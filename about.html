@@ -6,117 +6,169 @@
     <title>About LexyHub</title>
     <meta
       name="description"
-      content="Learn how LexyHub helps commerce teams translate market signals into confident product launches."
+      content="LexyHub is a crew of data-obsessed marketplace sellers and engineers who were tired of guessing from outdated, noisy signals."
     />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles-reskinned.css" />
   </head>
   <body>
     <header class="topbar">
-      <div class="container topbar-inner">
-        <a class="brand" href="./index.html">LexyHub</a>
-        <nav class="nav-links" aria-label="Primary">
-          <a href="./index.html#features">Features</a>
+      <div class="shell topbar__inner">
+        <a class="brand" href="./index.html">
+          <span class="brand__dot"></span>
+          LexyHub
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="./index.html#features">Product</a>
+          <a href="./index.html#workflow">How it works</a>
           <a href="./index.html#pricing">Pricing</a>
           <a href="./about.html" aria-current="page">About</a>
           <a href="./contact.html">Contact</a>
         </nav>
-        <div class="cta-group">
-          <a class="button ghost" href="https://app.lexyhub.com/login">Log in</a>
-          <a class="button primary" href="https://app.lexyhub.com/signup">Start for free</a>
+        <div class="actions">
+          <a class="btn btn--ghost" href="https://app.lexyhub.com/login">Log in</a>
+          <a class="btn btn--primary" href="https://app.lexyhub.com/signup">Start free</a>
         </div>
       </div>
     </header>
 
     <main>
+      <!-- HERO -->
       <section class="section">
-        <div class="container">
-          <div class="section-header">
-            <h1>We are building the future of commerce intelligence</h1>
+        <div class="shell section__head">
+          <p class="eyebrow">ABOUT LEXYHUB</p>
+          <h1>We sell. We stare at data. We hate guessing.</h1>
+          <p>
+            LexyHub was built by marketplace operators who have actually fought for the Buy Box, got penalized for wrong
+            inventory bets, and watched a trend peak before the report arrived. We wired every data source we wanted into one
+            interface and made it explain itself.
+          </p>
+        </div>
+
+        <div class="shell grid grid--features">
+          <article class="feature feature--accent">
+            <h2>Origin story</h2>
             <p>
-              LexyHub exists to make market truth accessible to every operator. Our platform helps teams convert fragmented
-              signals into unified stories that accelerate confident decision making.
+              We ran multi-marketplace catalogs. Amazon, Etsy, D2C. Every week the same problem: signals were everywhere,
+              timestamps were off, teams were reacting late. So we built a commerce-grade signal layer.
             </p>
-          </div>
-          <div class="feature-grid">
-            <article class="feature-card">
-              <h2>Our mission</h2>
-              <p>
-                Unlock unfair advantage for commerce operators by fusing real-time demand signals with explainable AI
-                storytelling.
-              </p>
-            </article>
-            <article class="feature-card">
-              <h2>Our principles</h2>
-              <ul class="plan-features" role="list">
-                <li>Truth before dashboards — insights must drive action.</li>
-                <li>Explainability by default — AI should clarify, not mystify.</li>
-                <li>Velocity with empathy — tools should respect the humans who use them.</li>
-              </ul>
-            </article>
-            <article class="feature-card">
-              <h2>How we work</h2>
-              <p>
-                We partner with modern commerce teams, co-design workflows, and ship weekly improvements that map to real
-                outcomes. Your roadmap influences ours.
-              </p>
-            </article>
-            <article class="feature-card">
-              <h2>Where we’re headed</h2>
-              <p>
-                Expanding beyond marketplaces into omnichannel demand sensing, creative intelligence, and predictive supply chain
-                planning.
-              </p>
-            </article>
-          </div>
+          </article>
+          <article class="feature">
+            <h2>What we’re obsessed with</h2>
+            <p>Complete, time-aligned, explainable data.</p>
+            <ul class="feature__list">
+              <li>Real marketplace search, not proxies</li>
+              <li>Momentum scored against saturation</li>
+              <li>AI briefs that show their work</li>
+            </ul>
+          </article>
+          <article class="feature">
+            <h2>Seller pain we solve</h2>
+            <p>We know the ugly parts.</p>
+            <ul class="feature__list">
+              <li>Chasing spikes without stock</li>
+              <li>SEO keywords aging out in days</li>
+              <li>Ops demanding “why this SKU”</li>
+              <li>CMO asking for proof of trend</li>
+            </ul>
+          </article>
+          <article class="feature">
+            <h2>Our non-negotiables</h2>
+            <p>
+              No black-box signals. No 30-day-old “insights.” No charts that don’t tell you what to launch or drop. If it
+              doesn’t move GMV or launch velocity, we rip it out.
+            </p>
+          </article>
         </div>
       </section>
 
+      <!-- SELLER DNA -->
+      <section class="section">
+        <div class="shell section__head">
+          <h2>Built by people who shipped SKUs, not just dashboards</h2>
+          <p>
+            We have sat in the 10 p.m. “are we buying this or not” call. We have overbought on a trend that was already decaying.
+            That is why LexyHub exposes signal age, source, and confidence.
+          </p>
+        </div>
+        <div class="shell grid grid--workflow">
+          <article class="stage">
+            <h3>1. Marketplace truth</h3>
+            <p>We ingest real marketplace and cultural signals at the speed needed to catch surges.</p>
+          </article>
+          <article class="stage">
+            <h3>2. Seller context</h3>
+            <p>We score for saturation, seasonality, and inventory risk. That’s seller brain, not generic BI.</p>
+          </article>
+          <article class="stage">
+            <h3>3. Team routing</h3>
+            <p>Growth, merch, ops see the same story. No more “where did this number come from.”</p>
+          </article>
+          <article class="stage">
+            <h3>4. Feedback in</h3>
+            <p>Performance goes back to the model so next week’s signals are sharper.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- TEAM -->
       <section class="section" id="team">
-        <div class="container">
-          <div class="section-header">
-            <h2>Meet the team fueling LexyHub</h2>
-            <p>Builders, analysts, and storytellers united around a shared obsession: shipping the right product narrative.</p>
-          </div>
-          <div class="feature-grid">
-            <article class="feature-card">
-              <h3>Naya Chen — CEO &amp; Co-founder</h3>
-              <p>Commerce operator, former GM at a top 50 Amazon seller, obsessed with evidence-backed launches.</p>
-            </article>
-            <article class="feature-card">
-              <h3>Gabriel Ortiz — CTO &amp; Co-founder</h3>
-              <p>Data infrastructure veteran who architected multi-marketplace intelligence systems serving millions of SKUs.</p>
-            </article>
-            <article class="feature-card">
-              <h3>Samira Patel — Head of Market Intelligence</h3>
-              <p>Former trend researcher who translates culture shifts into actionable insights for consumer brands.</p>
-            </article>
-            <article class="feature-card">
-              <h3>Aiden Rivers — Product Design Lead</h3>
-              <p>Designs workflows that balance power with clarity so teams can move faster with less friction.</p>
-            </article>
-          </div>
+        <div class="shell section__head">
+          <h2>The crew</h2>
+          <p>Operators first. Analysts always. Engineers who hate lag.</p>
+        </div>
+        <div class="shell grid grid--features">
+          <article class="feature">
+            <h3>Naya Chen — CEO</h3>
+            <p>
+              Scaled marketplace revenue. Lived the pain of reconciling Amazon keyword jumps with Etsy buyers and D2C ops.
+              Started LexyHub to kill that swivel-chair work.
+            </p>
+          </article>
+          <article class="feature">
+            <h3>Gabriel Ortiz — CTO</h3>
+            <p>
+              Data infra, ML, and pipeline hardening. Owns the ingestion and scoring spine so signals stay fresh and provable.
+            </p>
+          </article>
+          <article class="feature">
+            <h3>Samira Patel — Intelligence</h3>
+            <p>
+              Tracks cultural shifts against actual SKUs. If TikTok says it’s hot but Amazon says it’s flat, she shows you the
+              gap.
+            </p>
+          </article>
+          <article class="feature">
+            <h3>Seller council</h3>
+            <p>
+              Active marketplace sellers who test features in real catalogs. If they cannot use it during peak, we don’t ship it.
+            </p>
+          </article>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <div class="container footer-grid">
+      <div class="shell footer__grid">
         <div>
-          <div class="brand">LexyHub</div>
-          <p class="tagline">Turning marketplace noise into confident launch decisions.</p>
+          <p class="footer__brand">LexyHub</p>
+          <p class="footer__text">Data-first commerce intelligence. Built by sellers.</p>
         </div>
-        <div class="footer-nav">
-          <strong>Company</strong>
+        <div class="footer__col">
+          <p class="footer__title">Company</p>
           <a href="./index.html">Home</a>
           <a href="./contact.html">Contact</a>
           <a href="https://lexyhub.com/docs">Documentation</a>
         </div>
-        <div class="footer-nav">
-          <strong>Connect</strong>
+        <div class="footer__col">
+          <p class="footer__title">Connect</p>
           <a href="mailto:hello@lexyhub.com">hello@lexyhub.com</a>
           <a href="https://www.linkedin.com/company/lexyhub">LinkedIn</a>
         </div>
       </div>
+      <p class="footer__legal">© <span id="year"></span> LexyHub. All rights reserved.</p>
+      <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
     </footer>
   </body>
 </html>
