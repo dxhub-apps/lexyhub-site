@@ -3,211 +3,248 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>LexyHub | Commerce intelligence without the noise</title>
+    <title>LexyHub | Market intelligence for commerce teams</title>
     <meta
       name="description"
-      content="LexyHub centralizes marketplace demand, trend intelligence, and AI-powered recommendations so product teams can act faster."
+      content="LexyHub gives commerce, marketplace, and merchandising teams a single pane for demand signals, trend momentum, and AI launch briefs."
     />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles-reskinned.css" />
   </head>
   <body>
     <header class="topbar">
-      <div class="container topbar-inner">
-        <a class="brand" href="./index.html">LexyHub</a>
-        <nav class="nav-links" aria-label="Primary">
-          <a href="#features">Features</a>
+      <div class="shell topbar__inner">
+        <a class="brand" href="./index.html">
+          <span class="brand__dot"></span>
+          LexyHub
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="#features">Product</a>
+          <a href="#workflow">How it works</a>
           <a href="#pricing">Pricing</a>
-          <a href="./about.html">About</a>
-          <a href="./contact.html">Contact</a>
+          <a href="./about.html">Company</a>
         </nav>
-        <div class="cta-group">
-          <a class="button ghost" href="https://app.lexyhub.com/login">Log in</a>
-          <a class="button primary" href="#pricing">Start for free</a>
+        <div class="actions">
+          <a class="btn btn--ghost" href="https://app.lexyhub.com/login">Log in</a>
+          <a class="btn btn--primary" href="#pricing">Start free</a>
         </div>
       </div>
     </header>
 
     <main>
+      <!-- HERO -->
       <section class="hero" id="home">
-        <div class="container hero-grid">
-          <div>
-            <span class="muted-pill">Commerce signal orchestration</span>
-            <h1>Know what the market wants before the market does.</h1>
-            <p>
-              LexyHub fuses marketplace data, cultural trend signals, and explainable AI to help merchandising and growth teams
-              ship the next hit with conviction. Centralize intelligence, rally stakeholders, and turn intent into revenue.
+        <div class="shell hero__grid">
+          <div class="hero__copy">
+            <p class="eyebrow">COMMERCE SIGNAL PLATFORM</p>
+            <h1>Turn scattered marketplace noise into launch decisions.</h1>
+            <p class="lead">
+              One interface for demand spikes, keyword momentum, cultural signals, and AI-backed briefs. For teams that cannot
+              wait for monthly reports.
             </p>
-            <div class="cta-group">
-              <a class="button primary" href="#pricing">Compare plans</a>
-              <a class="button ghost" href="./about.html">Explore the vision</a>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#pricing">View plans</a>
+              <a class="btn btn--text" href="./contact.html">Talk to us</a>
+              <p class="hero__meta">No credit card. Analyst-grade in 2 minutes.</p>
             </div>
-            <ul class="hero-points" role="list">
-              <li>Live marketplace demand radar spanning Amazon, Etsy, and emerging channels.</li>
-              <li>Explainable AI briefs that justify every recommendation with sources and momentum.</li>
-              <li>Collaboration guardrails that keep product, marketing, and ops in sync.</li>
+            <ul class="hero__bullets" role="list">
+              <li>Live Amazon, Etsy, and D2C marketplace lenses.</li>
+              <li>Explainable AI reasoner with source trace.</li>
+              <li>Workspaces, watchlists, and routed alerts.</li>
             </ul>
           </div>
-          <div class="testimonial">
-            <div class="muted-pill">What operators are saying</div>
-            <p>
-              “LexyHub collapsed our weekly intelligence standup from 90 minutes to 15. The team now sees the why behind every
-              keyword shift and can rally launches in hours, not weeks.”
-            </p>
-            <div>
-              <strong>Riya Bansal</strong>
-              <div class="tagline">Head of Marketplace Growth, Luminate Labs</div>
+          <div class="hero__panel" aria-label="Product snapshot">
+            <div class="panel-card panel-card--primary">
+              <div class="panel-card__head">
+                <h2>Demand radar</h2>
+                <span class="pill pill--green">+18% QoQ</span>
+              </div>
+              <p class="panel-card__muted">Top surging clusters by channel</p>
+              <ul class="list-metric">
+                <li>
+                  <span class="list-metric__label">“message card jewelry”</span>
+                  <span class="list-metric__trend up">+142%</span>
+                </li>
+                <li>
+                  <span class="list-metric__label">“shineon gifts”</span>
+                  <span class="list-metric__trend up">+97%</span>
+                </li>
+                <li>
+                  <span class="list-metric__label">“etsy best sellers tags”</span>
+                  <span class="list-metric__trend up">+66%</span>
+                </li>
+                <li>
+                  <span class="list-metric__label">“print on demand valentines”</span>
+                  <span class="list-metric__trend up">+51%</span>
+                </li>
+              </ul>
+            </div>
+            <div class="panel-card panel-card--secondary">
+              <p class="panel-card__title">AI launch brief</p>
+              <p class="panel-card__body">
+                Opportunity validated on 3 marketplaces. Low saturation. Recommend “Pro” or above to auto-publish report.
+              </p>
+              <p class="panel-card__foot">Routed to: Growth, Merch, Ops</p>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- FEATURES -->
       <section class="section" id="features">
-        <div class="container">
-          <div class="section-header">
-            <h2>Designed for the builders behind category-defining launches</h2>
+        <div class="shell section__head">
+          <h2>What LexyHub centralizes</h2>
+          <p>Three surfaces. One story of demand.</p>
+        </div>
+        <div class="shell grid grid--features">
+          <article class="feature">
+            <div class="feature__icon">01</div>
+            <h3>Signal ingestion</h3>
             <p>
-              Activate intelligence loops that span your entire commerce operation. LexyHub blends research, planning, and
-              execution so your team never has to guess what customers actually want.
+              Marketplace data, synthetic intelligence, category heuristics, and social/cultural spikes folded into one scoring
+              model.
             </p>
-          </div>
-          <div class="feature-grid">
-            <article class="feature-card">
-              <h3>Unified market radar</h3>
-              <p>
-                Pull synthetic, marketplace, and cultural signals into a single hub with out-of-the-box scoring for velocity,
-                saturation, and intent.
-              </p>
-            </article>
-            <article class="feature-card">
-              <h3>Explainable AI co-pilot</h3>
-              <p>
-                Every recommendation arrives with narrative context, source provenance, and AI-generated launch briefs that you
-                can share instantly.
-              </p>
-            </article>
-            <article class="feature-card">
-              <h3>Collaboration guardrails</h3>
-              <p>
-                Multi-seat workspaces, watchlists, and alerting keep growth, merchandising, and supply chain teams aligned on
-                the same story.
-              </p>
-            </article>
-            <article class="feature-card">
-              <h3>Revenue-ready playbooks</h3>
-              <p>
-                Turn insights into action with templates for listing optimization, demand testing, and expansion sequencing.
-              </p>
-            </article>
-          </div>
+            <ul class="feature__list">
+              <li>Velocity and saturation indices</li>
+              <li>Source confidence per signal</li>
+              <li>Time-to-peak estimations</li>
+            </ul>
+          </article>
+          <article class="feature">
+            <div class="feature__icon">02</div>
+            <h3>Explainable AI</h3>
+            <p>
+              Every recommendation is backed by narrative context, why-now framing, and links to originating signals you can
+              show stakeholders.
+            </p>
+            <ul class="feature__list">
+              <li>Auto-generated launch briefs</li>
+              <li>Stakeholder-friendly summaries</li>
+              <li>Export to PDF/CSV</li>
+            </ul>
+          </article>
+          <article class="feature">
+            <div class="feature__icon">03</div>
+            <h3>Collaboration rails</h3>
+            <p>
+              Workspaces, watchlists, and alert channels so growth, merchandising, and supply chain act on the same narrative,
+              not parallel ones.
+            </p>
+            <ul class="feature__list">
+              <li>Multi-seat with roles</li>
+              <li>Event-level audit trail</li>
+              <li>API for automations</li>
+            </ul>
+          </article>
+          <article class="feature feature--accent">
+            <div class="feature__icon">04</div>
+            <h3>Playbooks to revenue</h3>
+            <p>Guided paths for listing optimization, D2C tests, and marketplace expansion powered by real-time demand.</p>
+            <ul class="feature__list">
+              <li>Channel-specific templates</li>
+              <li>Campaign-ready messaging</li>
+              <li>Benchmarking vs peers</li>
+            </ul>
+          </article>
         </div>
       </section>
 
+      <!-- PRICING -->
       <section class="section" id="pricing">
-        <div class="container">
-          <div class="section-header">
-            <h2>Pricing that scales with your conviction</h2>
-            <p>Start for free, layer on deeper intelligence when you’re ready, or engage our growth lab quietly.</p>
-          </div>
-          <div class="pricing-grid">
-            <article class="plan-card">
-              <div class="muted-pill">Free forever</div>
-              <h3>Free</h3>
-              <div class="plan-price">$0</div>
-              <p>Foundational insights for founders validating new listings.</p>
-              <ul class="plan-features" role="list">
-                <li>100 keyword lookups per month</li>
-                <li>3 curated watchlists</li>
-                <li>Momentum snapshots delivered weekly</li>
-              </ul>
-              <div class="plan-cta">
-                <a class="button ghost" href="https://app.lexyhub.com/signup">Create free workspace</a>
-              </div>
-            </article>
-
-            <article class="plan-card">
-              <div class="muted-pill">Starter</div>
-              <h3>Basic</h3>
-              <div class="plan-price">$7</div>
-              <p>Automation for lean teams shipping faster launches.</p>
-              <ul class="plan-features" role="list">
-                <li>1,000 keyword lookups</li>
-                <li>Automated watchlist refreshes</li>
-                <li>CSV exports for instant reporting</li>
-              </ul>
-              <div class="plan-cta">
-                <a class="button primary" href="https://app.lexyhub.com/signup?plan=basic">Upgrade to Basic</a>
-              </div>
-            </article>
-
-            <article class="plan-card highlight">
-              <div class="muted-pill">Most loved</div>
-              <h3>Pro</h3>
-              <div class="plan-price">$29</div>
-              <p>Predictive intelligence and AI copilots for scaling operators.</p>
-              <ul class="plan-features" role="list">
-                <li>Unlimited keyword intelligence</li>
-                <li>AI Market Twin simulations</li>
-                <li>White-glove onboarding</li>
-              </ul>
-              <div class="plan-cta">
-                <a class="button primary" href="https://app.lexyhub.com/signup?plan=pro">Scale with Pro</a>
-              </div>
-            </article>
-
-          </div>
-            <p class="pricing-note">Early bird teams unlock a 20% yearly discount when committing annually.</p>
-          <p class="pricing-growth-cta">
-            <a class="button-link" href="https://lexyhub.com/contact">Ask about our growth plan</a>
-          </p>
+        <div class="shell section__head">
+          <h2>Pricing that doesn’t hide the advanced features</h2>
+          <p>Start free. Move up only when you need higher signal counts or workspace controls.</p>
+        </div>
+        <div class="shell grid grid--pricing">
+          <article class="plan">
+            <p class="plan__badge">Starter</p>
+            <h3>Free</h3>
+            <p class="plan__price">$0</p>
+            <p class="plan__desc">For single operators validating new listings.</p>
+            <ul class="plan__list" role="list">
+              <li>100 lookups/month</li>
+              <li>3 watchlists</li>
+              <li>Weekly momentum digest</li>
+            </ul>
+            <a class="btn btn--ghost" href="https://app.lexyhub.com/signup">Create free account</a>
+          </article>
+          <article class="plan plan--featured">
+            <p class="plan__badge plan__badge--featured">Growth teams</p>
+            <h3>Pro</h3>
+            <p class="plan__price">$29</p>
+            <p class="plan__desc">For marketplace teams that need AI briefs and automation.</p>
+            <ul class="plan__list" role="list">
+              <li>Unlimited keyword intelligence</li>
+              <li>AI Market Twin simulations</li>
+              <li>Workspace roles and alerts</li>
+              <li>Exports and integrations</li>
+            </ul>
+            <a class="btn btn--primary" href="https://app.lexyhub.com/signup?plan=pro">Upgrade to Pro</a>
+            <p class="plan__foot">Annual: -20%</p>
+          </article>
+          <article class="plan">
+            <p class="plan__badge">Ops-heavy orgs</p>
+            <h3>Enterprise</h3>
+            <p class="plan__price">Talk to us</p>
+            <p class="plan__desc">For multi-brand, multi-region commerce orgs.</p>
+            <ul class="plan__list" role="list">
+              <li>Custom lookups & writers</li>
+              <li>Private connectors</li>
+              <li>SLAs and onboarding</li>
+            </ul>
+            <a class="btn btn--ghost" href="./contact.html">Schedule scoping</a>
+          </article>
         </div>
       </section>
 
+      <!-- WORKFLOW -->
       <section class="section" id="workflow">
-        <div class="container">
-          <div class="section-header">
-            <h2>How LexyHub powers your launch rhythm</h2>
-            <p>Operationalize discovery, validation, and storytelling in one repeatable loop.</p>
-          </div>
-          <div class="feature-grid">
-            <article class="feature-card">
-              <h3>Discover</h3>
-              <p>Monitor emerging opportunities with alerts tuned to your categories and growth goals.</p>
-            </article>
-            <article class="feature-card">
-              <h3>Decide</h3>
-              <p>Use AI-backed briefs to justify prioritization with stakeholders before inventory commitments are made.</p>
-            </article>
-            <article class="feature-card">
-              <h3>Deploy</h3>
-              <p>Push campaign-ready messaging, target keywords, and merchandising actions to your activation tools.</p>
-            </article>
-            <article class="feature-card">
-              <h3>Iterate</h3>
-              <p>Measure the narrative, learn faster, and feed signals back into LexyHub for compounding advantage.</p>
-            </article>
-          </div>
+        <div class="shell section__head">
+          <h2>Operational loop</h2>
+          <p>Four steps repeated per category.</p>
+        </div>
+        <div class="shell grid grid--workflow">
+          <article class="stage">
+            <h3>1. Discover</h3>
+            <p>Feed category, channel, and region. Get signals scored for intent, novelty, and saturation.</p>
+          </article>
+          <article class="stage">
+            <h3>2. Decide</h3>
+            <p>AI writes the brief. You adjust guardrails. Stakeholders get the why, not just the chart.</p>
+          </article>
+          <article class="stage">
+            <h3>3. Deploy</h3>
+            <p>Push messaging, keywords, and actions to the tools that activate your channel mix.</p>
+          </article>
+          <article class="stage">
+            <h3>4. Learn</h3>
+            <p>Performance comes back in. Signals get sharper. Next launches get faster.</p>
+          </article>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <div class="container footer-grid">
+      <div class="shell footer__grid">
         <div>
-          <div class="brand">LexyHub</div>
-          <p class="tagline">The commerce intelligence workspace for teams shipping the future of retail.</p>
+          <p class="footer__brand">LexyHub</p>
+          <p class="footer__text">Commerce intelligence without the lag.</p>
         </div>
-        <div class="footer-nav">
-          <strong>Company</strong>
+        <div class="footer__col">
+          <p class="footer__title">Company</p>
           <a href="./about.html">About</a>
           <a href="./contact.html">Contact</a>
-          <a href="https://lexyhub.com/docs">Documentation</a>
+          <a href="https://lexyhub.com/docs">Docs</a>
         </div>
-        <div class="footer-nav">
-          <strong>Stay in the loop</strong>
+        <div class="footer__col">
+          <p class="footer__title">Connect</p>
           <a href="mailto:hello@lexyhub.com">hello@lexyhub.com</a>
           <a href="https://www.linkedin.com/company/lexyhub">LinkedIn</a>
         </div>
       </div>
+      <p class="footer__legal">© <span id="year"></span> LexyHub. All rights reserved.</p>
+      <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
     </footer>
   </body>
 </html>
