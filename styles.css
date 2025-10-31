@@ -13,13 +13,19 @@
   --surface-muted: #f3f5f9;
   --radius-lg: 1.2rem;
   --radius-md: 0.9rem;
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  --transition: all 0.2s ease-in-out;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -33,6 +39,7 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+  transition: var(--transition);
 }
 
 .shell {
@@ -41,12 +48,18 @@ a {
   padding: 0 1.5rem;
 }
 
+/* ==================
+   TOPBAR & NAV
+   ================== */
+
 .topbar {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.85);
   border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .topbar__inner {
@@ -54,7 +67,7 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 1.25rem;
-  padding: 0.85rem 0;
+  padding: 0.85rem 1.5rem; /* Matched shell padding */
 }
 
 .brand {
@@ -78,6 +91,7 @@ a {
   gap: 1rem;
   color: var(--ink-soft);
   font-size: 0.9rem;
+  /* margin-left: auto; */ /* Pushes nav left */
 }
 
 .nav a {
@@ -95,7 +109,30 @@ a {
 .actions {
   display: flex;
   gap: 0.4rem;
+  margin-left: auto; /* Pushes actions to the right */
 }
+
+.btn-mobile-nav {
+  display: none; /* Hidden by default */
+  background: transparent;
+  border: 0;
+  padding: 0.25rem;
+  cursor: pointer;
+  z-index: 1001; /* Above nav overlay */
+}
+
+.hamburger-line {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--ink);
+  margin: 5px 0;
+  transition: var(--transition);
+}
+
+/* ==================
+   BUTTONS
+   ================== */
 
 .btn {
   display: inline-flex;
@@ -108,6 +145,7 @@ a {
   cursor: pointer;
   line-height: 1.3;
   padding: 0.4rem 1.05rem;
+  transition: var(--transition);
 }
 
 .btn--primary {
@@ -115,11 +153,21 @@ a {
   border-color: var(--blue);
   color: #fff;
 }
+.btn--primary:hover,
+.btn--primary:focus-visible {
+  background: #104ecb; /* Slightly darker blue */
+  border-color: #104ecb;
+}
 
 .btn--ghost {
   background: #fff;
   border-color: var(--border);
   color: var(--ink);
+}
+.btn--ghost:hover,
+.btn--ghost:focus-visible {
+  background: var(--surface-muted);
+  border-color: var(--border);
 }
 
 .btn--link {
@@ -129,13 +177,21 @@ a {
   padding: 0;
   font-weight: 600;
 }
+.btn--link:hover,
+.btn--link:focus-visible {
+  text-decoration: underline;
+}
 
 .btn--full {
   width: 100%;
 }
 
+/* ==================
+   HERO
+   ================== */
+
 .hero {
-  padding: 4.2rem 0 3.6rem;
+  padding: 5rem 0 4.5rem; /* More vertical space */
 }
 
 .hero__wrapper {
@@ -148,7 +204,7 @@ a {
   flex: 0 0 54%;
   display: flex;
   flex-direction: column;
-  gap: 1.1rem;
+  gap: 1.25rem; /* Increased gap */
 }
 
 .hero__side {
@@ -160,44 +216,48 @@ a {
 
 .eyebrow {
   display: inline-flex;
-  background: #e9f0ff;
+  background: var(--blue-soft);
   color: var(--blue);
   padding: 0.3rem 0.6rem 0.25rem;
   border-radius: 999px;
   font-size: 0.62rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
+  font-weight: 600;
+  align-self: flex-start; /* Fit content */
 }
 
 h1 {
-  font-size: clamp(2.4rem, 4vw, 3rem);
-  line-height: 1.03;
+  font-size: clamp(2.4rem, 4.2vw, 3.1rem); /* Slightly larger */
+  line-height: 1.1; /* Tighter line height */
   margin: 0;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em; /* Tighter letter spacing */
 }
 
 .lead {
   margin: 0;
   color: var(--ink-soft);
   max-width: 560px;
-  font-size: 1rem;
+  font-size: 1.05rem; /* Slightly larger lead */
 }
 
 .hero__cta-row {
   display: flex;
   gap: 0.8rem;
   flex-wrap: wrap;
+  margin-top: 0.5rem;
 }
 
 .hero__meta-row {
   display: flex;
-  gap: 1rem;
+  gap: 0.75rem; /* Tighter gap */
   flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
 .meta-block {
-  background: #fff;
-  border: 1px solid var(--border);
+  background: var(--blue-soft); /* Use soft blue */
+  border: 1px solid transparent; /* Remove border */
   border-radius: 0.8rem;
   padding: 0.45rem 0.8rem 0.35rem;
   min-width: 140px;
@@ -208,7 +268,7 @@ h1 {
   font-weight: 600;
   font-size: 0.7rem;
   text-transform: uppercase;
-  color: var(--ink-soft);
+  color: var(--blue); /* Use blue */
   letter-spacing: 0.03em;
 }
 
@@ -217,6 +277,10 @@ h1 {
   font-size: 0.78rem;
   color: var(--ink);
 }
+
+/* ==================
+   PANELS (in Hero)
+   ================== */
 
 .panel {
   background: #fff;
@@ -297,6 +361,7 @@ h1 {
 
 .panel--neutral {
   background: #fff;
+  border-color: var(--blue-soft); /* Tie into theme */
 }
 
 .panel__label {
@@ -310,6 +375,10 @@ h1 {
   color: var(--ink-soft);
 }
 
+/* ==================
+   SECTIONS & GRIDS
+   ================== */
+
 .section {
   padding: 3.5rem 0 3.2rem;
 }
@@ -317,20 +386,28 @@ h1 {
 .section__head {
   text-align: center;
   margin-bottom: 2rem;
+  max-width: 650px; /* Constrain width */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .section__head--left {
   text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+  max-width: none;
 }
 
 .section__head h2 {
   margin-bottom: 0.35rem;
-  font-size: 1.7rem;
+  font-size: 1.9rem; /* Larger section heads */
+  letter-spacing: -0.01em;
 }
 
 .section__head p {
   margin: 0;
   color: var(--ink-soft);
+  font-size: 1.05rem; /* Larger lead text */
 }
 
 .grid {
@@ -351,17 +428,29 @@ h1 {
   border: 1px solid var(--border);
   border-radius: 0.8rem;
   padding: 1.05rem 1rem 0.9rem;
+  transition: var(--transition);
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
 }
 
 .card h3 {
   margin-top: 0;
   margin-bottom: 0.4rem;
+  color: var(--ink);
 }
 
 .card p {
   margin: 0;
   color: var(--ink-soft);
 }
+
+/* ==================
+   PRICING
+   ================== */
 
 .section--gray {
   background: var(--surface-muted);
@@ -382,10 +471,16 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+  transition: var(--transition);
+}
+.plan:hover {
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+  transform: translateY(-2px);
 }
 
 .plan--highlight {
   border-color: rgba(21, 94, 239, 0.45);
+  box-shadow: 0 4px 20px rgba(21, 94, 239, 0.1);
 }
 
 .plan__badge {
@@ -393,6 +488,7 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--ink-muted);
+  font-weight: 600;
 }
 
 .plan__badge--blue {
@@ -407,6 +503,7 @@ h1 {
 .plan__desc {
   color: var(--ink-soft);
   font-size: 0.85rem;
+  flex-grow: 1; /* Pushes button down */
 }
 
 .plan__list {
@@ -417,11 +514,14 @@ h1 {
   gap: 0.35rem;
   color: var(--ink-soft);
   font-size: 0.8rem;
+  flex-grow: 1; /* Pushes button down */
 }
 
 .plan__foot {
   font-size: 0.7rem;
   color: var(--ink-muted);
+  text-align: center;
+  margin-top: 0.3rem;
 }
 
 .growth-link {
@@ -432,6 +532,10 @@ h1 {
 .growth-link a {
   color: var(--blue);
 }
+
+/* ==================
+   WORKFLOW (STEPS)
+   ================== */
 
 .step {
   background: #fff;
@@ -451,6 +555,10 @@ h1 {
   font-size: 0.82rem;
 }
 
+/* ==================
+   FOOTER
+   ================== */
+
 .footer {
   background: #0f172a;
   color: rgba(255, 255, 255, 0.7);
@@ -461,19 +569,27 @@ h1 {
 .footer__grid {
   display: grid;
   gap: 1.3rem;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: 2fr 1fr 1fr; /* Give brand more space */
   margin-bottom: 1.4rem;
 }
 
 .footer__brand {
   font-weight: 700;
   color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.footer__text {
+  font-size: 0.85rem;
+  margin-top: 0;
+  max-width: 200px;
 }
 
 .footer__title {
   font-weight: 600;
   color: #fff;
   margin-bottom: 0.3rem;
+  font-size: 0.9rem;
 }
 
 .footer a {
@@ -482,27 +598,121 @@ h1 {
   font-size: 0.8rem;
   margin-bottom: 0.25rem;
 }
+.footer a:hover {
+  color: #fff;
+}
 
 .footer__legal {
   font-size: 0.7rem;
   text-align: center;
+  margin: 0;
+  padding: 0 1.5rem;
 }
 
+/* ==================
+   MOBILE RESPONSIVE
+   ================== */
+
 @media (max-width: 900px) {
-  .nav {
-    display: none;
-  }
   .hero__wrapper {
     flex-direction: column;
+    gap: 2.5rem;
   }
   .hero__copy,
   .hero__side {
     width: 100%;
+    flex-basis: auto;
   }
   .hero__side {
     max-width: 500px;
   }
   .hero__meta-row {
     gap: 0.6rem;
+  }
+  .footer__grid {
+    grid-template-columns: 1fr; /* Stack footer columns */
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* --- Mobile Nav Toggle --- */
+  .btn-mobile-nav {
+    display: block;
+    margin-left: 0.5rem;
+  }
+
+  .actions {
+    margin-left: auto; /* Keep actions right */
+  }
+
+  .nav {
+    display: none; /* Hide desktop nav */
+    /* Mobile nav overlay styles */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    z-index: 1000;
+  }
+  .nav a {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* --- Nav Open State --- */
+  body.nav-open {
+    overflow: hidden; /* Prevent background scroll */
+  }
+  body.nav-open .nav {
+    display: flex; /* Show mobile nav */
+  }
+  /* Hamburger to 'X' animation */
+  body.nav-open .hamburger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  body.nav-open .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+  body.nav-open .hamburger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* --- Other adjustments --- */
+  .section__head p,
+  .lead {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* On very small screens, hide "Log in" to prevent wrap */
+  .actions .btn--ghost {
+    display: none;
+  }
+  .topbar__inner {
+    padding: 0.85rem 1rem;
+  }
+  .shell {
+    padding: 0 1rem;
+  }
+  .hero {
+    padding-top: 3rem;
+  }
+  .hero__cta-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero__cta-row .btn {
+    justify-content: center;
   }
 }
