@@ -223,6 +223,38 @@ a:focus {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
+.pricing-note {
+  margin: 2rem auto 0;
+  max-width: 620px;
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+.pricing-growth-cta {
+  margin: 1rem 0 0;
+  text-align: center;
+}
+
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.button-link::after {
+  content: "→";
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.button-link:hover::after,
+.button-link:focus::after {
+  transform: translateX(3px);
+}
+
 .plan-card {
   position: relative;
   border-radius: 1.5rem;
