@@ -3,12 +3,108 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>LexyHub | Real-time data advantage for sellers</title>
+    <title>LexyHub | Marketplace signals for sellers</title>
     <meta
       name="description"
-      content="LexyHub unifies Amazon, Etsy, and Google trend data to build actionable signals for sellers. Know what to launch, when to launch, and why — before your competition reacts."
+      content="LexyHub unifies Amazon, Etsy, and Google Trends into clean, explainable signals so sellers can launch faster and make more money."
     />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles-clean.css" />
+    <style>
+      /* page-level accents */
+      :root {
+        --primary: #0f5eea;
+        --primary-soft: rgba(15, 94, 234, 0.1);
+        --ink: #0f172a;
+        --ink-soft: #4b5563;
+        --ink-muted: #94a3b8;
+        --border: #dbe2ea;
+      }
+      header.topbar {
+        background: #0f5eea;
+        color: #fff;
+        border-bottom: none;
+      }
+      header .brand {
+        color: #fff;
+      }
+      header .brand__dot {
+        background: #fff;
+      }
+      header .nav a {
+        color: rgba(255, 255, 255, 0.8);
+        border-bottom-color: transparent;
+      }
+      header .nav a:hover,
+      header .nav a:focus-visible,
+      header .nav a[aria-current="page"] {
+        color: #fff;
+        border-bottom-color: rgba(255, 255, 255, 0.55);
+      }
+      header .btn--ghost {
+        background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(255, 255, 255, 0.25);
+        color: #fff;
+      }
+      header .btn--primary {
+        background: #fff;
+        color: #0f5eea;
+        border-color: #fff;
+      }
+      .hero {
+        background: #ffffff;
+        padding-top: 4.3rem;
+      }
+      .hero__copy h1 {
+        color: #0f172a;
+      }
+      .panel-card--primary {
+        background: #0f5eea;
+        border-color: #0f5eea;
+        color: #fff;
+      }
+      .panel-card--primary .panel-card__muted {
+        color: rgba(255, 255, 255, 0.8);
+      }
+      .panel-card--primary .list-metric__label {
+        color: #fff;
+      }
+      .panel-card--primary .list-metric__trend {
+        background: rgba(255, 255, 255, 0.14);
+        color: #fff;
+      }
+      .section.pricing {
+        background: #f2f6ff;
+      }
+      .plan--featured {
+        background: #ffffff;
+        border-color: rgba(15, 94, 234, 0.4);
+      }
+      .plan--growth {
+        background: #0f172a;
+        color: #fff;
+        border-color: #0f172a;
+      }
+      .plan--growth .plan__desc,
+      .plan--growth .plan__list li,
+      .plan--growth .plan__foot {
+        color: rgba(255, 255, 255, 0.82);
+      }
+      .plan--growth .btn--ghost {
+        background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(255, 255, 255, 0.25);
+        color: #fff;
+      }
+      .footer {
+        background: #0f172a;
+        color: rgba(255, 255, 255, 0.7);
+      }
+      .footer a {
+        color: rgba(255, 255, 255, 0.85);
+      }
+      .footer__brand {
+        color: #fff;
+      }
+    </style>
   </head>
   <body>
     <header class="topbar">
@@ -36,58 +132,47 @@
       <section class="hero" id="home">
         <div class="shell hero__grid">
           <div class="hero__copy">
-            <p class="eyebrow">DATA BUILT FOR SELLERS</p>
-            <h1>We unify every marketplace signal so you can outsell, not outguess.</h1>
+            <p class="eyebrow" style="background: rgba(15, 94, 234, 0.12); color: #0f5eea">DATA FROM EVERYWHERE</p>
+            <h1>Unified signals from Amazon, Etsy, Google, and the wider web.</h1>
             <p class="lead">
-              LexyHub merges Amazon, Etsy, and Google trend data with millions of high-value keywords across the internet to
-              build live commerce signals. We show what’s moving, why it’s moving, and where profit hides — so you can make
-              better, faster decisions and grow revenue with conviction.
+              LexyHub collects high-value keywords across the internet, matches them to live marketplace and trend data, and
+              delivers clean signals. You see what to launch and when. You make the money. Not the competition.
             </p>
             <div class="hero__actions">
-              <a class="btn btn--primary" href="#pricing">Compare plans</a>
-              <a class="btn btn--text" href="./about.html">Learn how we do it</a>
-              <p class="hero__meta">More clarity. Less noise. More money made.</p>
+              <a class="btn btn--primary" href="#pricing">View plans</a>
+              <a class="btn btn--text" href="./about.html">Why sellers built this</a>
+              <p class="hero__meta">No fluff. Marketplace truth only.</p>
             </div>
             <ul class="hero__bullets" role="list">
-              <li>Aggregates Amazon, Etsy, and Google Trends in one feed.</li>
-              <li>Identifies high-value, high-momentum keywords before the crowd.</li>
-              <li>Transforms raw data into launch-ready briefs for sellers.</li>
+              <li>Amazon and Etsy demand in one place</li>
+              <li>Google Trends and web keyword discovery</li>
+              <li>Explainable AI briefs for your team</li>
             </ul>
           </div>
 
-          <div class="hero__panel">
+          <div class="hero__panel" aria-label="Signal preview">
             <div class="panel-card panel-card--primary">
               <div class="panel-card__head">
-                <h2>Market signal summary</h2>
-                <span class="pill pill--green">Live</span>
+                <h2>Today’s fast movers</h2>
+                <span class="pill pill--green" style="background: rgba(236, 253, 245, 0.25); border: 1px solid rgba(236, 253, 245, 0.6)"
+                  >Live</span
+                >
               </div>
-              <p class="panel-card__muted">Top cross-marketplace keyword surges</p>
+              <p class="panel-card__muted">Cross-source keyword surges (Amazon + Etsy + Google)</p>
               <ul class="list-metric">
-                <li>
-                  <span class="list-metric__label">“personalized gift for mom”</span>
-                  <span class="list-metric__trend up">+183%</span>
-                </li>
-                <li>
-                  <span class="list-metric__label">“message card jewelry”</span>
-                  <span class="list-metric__trend up">+142%</span>
-                </li>
-                <li>
-                  <span class="list-metric__label">“etsy valentine necklace”</span>
-                  <span class="list-metric__trend up">+77%</span>
-                </li>
-                <li>
-                  <span class="list-metric__label">“print on demand shirt”</span>
-                  <span class="list-metric__trend up">+58%</span>
-                </li>
+                <li><span class="list-metric__label">“message card jewelry”</span><span class="list-metric__trend">+142%</span></li>
+                <li><span class="list-metric__label">“personalized gift for mom”</span><span class="list-metric__trend">+118%</span></li>
+                <li><span class="list-metric__label">“etsy valentines”</span><span class="list-metric__trend">+73%</span></li>
+                <li><span class="list-metric__label">“print on demand shirts”</span><span class="list-metric__trend">+51%</span></li>
               </ul>
             </div>
             <div class="panel-card panel-card--secondary">
-              <p class="panel-card__title">AI Opportunity Brief</p>
-              <p class="panel-card__body">
-                Aggregated intent signals from Amazon, Etsy, and Google show a 3-week upward momentum window. Conversion
-                likelihood high. Suggested move: test listing copy and double ad spend before trend peak.
+              <p class="panel-card__title" style="font-weight: 600">AI Launch Brief</p>
+              <p class="panel-card__body" style="font-size: 0.75rem; color: #4b5563">
+                Signals synced from Amazon and Etsy. Demand is rising, competition lagging. Move on this in 3 to 5 days for best
+                margin.
               </p>
-              <p class="panel-card__foot">Synced to Merch + Growth + Ops</p>
+              <p class="panel-card__foot" style="font-size: 0.7rem; color: #94a3b8">Routed to Growth, Merch, Ops</p>
             </div>
           </div>
         </div>
@@ -96,89 +181,93 @@
       <!-- FEATURES -->
       <section class="section" id="features">
         <div class="shell section__head">
-          <h2>Turn fragmented signals into actionable profit</h2>
+          <h2>Data for people who sell, not just analyze</h2>
           <p>
-            We collect real marketplace data and search behavior across the web, build clean signals, and serve them back as
-            decision-ready intelligence for sellers who want to win faster.
+            We normalize scattered marketplace and trend sources into one professional, auditable view. Less time reconciling.
+            More time listing.
           </p>
         </div>
         <div class="shell grid grid--features">
-          <article class="feature feature--accent">
+          <article class="feature">
             <h3>Marketplace fusion</h3>
-            <p>
-              Amazon, Etsy, Google, TikTok, and search trend data combined into one ranked view — complete with source, score,
-              and momentum.
-            </p>
+            <p>Amazon and Etsy signals in one place, time-aligned, scored, ready to share.</p>
           </article>
           <article class="feature">
-            <h3>Keyword intelligence</h3>
-            <p>
-              Our crawler network tracks millions of keywords and product phrases daily to uncover high-value opportunities
-              before competitors act.
-            </p>
+            <h3>Keyword discovery</h3>
+            <p>High-value keywords and product phrases collected from across the web.</p>
           </article>
           <article class="feature">
-            <h3>Explainable AI insights</h3>
-            <p>
-              AI models translate signal shifts into actionable context. Every recommendation comes with justification and
-              evidence.
-            </p>
+            <h3>Explainable AI</h3>
+            <p>Every recommendation shows source, time window, and reasoning.</p>
           </article>
           <article class="feature">
-            <h3>Seller-first workflows</h3>
-            <p>
-              Built for people managing SKUs, listings, and supply — not analysts. Get clarity, not charts.
-            </p>
+            <h3>Team-friendly</h3>
+            <p>Watchlists and alerts that merchandising, ops, and growth can agree on.</p>
           </article>
         </div>
       </section>
 
       <!-- PRICING -->
-      <section class="section" id="pricing">
+      <section class="section pricing" id="pricing">
         <div class="shell section__head">
-          <h2>Data advantage at every level</h2>
-          <p>From side hustlers to full operations, scale your visibility as you grow.</p>
+          <h2>Pricing that follows your data needs</h2>
+          <p>Start forever free. Move up as your signal intake grows.</p>
         </div>
         <div class="shell grid grid--pricing">
+          <!-- Free -->
           <article class="plan">
-            <p class="plan__badge">Starter</p>
+            <p class="plan__badge">Free (forever)</p>
             <h3>Free</h3>
             <p class="plan__price">$0</p>
-            <p class="plan__desc">Test your first 100 signals and learn where demand is forming.</p>
+            <p class="plan__desc">Validate ideas on real marketplace and trend data.</p>
             <ul class="plan__list" role="list">
-              <li>100 keyword lookups/month</li>
+              <li>100 lookups/month</li>
               <li>3 watchlists</li>
               <li>Weekly signal digest</li>
             </ul>
             <a class="btn btn--ghost" href="https://app.lexyhub.com/signup">Create free account</a>
           </article>
 
-          <article class="plan plan--featured">
-            <p class="plan__badge plan__badge--featured">Pro sellers</p>
-            <h3>Pro</h3>
-            <p class="plan__price">$29</p>
-            <p class="plan__desc">
-              For sellers managing multiple products who want live keyword and trend intelligence.
-            </p>
+          <!-- Basic -->
+          <article class="plan">
+            <p class="plan__badge">Small teams</p>
+            <h3>Basic</h3>
+            <p class="plan__price">$7</p>
+            <p class="plan__desc">For sellers who need more volume and fresher signals.</p>
             <ul class="plan__list" role="list">
-              <li>Unlimited lookups</li>
-              <li>AI launch briefs</li>
-              <li>Cross-market comparison</li>
-              <li>Data exports + alerts</li>
+              <li>1,000 lookups</li>
+              <li>Auto-refresh watchlists</li>
+              <li>CSV exports</li>
             </ul>
-            <a class="btn btn--primary" href="https://app.lexyhub.com/signup?plan=pro">Upgrade to Pro</a>
-            <p class="plan__foot">Annual billing: 20% off</p>
+            <a class="btn btn--primary" href="https://app.lexyhub.com/signup?plan=basic">Upgrade to Basic</a>
           </article>
 
-          <article class="plan">
-            <p class="plan__badge">Enterprise</p>
-            <h3>Growth Lab</h3>
-            <p class="plan__price">Custom</p>
-            <p class="plan__desc">For large teams or multi-brand operators who need private integrations and analytics.</p>
+          <!-- Pro -->
+          <article class="plan plan--featured">
+            <p class="plan__badge">Most used</p>
+            <h3>Pro</h3>
+            <p class="plan__price">$29</p>
+            <p class="plan__desc">Unlimited keyword intelligence and AI launch briefs.</p>
             <ul class="plan__list" role="list">
-              <li>Custom connectors</li>
-              <li>Dedicated data support</li>
-              <li>Advanced modeling</li>
+              <li>Unlimited lookups</li>
+              <li>Cross-market comparisons</li>
+              <li>Workspace alerts</li>
+              <li>API access</li>
+            </ul>
+            <a class="btn btn--primary" href="https://app.lexyhub.com/signup?plan=pro">Get Pro</a>
+            <p class="plan__foot">Annual: -20%</p>
+          </article>
+
+          <!-- Growth -->
+          <article class="plan plan--growth">
+            <p class="plan__badge">Growth</p>
+            <h3>$49</h3>
+            <p class="plan__price" style="font-size: 1.6rem; font-weight: 600; margin-top: -0.6rem">$49</p>
+            <p class="plan__desc">For teams ingesting multiple brands or high-velocity categories.</p>
+            <ul class="plan__list" role="list">
+              <li>Priority data freshness</li>
+              <li>Private connectors</li>
+              <li>Signal review sessions</li>
             </ul>
             <a class="btn btn--ghost" href="./contact.html">Talk to us</a>
           </article>
@@ -188,25 +277,25 @@
       <!-- WORKFLOW -->
       <section class="section" id="workflow">
         <div class="shell section__head">
-          <h2>From data to dollars</h2>
-          <p>Our feedback loop turns market noise into predictable action.</p>
+          <h2>Clean loop. No noise.</h2>
+          <p>Aggregate. Score. Explain. Deploy. Repeat.</p>
         </div>
         <div class="shell grid grid--workflow">
           <article class="stage">
             <h3>1. Aggregate</h3>
-            <p>We pull data from Amazon, Etsy, Google Trends, and the wider web to build one clean signal feed.</p>
+            <p>Amazon, Etsy, Google Trends, and web keywords pulled together.</p>
           </article>
           <article class="stage">
-            <h3>2. Analyze</h3>
-            <p>AI ranks signals by velocity, saturation, and value — so you see what matters, not everything.</p>
+            <h3>2. Score</h3>
+            <p>We rank by velocity, saturation, and money-making potential.</p>
           </article>
           <article class="stage">
-            <h3>3. Act</h3>
-            <p>Instantly convert validated signals into launch briefs and watchlists for your team.</p>
+            <h3>3. Explain</h3>
+            <p>AI writes the why so teams trust the decision.</p>
           </article>
           <article class="stage">
-            <h3>4. Learn</h3>
-            <p>Performance feeds back into the system. Each cycle makes your data sharper and your profit higher.</p>
+            <h3>4. Deploy</h3>
+            <p>Send to watchlists, campaigns, or ops. Launch faster.</p>
           </article>
         </div>
       </section>
@@ -216,7 +305,7 @@
       <div class="shell footer__grid">
         <div>
           <p class="footer__brand">LexyHub</p>
-          <p class="footer__text">We turn marketplace chaos into seller clarity and profit.</p>
+          <p class="footer__text">Unified marketplace intelligence for sellers.</p>
         </div>
         <div class="footer__col">
           <p class="footer__title">Company</p>
@@ -225,9 +314,9 @@
           <a href="https://lexyhub.com/docs">Docs</a>
         </div>
         <div class="footer__col">
-          <p class="footer__title">Connect</p>
+          <p class="footer__title">Contact</p>
           <a href="mailto:hello@lexyhub.com">hello@lexyhub.com</a>
-          <a href="https://www.linkedin.com/company/lexyhub">LinkedIn</a>
+          <a href="https://app.lexyhub.com/login">Customer login</a>
         </div>
       </div>
       <p class="footer__legal">© <span id="year"></span> LexyHub. All rights reserved.</p>
