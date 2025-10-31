@@ -2,16 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>LexyHub | The signal layer for marketplace sellers</title>
+    <title>LexyHub | Marketplace signal platform</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="LexyHub unifies Amazon, Etsy, Google Trends, and web-wide keyword data into one signal layer so marketplace sellers can launch faster and win categories."
-    />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./lexyhub.css" />
   </head>
   <body>
-    <!-- TOP BAR -->
+    <!-- TOPBAR -->
     <header class="topbar">
       <div class="shell topbar__inner">
         <a class="brand" href="./index.html">
@@ -31,190 +27,168 @@
       </div>
     </header>
 
+    <!-- HERO -->
     <main>
-      <!-- HERO -->
       <section class="hero" id="home">
-        <div class="shell hero__layout">
-          <div class="hero__content">
-            <p class="tag">DATA-FIRST, SELLER-BUILT</p>
-            <h1>One place to see what the market is actually buying.</h1>
-            <p class="sub">
-              LexyHub pulls signals from Amazon, Etsy, Google Trends, and high-value keyword sources across the web. We clean it,
-              rank it, and explain it so you can launch the right product before your competition even sees the trend.
+        <div class="shell hero__wrapper">
+          <div class="hero__copy">
+            <p class="eyebrow">DATA FROM AMAZON, ETSY, GOOGLE TRENDS</p>
+            <h1>One clean feed of what buyers are searching for right now.</h1>
+            <p class="lead">
+              LexyHub unifies marketplace data and high-value keywords across the internet, scores them, and explains them. You
+              see the opportunity, the timing, and the “why” before the rest of the market.
             </p>
-            <div class="hero__actions">
+            <div class="hero__cta-row">
               <a class="btn btn--primary" href="#pricing">View pricing</a>
-              <a class="btn btn--text" href="./about.html">Why sellers trust LexyHub</a>
+              <a class="btn btn--link" href="./about.html">Why sellers built LexyHub →</a>
             </div>
-            <ul class="hero__list" role="list">
-              <li>Unified signal feed across marketplaces and search.</li>
-              <li>Explainable AI briefs for merch, ops, and growth.</li>
-              <li>Always-fresh keyword intelligence.</li>
-            </ul>
-          </div>
-          <div class="hero__panel" aria-label="Live signal summary">
-            <div class="panel">
-              <div class="panel__head">
-                <span class="panel__title">Live marketplace signals</span>
-                <span class="badge badge--green">Live</span>
+            <div class="hero__meta-row">
+              <div class="meta-block">
+                <p class="meta-title">3 sources</p>
+                <p class="meta-text">Amazon, Etsy, Google</p>
               </div>
-              <p class="panel__muted">Combined from Amazon, Etsy, and search velocity</p>
+              <div class="meta-block">
+                <p class="meta-title">Explainable</p>
+                <p class="meta-text">every signal has a source</p>
+              </div>
+              <div class="meta-block">
+                <p class="meta-title">Seller-first</p>
+                <p class="meta-text">built to make money</p>
+              </div>
+            </div>
+          </div>
+          <div class="hero__side">
+            <div class="panel panel--primary" aria-label="Live signals">
+              <div class="panel__head">
+                <span class="panel__title">Live signal board</span>
+                <span class="tag tag--green">live</span>
+              </div>
+              <p class="panel__desc">Cross-marketplace spikes (10:05)</p>
               <ul class="signal-list">
                 <li>
-                  <span class="signal-list__label">“message card jewelry”</span>
-                  <span class="signal-list__value up">+142%</span>
+                  <span>“message card jewelry”</span>
+                  <span class="trend trend--up">+142%</span>
                 </li>
                 <li>
-                  <span class="signal-list__label">“personalized gift for mom”</span>
-                  <span class="signal-list__value up">+121%</span>
+                  <span>“personalized gift for mom”</span>
+                  <span class="trend trend--up">+118%</span>
                 </li>
                 <li>
-                  <span class="signal-list__label">“etsy valentines gift”</span>
-                  <span class="signal-list__value up">+74%</span>
+                  <span>“etsy valentines gift”</span>
+                  <span class="trend trend--up">+74%</span>
                 </li>
                 <li>
-                  <span class="signal-list__label">“print on demand tees”</span>
-                  <span class="signal-list__value up">+53%</span>
+                  <span>“print on demand shirt”</span>
+                  <span class="trend trend--up">+51%</span>
                 </li>
               </ul>
             </div>
-            <div class="panel panel--muted">
-              <p class="panel__title-sm">AI launch brief</p>
+            <div class="panel panel--neutral">
+              <p class="panel__label">AI launch brief</p>
               <p class="panel__body">
-                Demand lift observed across 3 channels. Competition still low. Launch window: 3–5 days. Recommend SKU variant and
-                ad test.
+                Signal confirmed across Amazon, Etsy, and search. Competition still light. Launch in 3–5 days. Route to Merch +
+                Ops.
               </p>
-              <p class="panel__footer">Sent to: Merch, Growth</p>
             </div>
           </div>
         </div>
       </section>
 
       <!-- PRODUCT -->
-      <section class="section section--tight" id="product">
+      <section class="section" id="product">
         <div class="shell section__head">
-          <h2>What LexyHub actually gives you</h2>
-          <p>Not pretty charts. Not lagging reports. A working signal layer for sellers.</p>
+          <h2>What you get</h2>
+          <p>Structured marketplace intelligence. Not dashboards.</p>
         </div>
-        <div class="shell grid grid--three">
-          <article class="feature">
-            <h3>1. Unified intake</h3>
-            <p>
-              Amazon, Etsy, Google Trends, and web keyword sources normalized into one structure so you compare like with like.
-            </p>
-            <ul class="bullets">
-              <li>Per-channel timestamps</li>
-              <li>Source-level confidence</li>
-              <li>Deduped keyword clusters</li>
-            </ul>
+        <div class="shell grid grid--3col">
+          <article class="card">
+            <h3>Unified capture</h3>
+            <p>Amazon, Etsy, and Google Trends aligned on time and category so you can compare real demand.</p>
           </article>
-          <article class="feature">
-            <h3>2. Signal scoring</h3>
-            <p>
-              We score demand by velocity, saturation, and monetization potential. You see what pays off, not just what’s noisy.
-            </p>
-            <ul class="bullets">
-              <li>Velocity vs. competition</li>
-              <li>Category sensitivity</li>
-              <li>Launch urgency</li>
-            </ul>
+          <article class="card">
+            <h3>Signal scoring</h3>
+            <p>We rank by velocity, saturation, and money-making potential.</p>
           </article>
-          <article class="feature">
-            <h3>3. Story for the team</h3>
-            <p>
-              Every insight is explainable so product, ops, and growth move together. No “where did this come from” meetings.
-            </p>
-            <ul class="bullets">
-              <li>AI-written briefs</li>
-              <li>Exports & alerts</li>
-              <li>Workspace-ready</li>
-            </ul>
+          <article class="card">
+            <h3>Explainable AI</h3>
+            <p>Every suggestion links back to sources so teams trust the decision.</p>
           </article>
         </div>
       </section>
 
       <!-- PRICING -->
-      <section class="section section--contrast" id="pricing">
+      <section class="section section--gray" id="pricing">
         <div class="shell section__head section__head--left">
-          <h2>Plans that match how much data you need</h2>
-          <p>Free forever. Predictable upgrades. No surprises.</p>
+          <h2>Pricing built for sellers</h2>
+          <p>Choose your intake. Upgrade when you outgrow it.</p>
         </div>
-        <div class="shell pricing__grid">
-          <!-- Free -->
+        <div class="shell pricing">
           <article class="plan">
-            <p class="plan__tag">Free forever</p>
+            <p class="plan__badge">Free forever</p>
             <h3>Free</h3>
             <p class="plan__price">$0</p>
-            <p class="plan__desc">For sellers validating ideas on real signals.</p>
-            <ul class="plan__list" role="list">
-              <li>100 signal lookups/month</li>
+            <p class="plan__desc">Validate product ideas on real signals.</p>
+            <ul class="plan__list">
+              <li>100 lookups/month</li>
               <li>3 watchlists</li>
-              <li>Weekly marketplace digest</li>
+              <li>Weekly signal digest</li>
             </ul>
-            <a class="btn btn--ghost btn--full" href="https://app.lexyhub.com/signup">Create free account</a>
+            <a class="btn btn--ghost btn--full" href="https://app.lexyhub.com/signup">Create account</a>
           </article>
-
-          <!-- Basic -->
           <article class="plan">
-            <p class="plan__tag">Most lightweight</p>
+            <p class="plan__badge">For operators</p>
             <h3>Basic</h3>
             <p class="plan__price">$7</p>
-            <p class="plan__desc">For small teams who need fresher marketplace and keyword data.</p>
-            <ul class="plan__list" role="list">
+            <p class="plan__desc">More volume, fresher keyword data.</p>
+            <ul class="plan__list">
               <li>1,000 lookups</li>
-              <li>Auto-refresh watchlists</li>
+              <li>Auto watchlist refresh</li>
               <li>CSV exports</li>
             </ul>
             <a class="btn btn--primary btn--full" href="https://app.lexyhub.com/signup?plan=basic">Upgrade to Basic</a>
           </article>
-
-          <!-- Pro -->
           <article class="plan plan--highlight">
-            <p class="plan__tag plan__tag--blue">Most sellers choose this</p>
+            <p class="plan__badge plan__badge--blue">Teams’ choice</p>
             <h3>Pro</h3>
             <p class="plan__price">$29</p>
-            <p class="plan__desc">For operators running multiple channels and launches.</p>
-            <ul class="plan__list" role="list">
-              <li>Unlimited keyword intelligence</li>
-              <li>Explainable AI launch briefs</li>
+            <p class="plan__desc">Unlimited signals plus explainable AI briefs.</p>
+            <ul class="plan__list">
+              <li>Unlimited lookups</li>
+              <li>Cross-market comparisons</li>
               <li>Workspace alerts & roles</li>
-              <li>API / exports</li>
+              <li>API access</li>
             </ul>
             <a class="btn btn--primary btn--full" href="https://app.lexyhub.com/signup?plan=pro">Scale with Pro</a>
             <p class="plan__foot">Annual: 20% off</p>
           </article>
         </div>
-        <p class="pricing__link">
-          <a href="./contact.html" class="link-inline">Ask about our Growth plan →</a>
+        <p class="shell growth-link">
+          <a href="./contact.html">Ask about our Growth plan →</a>
         </p>
       </section>
 
       <!-- WORKFLOW -->
       <section class="section">
         <div class="shell section__head section__head--left">
-          <h2>How it runs in your operation</h2>
-          <p>Short loop. No manual reconciliation.</p>
+          <h2>How it runs</h2>
+          <p>Short loop. No visual noise.</p>
         </div>
-        <div class="shell grid grid--four">
+        <div class="shell grid grid--4col">
           <article class="step">
-            <p class="step__num">01</p>
-            <h3>Ingest</h3>
-            <p>We pull marketplace, trend, and web keyword data.</p>
+            <h3>1. Ingest</h3>
+            <p>Pull marketplace, trend, and keyword data.</p>
           </article>
           <article class="step">
-            <p class="step__num">02</p>
-            <h3>Score</h3>
-            <p>Signals ranked for speed, saturation, and value.</p>
+            <h3>2. Score</h3>
+            <p>Rank by speed, saturation, and value.</p>
           </article>
           <article class="step">
-            <p class="step__num">03</p>
-            <h3>Explain</h3>
-            <p>AI writes the “why now” so teams act.</p>
+            <h3>3. Explain</h3>
+            <p>Generate context for teams.</p>
           </article>
           <article class="step">
-            <p class="step__num">04</p>
-            <h3>Deploy</h3>
-            <p>Watchlists and alerts go to merch, ops, and growth.</p>
+            <h3>4. Deploy</h3>
+            <p>Send to watchlists and alerts.</p>
           </article>
         </div>
       </section>
@@ -224,7 +198,7 @@
       <div class="shell footer__grid">
         <div>
           <p class="footer__brand">LexyHub</p>
-          <p class="footer__text">Real marketplace signals. Not marketing noise.</p>
+          <p class="footer__text">Unified marketplace signals for sellers.</p>
         </div>
         <div class="footer__col">
           <p class="footer__title">Company</p>
