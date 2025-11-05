@@ -874,4 +874,377 @@ h1 {
   .cta-block h2 {
     font-size: 1.8rem;
   }
+
+  .feature-block,
+  .feature-block--reverse {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .comparison-table {
+    font-size: 0.8rem;
+  }
+}
+
+/* ==================
+   NEW SECTIONS
+   ================== */
+
+/* Problem/Solution Section */
+.section--problem {
+  background: var(--surface-muted);
+}
+
+.grid--2col {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.problem-card {
+  background: #fff;
+  border: 2px solid var(--border);
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  transition: var(--transition);
+}
+
+.problem-card--solution {
+  border-color: var(--ink);
+  background: var(--surface-muted);
+}
+
+.problem-card__icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.problem-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.problem-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.problem-card li {
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.problem-card li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--ink-muted);
+  font-weight: bold;
+}
+
+.problem-card--solution li:before {
+  content: "✓";
+  color: var(--ink);
+}
+
+/* Feature Blocks (Deep Dive) */
+.section--features-deep {
+  background: #fff;
+}
+
+.feature-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.feature-block:last-child {
+  margin-bottom: 0;
+}
+
+.feature-block--reverse {
+  grid-template-columns: 1fr 1fr;
+}
+
+.feature-block--reverse .feature-block__content {
+  order: 2;
+}
+
+.feature-block--reverse .feature-block__visual {
+  order: 1;
+}
+
+.feature-block__content h2 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin: 0 0 1rem;
+  font-weight: 800;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.feature-list li {
+  padding-left: 1.75rem;
+  position: relative;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.feature-list li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.feature-demo {
+  background: var(--surface-muted);
+  border: 2px solid var(--border);
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.demo-search {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.demo-input {
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 0.6rem;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  flex-grow: 1;
+}
+
+.demo-arrow {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.demo-results {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.demo-result {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  color: var(--ink-soft);
+}
+
+/* Market Twin Simulator Demo */
+.feature-demo--simulator {
+  display: grid;
+  gap: 1rem;
+}
+
+.simulator-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  padding: 1rem 1.25rem;
+}
+
+.simulator-result {
+  background: var(--ink);
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* Listing Audit Demo */
+.audit-score {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.score-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 auto 0.75rem;
+  border: 4px solid var(--border);
+}
+
+.score-label {
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+.audit-items {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.audit-item {
+  background: #fff;
+  border: 2px solid var(--border);
+  border-radius: 0.6rem;
+  padding: 0.85rem 1rem;
+  font-size: 0.9rem;
+}
+
+.audit-item--high {
+  border-color: #d32f2f;
+  background: #ffebee;
+}
+
+.audit-item--medium {
+  border-color: #f57c00;
+  background: #fff3e0;
+}
+
+.audit-item--low {
+  border-color: var(--ink);
+  background: var(--surface-muted);
+}
+
+/* Use Cases Section */
+.section--use-cases {
+  background: var(--surface-muted);
+}
+
+.card .result {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid var(--border);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* Comparison Section */
+.section--comparison {
+  background: #fff;
+}
+
+.comparison-table {
+  background: var(--surface-muted);
+  border: 2px solid var(--border);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.comparison-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.comparison-row:last-child {
+  border-bottom: none;
+}
+
+.comparison-row--header {
+  background: var(--ink);
+  color: #fff;
+  font-weight: 700;
+  padding: 1.25rem 1.5rem;
+}
+
+.comparison-row:nth-child(even):not(.comparison-row--header) {
+  background: #fff;
+}
+
+.comparison-cell {
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.comparison-cell--yes {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.comparison-cell--no {
+  color: var(--ink-muted);
+}
+
+.comparison-note {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  color: var(--ink);
+}
+
+/* Mobile Responsive - Feature Blocks */
+@media (max-width: 900px) {
+  .feature-block,
+  .feature-block--reverse {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .feature-block--reverse .feature-block__content {
+    order: 1;
+  }
+
+  .feature-block--reverse .feature-block__visual {
+    order: 2;
+  }
+
+  .comparison-row {
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 0.75rem;
+    padding: 0.85rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .comparison-row--header {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .comparison-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .comparison-cell {
+    justify-content: center;
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+
+  .comparison-row--header .comparison-cell:first-child {
+    display: none;
+  }
 }

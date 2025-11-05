@@ -11,7 +11,7 @@ export default function Header() {
       <div className="shell topbar__inner">
         <Link className="brand" href="/">
           <span className="brand__dot"></span>
-          LexyHub
+          LexiHub
         </Link>
         <nav
           className="nav"
@@ -19,7 +19,7 @@ export default function Header() {
           aria-label="Primary"
           style={{ display: mobileMenuOpen ? 'flex' : undefined }}
         >
-          <Link href="/#product">Product</Link>
+          <Link href="/#features">Features</Link>
           <Link href="/#pricing">Pricing</Link>
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>

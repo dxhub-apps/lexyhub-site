@@ -14,8 +14,8 @@ export default function Footer() {
     <footer className="footer">
       <div className="shell footer__grid">
         <div>
-          <p className="footer__brand">LexyHub</p>
-          <p className="footer__text">Unified marketplace signals for sellers.</p>
+          <p className="footer__brand">LexiHub</p>
+          <p className="footer__text">AI-powered commerce intelligence for e-commerce sellers.</p>
         </div>
         <div className="footer__col">
           <p className="footer__title">Company</p>
@@ -34,7 +34,7 @@ export default function Footer() {
           <a href="https://app.lexyhub.com/signup">Create account</a>
         </div>
       </div>
-      <p className="footer__legal">© {year} LexyHub. All rights reserved.</p>
+      <p className="footer__legal">© {year} LexiHub. All rights reserved.</p>
       <style jsx>{`
         .footer {
           background: #000000;
