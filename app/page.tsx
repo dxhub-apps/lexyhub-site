@@ -6,193 +6,295 @@ export default function Home() {
       <section className="hero" id="home">
         <div className="shell hero__wrapper">
           <div className="hero__copy">
-            <p className="eyebrow">DATA FROM AMAZON, ETSY, & GOOGLE TRENDS</p>
-            <h1>See What Buyers Want. Right Now.</h1>
+            <p className="eyebrow">FREE FOREVER • NO CREDIT CARD REQUIRED</p>
+            <h1>Keyword Intelligence. Everywhere You Work.</h1>
             <p className="lead">
-              Stop sorting through messy dashboards. LexyHub unifies real-time
-              search data from Amazon, Etsy, and Google into one clean,
-              actionable feed. See the opportunity *before* it becomes a
-              saturated trend.
+              Most tools lock you inside their dashboard. LexyHub comes to you.
+              Get real-time keyword data from Amazon, Etsy, and Google—right in
+              your browser, across every tab, every search, every platform.
             </p>
             <div className="hero__cta-row">
-              <a className="btn btn--primary" href="#pricing">
-                View pricing
+              <a
+                className="btn btn--primary"
+                href="https://app.lexyhub.com/signup"
+              >
+                Start free—no card needed
               </a>
-              <Link className="btn btn--link" href="/about">
-                Why sellers built LexyHub →
-              </Link>
+              <a
+                className="btn btn--secondary"
+                href="#extension"
+              >
+                Get Chrome Extension
+              </a>
             </div>
-            <div className="hero__meta-row">
-              <div className="meta-block">
-                <p className="meta-title">3 Sources</p>
-                <p className="meta-text">Amazon, Etsy, Google</p>
-              </div>
-              <div className="meta-block">
-                <p className="meta-title">Explainable</p>
-                <p className="meta-text">Every signal has a source</p>
-              </div>
-              <div className="meta-block">
-                <p className="meta-title">Seller-First</p>
-                <p className="meta-text">Built to make money</p>
-              </div>
-            </div>
+            <p className="hero__perk-note">
+              💡 <strong>Sign up through our extension</strong> and unlock
+              exclusive perks + priority features
+            </p>
           </div>
           <div className="hero__side">
             <div className="panel panel--primary" aria-label="Live signals">
               <div className="panel__head">
-                <span className="panel__title">Live Signal Board</span>
-                <span className="tag tag--green">live</span>
+                <span className="panel__title">Live Signal Feed</span>
+                <span className="tag tag--live">LIVE</span>
               </div>
-              <p className="panel__desc">Cross-marketplace spikes (10:05)</p>
+              <p className="panel__desc">Cross-marketplace trends (Real-time)</p>
               <ul className="signal-list">
                 <li>
-                  <span>&quot;message card jewelry&quot;</span>
+                  <span>&quot;personalized gift jewelry&quot;</span>
                   <span className="trend trend--up">+142%</span>
                 </li>
                 <li>
-                  <span>&quot;personalized gift for mom&quot;</span>
+                  <span>&quot;custom mom necklace&quot;</span>
                   <span className="trend trend--up">+118%</span>
                 </li>
                 <li>
-                  <span>&quot;etsy valentines gift&quot;</span>
-                  <span className="trend trend--up">+74%</span>
+                  <span>&quot;etsy anniversary gift&quot;</span>
+                  <span className="trend trend--up">+89%</span>
                 </li>
                 <li>
-                  <span>&quot;print on demand shirt&quot;</span>
-                  <span className="trend trend--up">+51%</span>
+                  <span>&quot;print on demand hoodie&quot;</span>
+                  <span className="trend trend--up">+64%</span>
                 </li>
               </ul>
             </div>
             <div className="panel panel--neutral">
-              <p className="panel__label">AI Launch Brief</p>
+              <p className="panel__label">Available Everywhere</p>
               <p className="panel__body">
-                Signal confirmed across Amazon, Etsy, and search. Competition
-                still light. Launch in 3–5 days. Route to Merch + Ops.
+                Amazon product pages. Etsy listings. Google searches. Wherever
+                you work—LexyHub is already there.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section" id="product">
+      <section className="section section--why" id="why">
         <div className="shell section__head">
-          <h2>Intelligence, Not Just Data.</h2>
-          <p>Structured marketplace intelligence. Not dashboards.</p>
+          <h2>What Others Don&apos;t Give You</h2>
+          <p>We built what we wish existed when we were sellers.</p>
         </div>
         <div className="shell grid grid--3col">
           <article className="card">
-            <h3>Unified Signals</h3>
+            <h3>✓ No Dashboard Prison</h3>
             <p>
-              We pull and align real-time demand from Amazon, Etsy, and Google.
-              No more comparing apples and oranges.
+              Others trap you in their UI. We bring intelligence to <em>your</em>
+              workspace—Amazon, Etsy, Google, everywhere.
             </p>
           </article>
           <article className="card">
-            <h3>Opportunity Scoring</h3>
+            <h3>✓ Free. Actually Free.</h3>
             <p>
-              Our algorithm ranks every signal on velocity, saturation, and
-              profit potential. Focus on what works.
+              No credit card. No trial countdown. No bait-and-switch. Start free,
+              upgrade when <em>you</em> decide.
             </p>
           </article>
           <article className="card">
-            <h3>AI Launch Briefs</h3>
+            <h3>✓ Intelligence, Not Just Data</h3>
             <p>
-              Every signal is explained. Get AI-powered briefs your team can
-              trust and act on instantly.
+              Others dump spreadsheets. We score opportunities, explain trends,
+              and tell you what to do next.
             </p>
           </article>
         </div>
       </section>
 
-      <section className="section section--gray" id="pricing">
-        <div className="shell section__head section__head--left">
-          <h2>Pricing built for sellers</h2>
-          <p>Choose your intake. Upgrade when you outgrow it.</p>
+      <section className="section section--extension" id="extension">
+        <div className="shell extension-feature">
+          <div className="extension-feature__copy">
+            <h2>
+              Your Keyword Sidekick.
+              <br />
+              Install Once. Use Everywhere.
+            </h2>
+            <p className="lead">
+              The LexyHub Chrome Extension gives you instant keyword
+              intelligence without leaving your workflow. Browse Amazon? We show
+              you trend data. Research on Google? We surface demand signals.
+              Check Etsy? We tell you what&apos;s heating up.
+            </p>
+            <div className="extension-perks">
+              <h3>Extension-Only Perks:</h3>
+              <ul>
+                <li>Instant keyword overlays on Amazon & Etsy product pages</li>
+                <li>One-click trend lookups from any Google search</li>
+                <li>Priority support & early access to new features</li>
+                <li>
+                  <strong>Bonus:</strong> Sign up through the extension to unlock
+                  exclusive insights not available in the web app
+                </li>
+              </ul>
+            </div>
+            <a
+              className="btn btn--primary btn--large"
+              href="https://chrome.google.com/webstore"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download Free Extension →
+            </a>
+            <p className="extension-note">
+              Works with Chrome, Edge, Brave, and all Chromium browsers
+            </p>
+          </div>
+          <div className="extension-feature__visual">
+            <div className="browser-mockup">
+              <div className="browser-chrome">
+                <div className="browser-dots">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div className="browser-address">chrome://extensions</div>
+              </div>
+              <div className="browser-content">
+                <div className="extension-card">
+                  <div className="extension-icon">LH</div>
+                  <div className="extension-info">
+                    <h4>LexyHub Intelligence</h4>
+                    <p>Keyword data. Everywhere.</p>
+                  </div>
+                </div>
+                <div className="extension-badge">✓ Installed</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--pricing" id="pricing">
+        <div className="shell section__head">
+          <h2>Start Free. Scale When Ready.</h2>
+          <p>
+            No credit card to start. No surprise charges. Upgrade inside the app
+            when you need more.
+          </p>
         </div>
         <div className="shell pricing">
-          <article className="plan">
-            <p className="plan__badge">Free forever</p>
-            <h3>Free</h3>
+          <article className="plan plan--highlight">
+            <p className="plan__badge">Recommended</p>
+            <h3>Free Forever</h3>
             <p className="plan__price">$0</p>
-            <p className="plan__desc">Validate product ideas on real signals.</p>
+            <p className="plan__desc">
+              Everything you need to validate ideas and spot trends. Forever.
+            </p>
             <ul className="plan__list">
-              <li>100 lookups/month</li>
-              <li>3 watchlists</li>
-              <li>Weekly signal digest</li>
+              <li>✓ 100 keyword lookups/month</li>
+              <li>✓ 3 saved watchlists</li>
+              <li>✓ Chrome extension access</li>
+              <li>✓ Weekly trend digest</li>
+              <li>✓ Amazon, Etsy & Google data</li>
+            </ul>
+            <a
+              className="btn btn--primary btn--full"
+              href="https://app.lexyhub.com/signup"
+            >
+              Start Free Now
+            </a>
+            <p className="plan__note">No credit card. No commitment.</p>
+          </article>
+          <article className="plan">
+            <p className="plan__badge">For power users</p>
+            <h3>Pro</h3>
+            <p className="plan__price">$19<span className="plan__period">/month</span></p>
+            <p className="plan__desc">
+              More lookups, more features. Upgrade anytime from inside the app.
+            </p>
+            <ul className="plan__list">
+              <li>✓ <strong>Unlimited</strong> keyword lookups</li>
+              <li>✓ Unlimited watchlists</li>
+              <li>✓ AI-powered opportunity briefs</li>
+              <li>✓ Cross-marketplace comparisons</li>
+              <li>✓ CSV exports & API access</li>
+              <li>✓ Priority support</li>
             </ul>
             <a
               className="btn btn--ghost btn--full"
               href="https://app.lexyhub.com/signup"
             >
-              Start for Free
+              Start Free, Upgrade Later
             </a>
           </article>
           <article className="plan">
-            <p className="plan__badge">For operators</p>
-            <h3>Basic</h3>
-            <p className="plan__price">$7</p>
-            <p className="plan__desc">More volume, fresher keyword data.</p>
-            <ul className="plan__list">
-              <li>1,000 lookups</li>
-              <li>Auto watchlist refresh</li>
-              <li>CSV exports</li>
-            </ul>
-            <a
-              className="btn btn--primary btn--full"
-              href="https://app.lexyhub.com/signup?plan=basic"
-            >
-              Start Basic
-            </a>
-          </article>
-          <article className="plan plan--highlight">
-            <p className="plan__badge plan__badge--blue">Teams&apos; choice</p>
-            <h3>Pro</h3>
-            <p className="plan__price">$29</p>
+            <p className="plan__badge">For teams</p>
+            <h3>Enterprise</h3>
+            <p className="plan__price">Custom</p>
             <p className="plan__desc">
-              Unlimited signals plus explainable AI briefs.
+              Unlimited seats, dedicated support, custom integrations.
             </p>
             <ul className="plan__list">
-              <li>Unlimited lookups</li>
-              <li>Cross-market comparisons</li>
-              <li>Workspace alerts & roles</li>
-              <li>API access</li>
+              <li>✓ Everything in Pro</li>
+              <li>✓ Team workspaces & roles</li>
+              <li>✓ Dedicated account manager</li>
+              <li>✓ Custom data feeds</li>
+              <li>✓ SLA & priority support</li>
+              <li>✓ Annual billing discount</li>
             </ul>
-            <a
-              className="btn btn--primary btn--full"
-              href="https://app.lexyhub.com/signup?plan=pro"
-            >
-              Start Pro
-            </a>
-            <p className="plan__foot">Annual: 20% off</p>
+            <Link className="btn btn--ghost btn--full" href="/contact">
+              Contact Sales
+            </Link>
           </article>
         </div>
-        <p className="shell growth-link">
-          <Link href="/contact">Ask about our Growth plan →</Link>
-        </p>
+        <div className="shell pricing-footer">
+          <p>
+            ✓ All plans include the Chrome extension
+            <br />
+            ✓ Cancel anytime (but you won&apos;t need to—the free plan stays free)
+          </p>
+        </div>
       </section>
 
-      <section className="section">
-        <div className="shell section__head section__head--left">
-          <h2>Your 5-Minute Workflow</h2>
-          <p>From signal to decision, fast. No visual noise.</p>
+      <section className="section section--how">
+        <div className="shell section__head">
+          <h2>How It Works</h2>
+          <p>From installation to insights in under 60 seconds.</p>
         </div>
         <div className="shell grid grid--4col">
           <article className="step">
-            <h3>1. Ingest</h3>
-            <p>Pull marketplace, trend, and keyword data.</p>
+            <h3>1. Install</h3>
+            <p>Add the free Chrome extension. No account needed yet.</p>
           </article>
           <article className="step">
-            <h3>2. Score</h3>
-            <p>Rank by speed, saturation, and value.</p>
+            <h3>2. Browse</h3>
+            <p>Visit Amazon, Etsy, or Google like you normally do.</p>
           </article>
           <article className="step">
-            <h3>3. Explain</h3>
-            <p>Generate context for teams.</p>
+            <h3>3. See Insights</h3>
+            <p>Instant keyword intelligence overlays on every page.</p>
           </article>
           <article className="step">
-            <h3>4. Deploy</h3>
-            <p>Send to watchlists and alerts.</p>
+            <h3>4. Sign Up Free</h3>
+            <p>
+              Create your free account from the extension for bonus perks.
+            </p>
           </article>
+        </div>
+      </section>
+
+      <section className="section section--cta">
+        <div className="shell cta-block">
+          <h2>Ready to See What&apos;s Trending?</h2>
+          <p>
+            Join thousands of sellers who use LexyHub to spot opportunities
+            before they become saturated.
+          </p>
+          <div className="cta-buttons">
+            <a
+              className="btn btn--primary btn--large"
+              href="https://app.lexyhub.com/signup"
+            >
+              Start Free Account
+            </a>
+            <a
+              className="btn btn--secondary btn--large"
+              href="#extension"
+            >
+              Get Chrome Extension
+            </a>
+          </div>
+          <p className="cta-note">
+            No credit card required. Upgrade inside the app when you&apos;re ready.
+          </p>
         </div>
       </section>
     </>

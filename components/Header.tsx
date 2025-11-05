@@ -76,7 +76,7 @@ export default function Header() {
           width: 0.55rem;
           height: 0.55rem;
           border-radius: 999px;
-          background: var(--blue);
+          background: var(--ink);
         }
 
         .nav {
@@ -93,7 +93,7 @@ export default function Header() {
 
         .nav a:hover,
         .nav a:focus-visible {
-          border-bottom-color: var(--blue);
+          border-bottom-color: var(--ink);
           color: var(--ink);
         }
 

@@ -37,10 +37,11 @@ export default function Footer() {
       <p className="footer__legal">© {year} LexyHub. All rights reserved.</p>
       <style jsx>{`
         .footer {
-          background: #0f172a;
+          background: #000000;
           color: rgba(255, 255, 255, 0.7);
           padding: 2.4rem 0 2.5rem;
-          margin-top: 2.5rem;
+          margin-top: 0;
+          border-top: 2px solid #000000;
         }
 
         .footer__grid {
