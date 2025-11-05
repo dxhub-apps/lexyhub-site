@@ -228,7 +228,7 @@ export default function Disclaimer() {
       <ul>
         <li>May not work as intended or may contain bugs and errors</li>
         <li>Could be modified or discontinued at any time without notice</li>
-        <li>Are provided "as is" without warranties of any kind</li>
+        <li>Are provided &quot;as is&quot; without warranties of any kind</li>
         <li>Should not be relied upon for critical business decisions</li>
       </ul>
 
@@ -279,7 +279,7 @@ export default function Disclaimer() {
 
       <p>
         We reserve the right to modify this Disclaimer at any time. We will notify you of material changes by updating the
-        "Last updated" date and posting the revised Disclaimer on our website. Your continued use of our services after
+        &quot;Last updated&quot; date and posting the revised Disclaimer on our website. Your continued use of our services after
         changes constitutes acceptance of the updated Disclaimer.
       </p>
 
