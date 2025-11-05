@@ -74,7 +74,7 @@ export default function Home() {
         </div>
         <div className="shell grid grid--2col">
           <article className="problem-card">
-            <div className="problem-card__icon">❌</div>
+            <div className="problem-card__icon">×</div>
             <h3>Without LexiHub</h3>
             <ul>
               <li>Manual keyword research across multiple tools</li>
@@ -108,37 +108,37 @@ export default function Home() {
         </div>
         <div className="shell grid grid--3col">
           <article className="card">
-            <h3>🧠 AI Semantic Search</h3>
+            <h3>AI Semantic Search</h3>
             <p>
               Not just keyword matching. Our 3,072-dimensional AI embeddings understand <em>meaning</em>. Search &quot;handmade candles&quot; and discover related opportunities like &quot;artisan wax melts&quot; that competitors miss.
             </p>
           </article>
           <article className="card">
-            <h3>📊 5+ Data Sources</h3>
+            <h3>5+ Data Sources</h3>
             <p>
               Cross-validate trends across Etsy, Amazon, Google, Pinterest, and Reddit. Reduce false positives and catch opportunities before mainstream tools.
             </p>
           </article>
           <article className="card">
-            <h3>🎯 Seasonal Intelligence</h3>
+            <h3>Seasonal Intelligence</h3>
             <p>
               Automatic seasonal weighting for Black Friday, Christmas, Mother&apos;s Day, and more. Plan inventory 2-3 months ahead of demand peaks.
             </p>
           </article>
           <article className="card">
-            <h3>🔮 Market Twin Simulator</h3>
+            <h3>Market Twin Simulator</h3>
             <p>
               Model &quot;what-if&quot; scenarios before making changes. Test price adjustments, ad spend, and inventory decisions with data-backed projections.
             </p>
           </article>
           <article className="card">
-            <h3>✨ Listing Intelligence</h3>
+            <h3>Listing Intelligence</h3>
             <p>
               AI-powered quality audits score your listings and provide specific, prioritized fixes. Upload images for computer vision-powered tag suggestions.
             </p>
           </article>
           <article className="card">
-            <h3>🎨 Visual Tag AI</h3>
+            <h3>Visual Tag AI</h3>
             <p>
               Upload product images and get AI-generated tag suggestions using computer vision. Find keywords you never would have thought of.
             </p>
@@ -169,10 +169,10 @@ export default function Home() {
                   <div className="demo-arrow">→</div>
                 </div>
                 <div className="demo-results">
-                  <div className="demo-result">✓ artisan wax melts</div>
-                  <div className="demo-result">✓ hand-poured soy candles</div>
-                  <div className="demo-result">✓ aromatherapy home decor</div>
-                  <div className="demo-result">✓ scented gift sets</div>
+                  <div className="demo-result">artisan wax melts</div>
+                  <div className="demo-result">hand-poured soy candles</div>
+                  <div className="demo-result">aromatherapy home decor</div>
+                  <div className="demo-result">scented gift sets</div>
                 </div>
               </div>
             </div>
@@ -229,9 +229,9 @@ export default function Home() {
                   <div className="score-label">Listing Quality</div>
                 </div>
                 <div className="audit-items">
-                  <div className="audit-item audit-item--high">⚠️ Readability: 42/100</div>
-                  <div className="audit-item audit-item--medium">⚡ Keyword density low</div>
-                  <div className="audit-item audit-item--low">✓ Completeness: 89/100</div>
+                  <div className="audit-item audit-item--high">Readability: 42/100</div>
+                  <div className="audit-item audit-item--medium">Keyword density low</div>
+                  <div className="audit-item audit-item--low">Completeness: 89/100</div>
                 </div>
               </div>
             </div>
@@ -256,13 +256,13 @@ export default function Home() {
               Perfect for validating ideas and exploring opportunities.
             </p>
             <ul className="plan__list">
-              <li>✓ 10 keyword searches/month</li>
-              <li>✓ 1 active niche tracking</li>
-              <li>✓ 2 AI opportunities/month</li>
-              <li>✓ Basic SERP tracking</li>
-              <li>✓ Limited Market Twin simulations</li>
-              <li>✓ Seasonal calendar access</li>
-              <li>✓ Community support</li>
+              <li>10 keyword searches/month</li>
+              <li>1 active niche tracking</li>
+              <li>2 AI opportunities/month</li>
+              <li>Basic SERP tracking</li>
+              <li>Limited Market Twin simulations</li>
+              <li>Seasonal calendar access</li>
+              <li>Community support</li>
             </ul>
             <a
               className="btn btn--ghost btn--full"
@@ -281,14 +281,14 @@ export default function Home() {
               For growing sellers who need regular market intelligence.
             </p>
             <ul className="plan__list">
-              <li>✓ <strong>100 keyword searches/month</strong></li>
-              <li>✓ 10 active niches</li>
-              <li>✓ <strong>999 AI opportunities/month</strong></li>
-              <li>✓ 999 tag optimizer runs/month</li>
-              <li>✓ Standard SERP tracking</li>
-              <li>✓ Full Market Twin access</li>
-              <li>✓ All core features</li>
-              <li>✓ Email support</li>
+              <li><strong>100 keyword searches/month</strong></li>
+              <li>10 active niches</li>
+              <li><strong>999 AI opportunities/month</strong></li>
+              <li>999 tag optimizer runs/month</li>
+              <li>Standard SERP tracking</li>
+              <li>Full Market Twin access</li>
+              <li>All core features</li>
+              <li>Email support</li>
             </ul>
             <a
               className="btn btn--ghost btn--full"
@@ -307,16 +307,16 @@ export default function Home() {
               For serious sellers and teams managing large catalogs.
             </p>
             <ul className="plan__list">
-              <li>✓ <strong>UNLIMITED</strong> keyword searches</li>
-              <li>✓ <strong>UNLIMITED</strong> active niches</li>
-              <li>✓ <strong>UNLIMITED</strong> AI opportunities</li>
-              <li>✓ <strong>UNLIMITED</strong> tag optimizer runs</li>
-              <li>✓ <strong>UNLIMITED</strong> watchlists</li>
-              <li>✓ <strong>UNLIMITED</strong> Market Twin scenarios</li>
-              <li>✓ Multi-user team access</li>
-              <li>✓ Priority support</li>
-              <li>✓ API access & CSV exports</li>
-              <li>✓ Affiliate program access</li>
+              <li><strong>UNLIMITED</strong> keyword searches</li>
+              <li><strong>UNLIMITED</strong> active niches</li>
+              <li><strong>UNLIMITED</strong> AI opportunities</li>
+              <li><strong>UNLIMITED</strong> tag optimizer runs</li>
+              <li><strong>UNLIMITED</strong> watchlists</li>
+              <li><strong>UNLIMITED</strong> Market Twin scenarios</li>
+              <li>Multi-user team access</li>
+              <li>Priority support</li>
+              <li>API access & CSV exports</li>
+              <li>Affiliate program access</li>
             </ul>
             <a
               className="btn btn--primary btn--full"
@@ -329,11 +329,11 @@ export default function Home() {
         </div>
         <div className="shell pricing-footer">
           <p>
-            ✓ All plans include Chrome extension access
+            All plans include Chrome extension access
             <br />
-            ✓ Cancel anytime • Upgrade/downgrade with one click
+            Cancel anytime • Upgrade/downgrade with one click
             <br />
-            ✓ 14-day money-back guarantee on paid plans
+            14-day money-back guarantee on paid plans
           </p>
         </div>
       </section>
@@ -346,7 +346,7 @@ export default function Home() {
         </div>
         <div className="shell grid grid--3col">
           <article className="card">
-            <h3>📦 Seasonal Launch Success</h3>
+            <h3>Seasonal Launch Success</h3>
             <p>
               <strong>Challenge:</strong> Launch Christmas ornaments in time for holiday peak.
             </p>
@@ -358,7 +358,7 @@ export default function Home() {
             </p>
           </article>
           <article className="card">
-            <h3>🎯 Untapped Niche Discovery</h3>
+            <h3>Untapped Niche Discovery</h3>
             <p>
               <strong>Challenge:</strong> Wanted to expand product line but unsure which direction.
             </p>
@@ -370,7 +370,7 @@ export default function Home() {
             </p>
           </article>
           <article className="card">
-            <h3>📈 Conversion Rate Optimization</h3>
+            <h3>Conversion Rate Optimization</h3>
             <p>
               <strong>Challenge:</strong> 20 listings but only 3 driving sales. Others had impressions but no conversions.
             </p>
@@ -399,33 +399,33 @@ export default function Home() {
             </div>
             <div className="comparison-row">
               <div className="comparison-cell"><strong>Semantic AI Search</strong></div>
-              <div className="comparison-cell comparison-cell--yes">✓ 3,072D embeddings</div>
-              <div className="comparison-cell comparison-cell--no">❌ Exact matching only</div>
+              <div className="comparison-cell comparison-cell--yes">3,072D embeddings</div>
+              <div className="comparison-cell comparison-cell--no">Exact matching only</div>
             </div>
             <div className="comparison-row">
               <div className="comparison-cell"><strong>Multi-Source Data</strong></div>
-              <div className="comparison-cell comparison-cell--yes">✓ 5+ sources</div>
-              <div className="comparison-cell comparison-cell--no">❌ Usually 1-2</div>
+              <div className="comparison-cell comparison-cell--yes">5+ sources</div>
+              <div className="comparison-cell comparison-cell--no">Usually 1-2</div>
             </div>
             <div className="comparison-row">
               <div className="comparison-cell"><strong>Seasonal Intelligence</strong></div>
-              <div className="comparison-cell comparison-cell--yes">✓ Automatic weighting</div>
-              <div className="comparison-cell comparison-cell--no">❌ Manual adjustments</div>
+              <div className="comparison-cell comparison-cell--yes">Automatic weighting</div>
+              <div className="comparison-cell comparison-cell--no">Manual adjustments</div>
             </div>
             <div className="comparison-row">
               <div className="comparison-cell"><strong>Market Simulator</strong></div>
-              <div className="comparison-cell comparison-cell--yes">✓ Built-in scenarios</div>
-              <div className="comparison-cell comparison-cell--no">❌ Not available</div>
+              <div className="comparison-cell comparison-cell--yes">Built-in scenarios</div>
+              <div className="comparison-cell comparison-cell--no">Not available</div>
             </div>
             <div className="comparison-row">
               <div className="comparison-cell"><strong>Listing Audits</strong></div>
-              <div className="comparison-cell comparison-cell--yes">✓ AI-powered analysis</div>
-              <div className="comparison-cell comparison-cell--no">❌ Basic SEO checks</div>
+              <div className="comparison-cell comparison-cell--yes">AI-powered analysis</div>
+              <div className="comparison-cell comparison-cell--no">Basic SEO checks</div>
             </div>
             <div className="comparison-row">
               <div className="comparison-cell"><strong>Visual Tag AI</strong></div>
-              <div className="comparison-cell comparison-cell--yes">✓ Image-to-tag generation</div>
-              <div className="comparison-cell comparison-cell--no">❌ Not available</div>
+              <div className="comparison-cell comparison-cell--yes">Image-to-tag generation</div>
+              <div className="comparison-cell comparison-cell--no">Not available</div>
             </div>
             <div className="comparison-row">
               <div className="comparison-cell"><strong>Monthly Cost</strong></div>
@@ -490,7 +490,7 @@ export default function Home() {
                     <p>Keyword data. Everywhere.</p>
                   </div>
                 </div>
-                <div className="extension-badge">✓ Installed</div>
+                <div className="extension-badge">Installed</div>
               </div>
             </div>
           </div>

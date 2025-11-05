@@ -27,6 +27,7 @@ export default function Footer() {
           <p className="footer__title">Legal</p>
           <Link href="/privacy">Privacy Policy</Link>
           <Link href="/terms">Terms of Service</Link>
+          <Link href="/disclaimer">Disclaimer</Link>
         </div>
         <div className="footer__col">
           <p className="footer__title">Account</p>
