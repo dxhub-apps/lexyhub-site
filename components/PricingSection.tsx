@@ -19,11 +19,63 @@ export default function PricingSection() {
     }
   };
 
-  const handleUpgrade = (tier: 'basic' | 'pro') => {
-    const period = billingPeriod;
-    const isFounders = billingPeriod === 'annual'; // Founders pricing is active for annual plans
-    // Redirect to signup with plan selection - the app will create Stripe checkout session
-    window.location.href = `https://app.lexyhub.com/signup?plan=${tier}&billing=${period}${isFounders ? '&founders=true' : ''}`;
+  const handleCheckout = async (planCode: 'basic' | 'pro', billingCycle: 'monthly' | 'annual') => {
+    try {
+      const response = await fetch('https://app.lexyhub.com/api/billing/checkout/public', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ planCode, billingCycle })
+      });
+
+      const data = await response.json();
+      if (data.url) {
+        window.location.href = data.url; // Redirect to Stripe
+      } else {
+        alert('Checkout failed. Please try again.');
+      }
+    } catch (error) {
+      console.error('Checkout error:', error);
+      alert('Checkout failed. Please try again.');
+    }
+  };
+
+  const handleFoundersDeal = async (tier: 'basic' | 'pro') => {
+    // Founders Deal price IDs
+    const priceIds = {
+      basic: 'price_1SQPWO3enLCiqy1Oll2Lhd54',
+      pro: 'price_1SQPWx3enLCiqy1Ove2rZJkH' // You'll need to get the actual Pro founders price ID
+    };
+
+    try {
+      const response = await fetch('https://app.lexyhub.com/api/billing/checkout/direct', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          priceId: priceIds[tier],
+          planName: `${tier.charAt(0).toUpperCase() + tier.slice(1)} Plan (Founders Deal)`
+        })
+      });
+
+      const data = await response.json();
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        alert('Checkout failed. Please try again.');
+      }
+    } catch (error) {
+      console.error('Checkout error:', error);
+      alert('Checkout failed. Please try again.');
+    }
+  };
+
+  const handlePlanSelection = (tier: 'basic' | 'pro') => {
+    if (billingPeriod === 'annual') {
+      // Use Founders Deal for annual plans
+      handleFoundersDeal(tier);
+    } else {
+      // Use regular checkout for monthly plans
+      handleCheckout(tier, 'monthly');
+    }
   };
 
   return (
@@ -68,11 +120,23 @@ export default function PricingSection() {
                 <span className="tier-name">Basic</span>
                 <span className="price-strike">${pricing.basic.annual}/yr</span>
                 <span className="price-founders">${pricing.basic.foundersAnnual}/yr</span>
+                <button
+                  className="btn btn--founders"
+                  onClick={() => handleFoundersDeal('basic')}
+                >
+                  Claim Basic Deal
+                </button>
               </div>
               <div className="founders-price-item">
                 <span className="tier-name">Pro</span>
                 <span className="price-strike">${pricing.pro.annual}/yr</span>
                 <span className="price-founders">${pricing.pro.foundersAnnual}/yr</span>
+                <button
+                  className="btn btn--founders"
+                  onClick={() => handleFoundersDeal('pro')}
+                >
+                  Claim Pro Deal
+                </button>
               </div>
             </div>
           </div>
@@ -159,7 +223,7 @@ export default function PricingSection() {
           </ul>
           <button
             className="btn btn--ghost btn--full"
-            onClick={() => handleUpgrade('basic')}
+            onClick={() => handlePlanSelection('basic')}
           >
             Choose Basic Plan
           </button>
@@ -202,7 +266,7 @@ export default function PricingSection() {
           </ul>
           <button
             className="btn btn--primary btn--full"
-            onClick={() => handleUpgrade('pro')}
+            onClick={() => handlePlanSelection('pro')}
           >
             Choose Pro Plan
           </button>
@@ -415,6 +479,24 @@ export default function PricingSection() {
           backdrop-filter: blur(10px);
           border-radius: 0.75rem;
           min-width: 180px;
+        }
+
+        .btn--founders {
+          margin-top: 0.5rem;
+          padding: 0.75rem 1.5rem;
+          background: white;
+          color: #f5576c;
+          border: 0;
+          border-radius: 0.5rem;
+          font-weight: 700;
+          cursor: pointer;
+          transition: all 0.2s ease;
+        }
+
+        .btn--founders:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+          background: #fff;
         }
 
         .tier-name {
