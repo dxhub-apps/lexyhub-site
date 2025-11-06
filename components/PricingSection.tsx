@@ -10,17 +10,20 @@ export default function PricingSection() {
     basic: {
       monthly: 6.99,
       annual: 55, // ~$4.58/month (saves ~34%)
+      foundersAnnual: 39, // ~$3.25/month (saves 53% vs monthly, 29% vs annual)
     },
     pro: {
       monthly: 12.99,
       annual: 125, // ~$10.42/month (saves ~20%)
+      foundersAnnual: 99, // ~$8.25/month (saves 36% vs monthly, 21% vs annual)
     }
   };
 
   const handleUpgrade = (tier: 'basic' | 'pro') => {
     const period = billingPeriod;
+    const isFounders = billingPeriod === 'annual'; // Founders pricing is active for annual plans
     // Redirect to signup with plan selection - the app will create Stripe checkout session
-    window.location.href = `https://app.lexyhub.com/signup?plan=${tier}&billing=${period}`;
+    window.location.href = `https://app.lexyhub.com/signup?plan=${tier}&billing=${period}${isFounders ? '&founders=true' : ''}`;
   };
 
   return (
@@ -46,10 +49,35 @@ export default function PricingSection() {
             onClick={() => setBillingPeriod('annual')}
           >
             Annual
-            <span className="save-badge">Save up to 34%</span>
+            <span className="save-badge">Save up to 53%</span>
           </button>
         </div>
       </div>
+
+      {/* Founders' Pricing Banner */}
+      {billingPeriod === 'annual' && (
+        <div className="shell founders-banner">
+          <div className="founders-banner__content">
+            <div className="founders-banner__badge">⚡ FOUNDERS&apos; PRICING</div>
+            <h3 className="founders-banner__title">Limited-Time Launch Offer</h3>
+            <p className="founders-banner__desc">
+              Lock in special pricing for being an early adopter. <strong>First 60 days only.</strong>
+            </p>
+            <div className="founders-banner__pricing">
+              <div className="founders-price-item">
+                <span className="tier-name">Basic</span>
+                <span className="price-strike">${pricing.basic.annual}/yr</span>
+                <span className="price-founders">${pricing.basic.foundersAnnual}/yr</span>
+              </div>
+              <div className="founders-price-item">
+                <span className="tier-name">Pro</span>
+                <span className="price-strike">${pricing.pro.annual}/yr</span>
+                <span className="price-founders">${pricing.pro.foundersAnnual}/yr</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Chrome Extension Bonus Callout */}
       <div className="shell extension-bonus">
@@ -94,13 +122,18 @@ export default function PricingSection() {
           <p className="plan__badge">Most popular</p>
           <h3>Basic</h3>
           <p className="plan__price">
-            ${billingPeriod === 'monthly' ? pricing.basic.monthly : (pricing.basic.annual / 12).toFixed(2)}
+            ${billingPeriod === 'monthly' ? pricing.basic.monthly : (pricing.basic.foundersAnnual / 12).toFixed(2)}
             <span className="plan__period">/month</span>
           </p>
           {billingPeriod === 'annual' && (
-            <p className="plan__billed">
-              Billed ${pricing.basic.annual}/year
-            </p>
+            <>
+              <p className="plan__billed plan__billed--founders">
+                <span className="price-strike-inline">${pricing.basic.annual}/year</span>
+                {' '}
+                <span className="price-founders-inline">${pricing.basic.foundersAnnual}/year</span>
+              </p>
+              <p className="plan__founders-badge">🎯 Founders&apos; Price</p>
+            </>
           )}
           <p className="plan__desc">
             For growing sellers who need regular market intelligence.
@@ -130,13 +163,18 @@ export default function PricingSection() {
           <p className="plan__badge">Best value</p>
           <h3>Pro</h3>
           <p className="plan__price">
-            ${billingPeriod === 'monthly' ? pricing.pro.monthly : (pricing.pro.annual / 12).toFixed(2)}
+            ${billingPeriod === 'monthly' ? pricing.pro.monthly : (pricing.pro.foundersAnnual / 12).toFixed(2)}
             <span className="plan__period">/month</span>
           </p>
           {billingPeriod === 'annual' && (
-            <p className="plan__billed">
-              Billed ${pricing.pro.annual}/year
-            </p>
+            <>
+              <p className="plan__billed plan__billed--founders">
+                <span className="price-strike-inline">${pricing.pro.annual}/year</span>
+                {' '}
+                <span className="price-founders-inline">${pricing.pro.foundersAnnual}/year</span>
+              </p>
+              <p className="plan__founders-badge">🎯 Founders&apos; Price</p>
+            </>
           )}
           <p className="plan__desc">
             For serious sellers and teams managing large catalogs.
@@ -315,6 +353,105 @@ export default function PricingSection() {
           font-weight: 700;
         }
 
+        .founders-banner {
+          margin: 1.5rem auto 2rem;
+          max-width: 900px;
+        }
+
+        .founders-banner__content {
+          padding: 2rem 2.5rem;
+          background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+          color: white;
+          border-radius: 1rem;
+          box-shadow: 0 8px 24px rgba(245, 87, 108, 0.4);
+          text-align: center;
+        }
+
+        .founders-banner__badge {
+          display: inline-block;
+          padding: 0.375rem 1rem;
+          background: rgba(255, 255, 255, 0.25);
+          backdrop-filter: blur(10px);
+          border-radius: 2rem;
+          font-weight: 700;
+          font-size: 0.875rem;
+          letter-spacing: 0.05em;
+          margin-bottom: 1rem;
+        }
+
+        .founders-banner__title {
+          font-size: 2rem;
+          margin: 0 0 0.75rem;
+          font-weight: 800;
+        }
+
+        .founders-banner__desc {
+          font-size: 1.1rem;
+          margin: 0 0 1.5rem;
+          opacity: 0.95;
+        }
+
+        .founders-banner__pricing {
+          display: flex;
+          gap: 2rem;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+
+        .founders-price-item {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          padding: 1.25rem 2rem;
+          background: rgba(255, 255, 255, 0.15);
+          backdrop-filter: blur(10px);
+          border-radius: 0.75rem;
+          min-width: 180px;
+        }
+
+        .tier-name {
+          font-weight: 700;
+          font-size: 1.1rem;
+          opacity: 0.9;
+        }
+
+        .price-strike {
+          text-decoration: line-through;
+          opacity: 0.7;
+          font-size: 1rem;
+        }
+
+        .price-founders {
+          font-size: 2rem;
+          font-weight: 800;
+        }
+
+        .price-strike-inline {
+          text-decoration: line-through;
+          opacity: 0.6;
+          font-size: 0.875rem;
+        }
+
+        .price-founders-inline {
+          font-weight: 700;
+          color: var(--accent);
+          font-size: 1.1rem;
+        }
+
+        .plan__billed--founders {
+          display: flex;
+          gap: 0.5rem;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .plan__founders-badge {
+          margin: -0.25rem 0 0.5rem;
+          font-size: 0.85rem;
+          font-weight: 700;
+          color: var(--accent);
+        }
+
         .extension-bonus {
           margin: 0 auto 2rem;
           max-width: 800px;
@@ -465,6 +602,23 @@ export default function PricingSection() {
           .billing-toggle button {
             padding: 0.5rem 1rem;
             font-size: 0.875rem;
+          }
+
+          .founders-banner__content {
+            padding: 1.5rem 1.25rem;
+          }
+
+          .founders-banner__title {
+            font-size: 1.5rem;
+          }
+
+          .founders-banner__desc {
+            font-size: 1rem;
+          }
+
+          .founders-price-item {
+            padding: 1rem 1.5rem;
+            min-width: 150px;
           }
         }
 
