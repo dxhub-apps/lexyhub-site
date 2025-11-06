@@ -1,10 +1,6 @@
 'use client';
 
-import { useState } from 'react';
-
 export default function PricingSection() {
-  const [billingPeriod, setBillingPeriod] = useState<'monthly' | 'annual'>('monthly');
-
   // Pricing data
   const pricing = {
     basic: {
@@ -48,25 +44,6 @@ export default function PricingSection() {
         <p>
           No credit card required. Cancel anytime. Plans start at just ${pricing.basic.monthly}/month.
         </p>
-      </div>
-
-      {/* Billing Toggle */}
-      <div className="shell billing-toggle-wrapper">
-        <div className="billing-toggle">
-          <button
-            className={billingPeriod === 'monthly' ? 'active' : ''}
-            onClick={() => setBillingPeriod('monthly')}
-          >
-            Monthly
-          </button>
-          <button
-            className={billingPeriod === 'annual' ? 'active' : ''}
-            onClick={() => setBillingPeriod('annual')}
-          >
-            Annual
-            <span className="save-badge">Save up to 17%</span>
-          </button>
-        </div>
       </div>
 
       {/* Chrome Extension Pro Trial Callout */}
@@ -120,12 +97,9 @@ export default function PricingSection() {
           <p className="plan__badge">Most popular</p>
           <h3>Basic</h3>
           <p className="plan__price">
-            ${billingPeriod === 'monthly' ? pricing.basic.monthly : (pricing.basic.annual / 12).toFixed(2)}
+            ${pricing.basic.monthly}
             <span className="plan__period">/month</span>
           </p>
-          {billingPeriod === 'annual' && (
-            <p className="plan__billed">Billed ${pricing.basic.annual}/year</p>
-          )}
           <p className="plan__desc">
             For growing sellers who need regular market intelligence.
           </p>
@@ -142,9 +116,15 @@ export default function PricingSection() {
           </ul>
           <button
             className="btn btn--ghost btn--full"
-            onClick={() => handleCheckout('basic', billingPeriod)}
+            onClick={() => handleCheckout('basic', 'monthly')}
           >
             Choose Basic Plan
+          </button>
+          <button
+            className="btn-link btn-link--annual"
+            onClick={() => handleCheckout('basic', 'annual')}
+          >
+            Get Annual Discount (${pricing.basic.annual}/year - Save 17%)
           </button>
           <p className="plan__note">Less than two coffees per month</p>
         </article>
@@ -154,12 +134,9 @@ export default function PricingSection() {
           <p className="plan__badge">Best value</p>
           <h3>Pro</h3>
           <p className="plan__price">
-            ${billingPeriod === 'monthly' ? pricing.pro.monthly : (pricing.pro.annual / 12).toFixed(2)}
+            ${pricing.pro.monthly}
             <span className="plan__period">/month</span>
           </p>
-          {billingPeriod === 'annual' && (
-            <p className="plan__billed">Billed ${pricing.pro.annual}/year</p>
-          )}
           <p className="plan__desc">
             For serious sellers and teams managing large catalogs.
           </p>
@@ -176,9 +153,15 @@ export default function PricingSection() {
           </ul>
           <button
             className="btn btn--primary btn--full"
-            onClick={() => handleCheckout('pro', billingPeriod)}
+            onClick={() => handleCheckout('pro', 'monthly')}
           >
             Choose Pro Plan
+          </button>
+          <button
+            className="btn-link btn-link--annual"
+            onClick={() => handleCheckout('pro', 'annual')}
+          >
+            Get Annual Discount (${pricing.pro.annual}/year - Save 17%)
           </button>
           <p className="plan__note">Perfect for growing businesses</p>
         </article>
@@ -188,12 +171,9 @@ export default function PricingSection() {
           <p className="plan__badge">Everything Unlimited</p>
           <h3>Growth</h3>
           <p className="plan__price">
-            ${billingPeriod === 'monthly' ? pricing.growth.monthly : (pricing.growth.annual / 12).toFixed(2)}
+            ${pricing.growth.monthly}
             <span className="plan__period">/month</span>
           </p>
-          {billingPeriod === 'annual' && (
-            <p className="plan__billed">Billed ${pricing.growth.annual}/year</p>
-          )}
           <p className="plan__desc">
             For power users and agencies who need unlimited everything.
           </p>
@@ -212,9 +192,15 @@ export default function PricingSection() {
           </ul>
           <button
             className="btn btn--primary btn--full"
-            onClick={() => handleCheckout('growth', billingPeriod)}
+            onClick={() => handleCheckout('growth', 'monthly')}
           >
             Choose Growth Plan
+          </button>
+          <button
+            className="btn-link btn-link--annual"
+            onClick={() => handleCheckout('growth', 'annual')}
+          >
+            Get Annual Discount (${pricing.growth.annual}/year - Save 17%)
           </button>
           <p className="plan__note">Everything unlimited. Maximum value.</p>
         </article>
@@ -331,171 +317,27 @@ export default function PricingSection() {
       </div>
 
       <style jsx>{`
-        .billing-toggle-wrapper {
-          display: flex;
-          justify-content: center;
-          margin: 2rem 0 1.5rem;
-        }
-
-        .billing-toggle {
-          display: inline-flex;
-          gap: 0.5rem;
-          padding: 0.375rem;
-          background: var(--bg-soft);
-          border-radius: 0.75rem;
-          border: 1px solid var(--border);
-        }
-
-        .billing-toggle button {
-          position: relative;
-          padding: 0.625rem 1.5rem;
-          border: 0;
-          background: transparent;
-          border-radius: 0.5rem;
-          font-weight: 600;
-          color: var(--ink-soft);
+        .btn-link {
+          background: none;
+          border: none;
+          color: var(--accent);
+          text-decoration: underline;
           cursor: pointer;
-          transition: all 0.2s ease;
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-        }
-
-        .billing-toggle button:hover {
-          color: var(--ink);
-        }
-
-        .billing-toggle button.active {
-          background: white;
-          color: var(--ink);
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-
-        .save-badge {
-          display: inline-block;
-          padding: 0.125rem 0.5rem;
-          background: var(--accent);
-          color: white;
-          font-size: 0.75rem;
-          border-radius: 0.375rem;
-          font-weight: 700;
-        }
-
-        .founders-banner {
-          margin: 1.5rem auto 2rem;
-          max-width: 900px;
-        }
-
-        .founders-banner__content {
-          padding: 2rem 2.5rem;
-          background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-          color: white;
-          border-radius: 1rem;
-          box-shadow: 0 8px 24px rgba(245, 87, 108, 0.4);
-          text-align: center;
-        }
-
-        .founders-banner__badge {
-          display: inline-block;
-          padding: 0.375rem 1rem;
-          background: rgba(255, 255, 255, 0.25);
-          backdrop-filter: blur(10px);
-          border-radius: 2rem;
-          font-weight: 700;
           font-size: 0.875rem;
-          letter-spacing: 0.05em;
-          margin-bottom: 1rem;
-        }
-
-        .founders-banner__title {
-          font-size: 2rem;
-          margin: 0 0 0.75rem;
-          font-weight: 800;
-        }
-
-        .founders-banner__desc {
-          font-size: 1.1rem;
-          margin: 0 0 1.5rem;
-          opacity: 0.95;
-        }
-
-        .founders-banner__pricing {
-          display: flex;
-          gap: 2rem;
-          justify-content: center;
-          flex-wrap: wrap;
-        }
-
-        .founders-price-item {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-          padding: 1.25rem 2rem;
-          background: rgba(255, 255, 255, 0.15);
-          backdrop-filter: blur(10px);
-          border-radius: 0.75rem;
-          min-width: 180px;
-        }
-
-        .btn--founders {
+          padding: 0.5rem 0;
           margin-top: 0.5rem;
-          padding: 0.75rem 1.5rem;
-          background: white;
-          color: #f5576c;
-          border: 0;
-          border-radius: 0.5rem;
-          font-weight: 700;
-          cursor: pointer;
-          transition: all 0.2s ease;
+          width: 100%;
+          text-align: center;
+          transition: color 0.2s ease;
         }
 
-        .btn--founders:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-          background: #fff;
+        .btn-link:hover {
+          color: var(--accent-dark);
         }
 
-        .tier-name {
-          font-weight: 700;
-          font-size: 1.1rem;
-          opacity: 0.9;
-        }
-
-        .price-strike {
-          text-decoration: line-through;
-          opacity: 0.7;
-          font-size: 1rem;
-        }
-
-        .price-founders {
-          font-size: 2rem;
-          font-weight: 800;
-        }
-
-        .price-strike-inline {
-          text-decoration: line-through;
-          opacity: 0.6;
-          font-size: 0.875rem;
-        }
-
-        .price-founders-inline {
-          font-weight: 700;
-          color: var(--accent);
-          font-size: 1.1rem;
-        }
-
-        .plan__billed--founders {
-          display: flex;
-          gap: 0.5rem;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .plan__founders-badge {
-          margin: -0.25rem 0 0.5rem;
-          font-size: 0.85rem;
-          font-weight: 700;
-          color: var(--accent);
+        .btn-link--annual {
+          margin-top: 0.75rem;
+          margin-bottom: 0.5rem;
         }
 
         .extension-bonus {
@@ -664,28 +506,6 @@ export default function PricingSection() {
           .extension-bonus__cta {
             width: 100%;
             text-align: center;
-          }
-
-          .billing-toggle button {
-            padding: 0.5rem 1rem;
-            font-size: 0.875rem;
-          }
-
-          .founders-banner__content {
-            padding: 1.5rem 1.25rem;
-          }
-
-          .founders-banner__title {
-            font-size: 1.5rem;
-          }
-
-          .founders-banner__desc {
-            font-size: 1rem;
-          }
-
-          .founders-price-item {
-            padding: 1rem 1.5rem;
-            min-width: 150px;
           }
         }
 
