@@ -10,14 +10,10 @@ export default function PricingSection() {
     pro: {
       monthly: 12.99,
       annual: 129.90,
-    },
-    growth: {
-      monthly: 24.99,
-      annual: 249.90,
     }
   };
 
-  const handleCheckout = async (planCode: 'basic' | 'pro' | 'growth', billingCycle: 'monthly' | 'annual') => {
+  const handleCheckout = async (planCode: 'basic' | 'pro', billingCycle: 'monthly' | 'annual') => {
     try {
       const response = await fetch('https://app.lexyhub.com/api/billing/checkout/public', {
         method: 'POST',
@@ -165,45 +161,6 @@ export default function PricingSection() {
           </button>
           <p className="plan__note">Perfect for growing businesses</p>
         </article>
-
-        {/* Growth Tier */}
-        <article className="plan plan--highlight">
-          <p className="plan__badge">Everything Unlimited</p>
-          <h3>Growth</h3>
-          <p className="plan__price">
-            ${pricing.growth.monthly}
-            <span className="plan__period">/month</span>
-          </p>
-          <p className="plan__desc">
-            For power users and agencies who need unlimited everything.
-          </p>
-          <ul className="plan__list">
-            <li><strong>UNLIMITED</strong> keyword searches</li>
-            <li><strong>UNLIMITED</strong> active niches</li>
-            <li><strong>UNLIMITED</strong> AI opportunities</li>
-            <li><strong>UNLIMITED</strong> storage</li>
-            <li>Hidden visibility (stealth mode)</li>
-            <li>Advanced SERP tracking</li>
-            <li>Full Market Twin access</li>
-            <li>Multi-user team access</li>
-            <li>Priority support</li>
-            <li>API access &amp; CSV exports</li>
-            <li>Affiliate program access</li>
-          </ul>
-          <button
-            className="btn btn--primary btn--full"
-            onClick={() => handleCheckout('growth', 'monthly')}
-          >
-            Choose Growth Plan
-          </button>
-          <button
-            className="btn-link btn-link--annual"
-            onClick={() => handleCheckout('growth', 'annual')}
-          >
-            Get Annual Discount (${pricing.growth.annual}/year - Save 17%)
-          </button>
-          <p className="plan__note">Everything unlimited. Maximum value.</p>
-        </article>
       </div>
 
       {/* Feature Comparison Table */}
@@ -215,7 +172,6 @@ export default function PricingSection() {
             <div className="comparison-cell comparison-cell--plan">Free</div>
             <div className="comparison-cell comparison-cell--plan">Basic</div>
             <div className="comparison-cell comparison-cell--plan">Pro</div>
-            <div className="comparison-cell comparison-cell--plan comparison-cell--highlight">Growth</div>
           </div>
 
           <div className="comparison-row">
@@ -223,7 +179,6 @@ export default function PricingSection() {
             <div className="comparison-cell">10/month</div>
             <div className="comparison-cell">100/month</div>
             <div className="comparison-cell">500/month</div>
-            <div className="comparison-cell comparison-cell--highlight">Unlimited</div>
           </div>
 
           <div className="comparison-row">
@@ -231,7 +186,6 @@ export default function PricingSection() {
             <div className="comparison-cell">10/month</div>
             <div className="comparison-cell">100/month</div>
             <div className="comparison-cell">500/month</div>
-            <div className="comparison-cell comparison-cell--highlight">Unlimited</div>
           </div>
 
           <div className="comparison-row">
@@ -239,7 +193,6 @@ export default function PricingSection() {
             <div className="comparison-cell">1</div>
             <div className="comparison-cell">10</div>
             <div className="comparison-cell">50</div>
-            <div className="comparison-cell comparison-cell--highlight">Unlimited</div>
           </div>
 
           <div className="comparison-row">
@@ -247,7 +200,6 @@ export default function PricingSection() {
             <div className="comparison-cell">50 MB</div>
             <div className="comparison-cell">500 MB</div>
             <div className="comparison-cell">5,000 MB</div>
-            <div className="comparison-cell comparison-cell--highlight">Unlimited</div>
           </div>
 
           <div className="comparison-row">
@@ -255,7 +207,6 @@ export default function PricingSection() {
             <div className="comparison-cell">Public</div>
             <div className="comparison-cell">Public</div>
             <div className="comparison-cell">Public</div>
-            <div className="comparison-cell comparison-cell--highlight">Hidden</div>
           </div>
 
           <div className="comparison-row">
@@ -263,7 +214,6 @@ export default function PricingSection() {
             <div className="comparison-cell">—</div>
             <div className="comparison-cell">—</div>
             <div className="comparison-cell">—</div>
-            <div className="comparison-cell comparison-cell--highlight">✓</div>
           </div>
 
           <div className="comparison-row">
@@ -271,7 +221,6 @@ export default function PricingSection() {
             <div className="comparison-cell">—</div>
             <div className="comparison-cell">—</div>
             <div className="comparison-cell">—</div>
-            <div className="comparison-cell comparison-cell--highlight">✓</div>
           </div>
 
           <div className="comparison-row">
@@ -279,7 +228,6 @@ export default function PricingSection() {
             <div className="comparison-cell">Community</div>
             <div className="comparison-cell">Email</div>
             <div className="comparison-cell">Priority</div>
-            <div className="comparison-cell comparison-cell--highlight">Priority</div>
           </div>
 
           <div className="comparison-row comparison-row--highlight">
@@ -287,7 +235,6 @@ export default function PricingSection() {
             <div className="comparison-cell">14-day Pro trial</div>
             <div className="comparison-cell">14-day Pro trial</div>
             <div className="comparison-cell">14-day Pro trial</div>
-            <div className="comparison-cell comparison-cell--highlight">14-day Pro trial</div>
           </div>
         </div>
       </div>
@@ -412,7 +359,7 @@ export default function PricingSection() {
 
         .comparison-grid {
           display: grid;
-          grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+          grid-template-columns: 2fr 1fr 1fr 1fr;
           gap: 0;
           border: 1px solid var(--border);
           border-radius: 0.75rem;
@@ -489,7 +436,7 @@ export default function PricingSection() {
 
         @media (max-width: 768px) {
           .comparison-grid {
-            grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
             font-size: 0.875rem;
           }
 
@@ -517,7 +464,7 @@ export default function PricingSection() {
           .comparison-header,
           .comparison-row {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 0.5rem;
             margin-bottom: 0.5rem;
           }
