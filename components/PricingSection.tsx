@@ -9,11 +9,11 @@ export default function PricingSection() {
   const pricing = {
     basic: {
       monthly: 6.99,
-      annual: 69.99, // ~$5.83/month (saves ~17%)
+      annual: 55, // ~$4.58/month (saves ~34%)
     },
     pro: {
       monthly: 12.99,
-      annual: 129.99, // ~$10.83/month (saves ~17%)
+      annual: 125, // ~$10.42/month (saves ~20%)
     }
   };
 
@@ -46,7 +46,7 @@ export default function PricingSection() {
             onClick={() => setBillingPeriod('annual')}
           >
             Annual
-            <span className="save-badge">Save 17%</span>
+            <span className="save-badge">Save up to 34%</span>
           </button>
         </div>
       </div>
