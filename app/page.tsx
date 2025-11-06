@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import PricingSection from '@/components/PricingSection';
 
 export default function Home() {
   return (
@@ -240,103 +241,7 @@ export default function Home() {
       </section>
 
       {/* Pricing Section */}
-      <section className="section section--pricing" id="pricing">
-        <div className="shell section__head">
-          <h2>Start Free. Scale When Ready.</h2>
-          <p>
-            No credit card required. No surprise charges. Upgrade when you need more capacity.
-          </p>
-        </div>
-        <div className="shell pricing">
-          <article className="plan">
-            <p className="plan__badge">Try before you buy</p>
-            <h3>Free Forever</h3>
-            <p className="plan__price">$0</p>
-            <p className="plan__desc">
-              Perfect for validating ideas and exploring opportunities.
-            </p>
-            <ul className="plan__list">
-              <li>10 keyword searches/month</li>
-              <li>1 active niche tracking</li>
-              <li>2 AI opportunities/month</li>
-              <li>Basic SERP tracking</li>
-              <li>Limited Market Twin simulations</li>
-              <li>Seasonal calendar access</li>
-              <li>Community support</li>
-            </ul>
-            <a
-              className="btn btn--ghost btn--full"
-              href="https://app.lexyhub.com/signup"
-            >
-              Start Free
-            </a>
-            <p className="plan__note">No credit card. No commitment.</p>
-          </article>
-
-          <article className="plan">
-            <p className="plan__badge">Most popular</p>
-            <h3>Basic</h3>
-            <p className="plan__price">$7<span className="plan__period">/month</span></p>
-            <p className="plan__desc">
-              For growing sellers who need regular market intelligence.
-            </p>
-            <ul className="plan__list">
-              <li><strong>100 keyword searches/month</strong></li>
-              <li>10 active niches</li>
-              <li><strong>999 AI opportunities/month</strong></li>
-              <li>999 tag optimizer runs/month</li>
-              <li>Standard SERP tracking</li>
-              <li>Full Market Twin access</li>
-              <li>All core features</li>
-              <li>Email support</li>
-            </ul>
-            <a
-              className="btn btn--ghost btn--full"
-              href="https://app.lexyhub.com/signup"
-            >
-              Start Free, Upgrade Later
-            </a>
-            <p className="plan__note">Less than a coffee per month</p>
-          </article>
-
-          <article className="plan plan--highlight">
-            <p className="plan__badge">Best value</p>
-            <h3>Pro</h3>
-            <p className="plan__price">$19<span className="plan__period">/month</span></p>
-            <p className="plan__desc">
-              For serious sellers and teams managing large catalogs.
-            </p>
-            <ul className="plan__list">
-              <li><strong>UNLIMITED</strong> keyword searches</li>
-              <li><strong>UNLIMITED</strong> active niches</li>
-              <li><strong>UNLIMITED</strong> AI opportunities</li>
-              <li><strong>UNLIMITED</strong> tag optimizer runs</li>
-              <li><strong>UNLIMITED</strong> watchlists</li>
-              <li><strong>UNLIMITED</strong> Market Twin scenarios</li>
-              <li>Multi-user team access</li>
-              <li>Priority support</li>
-              <li>API access & CSV exports</li>
-              <li>Affiliate program access</li>
-            </ul>
-            <a
-              className="btn btn--primary btn--full"
-              href="https://app.lexyhub.com/signup"
-            >
-              Start Free, Upgrade Anytime
-            </a>
-            <p className="plan__note">Everything unlimited. No restrictions.</p>
-          </article>
-        </div>
-        <div className="shell pricing-footer">
-          <p>
-            All plans include Chrome extension access
-            <br />
-            Cancel anytime • Upgrade/downgrade with one click
-            <br />
-            14-day money-back guarantee on paid plans
-          </p>
-        </div>
-      </section>
+      <PricingSection />
 
       {/* Use Cases / Success Stories */}
       <section className="section section--use-cases">
