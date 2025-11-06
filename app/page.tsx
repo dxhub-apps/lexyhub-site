@@ -28,7 +28,7 @@ export default function Home() {
               </a>
             </div>
             <p className="hero__perk-note">
-              <strong>10 keyword searches/month free forever.</strong> Upgrade anytime for unlimited access.
+              <strong>10 keyword searches/month free forever.</strong> Upgrade to Basic ($6.99), Pro ($12.99), or Growth ($24.99) for more.
             </p>
           </div>
           <div className="hero__side">
@@ -334,7 +334,7 @@ export default function Home() {
             </div>
             <div className="comparison-row">
               <div className="comparison-cell"><strong>Monthly Cost</strong></div>
-              <div className="comparison-cell comparison-cell--yes">$0 - $19</div>
+              <div className="comparison-cell comparison-cell--yes">$0 - $24.99</div>
               <div className="comparison-cell comparison-cell--no">$100 - $200</div>
             </div>
           </div>
