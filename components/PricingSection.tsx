@@ -9,17 +9,19 @@ export default function PricingSection() {
   const pricing = {
     basic: {
       monthly: 6.99,
-      annual: 55, // ~$4.58/month (saves ~34%)
-      foundersAnnual: 39, // ~$3.25/month (saves 53% vs monthly, 29% vs annual)
+      annual: 69.90,
     },
     pro: {
       monthly: 12.99,
-      annual: 125, // ~$10.42/month (saves ~20%)
-      foundersAnnual: 99, // ~$8.25/month (saves 36% vs monthly, 21% vs annual)
+      annual: 129.90,
+    },
+    growth: {
+      monthly: 24.99,
+      annual: 249.90,
     }
   };
 
-  const handleCheckout = async (planCode: 'basic' | 'pro', billingCycle: 'monthly' | 'annual') => {
+  const handleCheckout = async (planCode: 'basic' | 'pro' | 'growth', billingCycle: 'monthly' | 'annual') => {
     try {
       const response = await fetch('https://app.lexyhub.com/api/billing/checkout/public', {
         method: 'POST',
@@ -36,45 +38,6 @@ export default function PricingSection() {
     } catch (error) {
       console.error('Checkout error:', error);
       alert('Checkout failed. Please try again.');
-    }
-  };
-
-  const handleFoundersDeal = async (tier: 'basic' | 'pro') => {
-    // Founders Deal price IDs
-    const priceIds = {
-      basic: 'price_1SQPWO3enLCiqy1Oll2Lhd54',
-      pro: 'price_1SQPWx3enLCiqy1Ove2rZJkH' // You'll need to get the actual Pro founders price ID
-    };
-
-    try {
-      const response = await fetch('https://app.lexyhub.com/api/billing/checkout/direct', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          priceId: priceIds[tier],
-          planName: `${tier.charAt(0).toUpperCase() + tier.slice(1)} Plan (Founders Deal)`
-        })
-      });
-
-      const data = await response.json();
-      if (data.url) {
-        window.location.href = data.url;
-      } else {
-        alert('Checkout failed. Please try again.');
-      }
-    } catch (error) {
-      console.error('Checkout error:', error);
-      alert('Checkout failed. Please try again.');
-    }
-  };
-
-  const handlePlanSelection = (tier: 'basic' | 'pro') => {
-    if (billingPeriod === 'annual') {
-      // Use Founders Deal for annual plans
-      handleFoundersDeal(tier);
-    } else {
-      // Use regular checkout for monthly plans
-      handleCheckout(tier, 'monthly');
     }
   };
 
@@ -101,47 +64,10 @@ export default function PricingSection() {
             onClick={() => setBillingPeriod('annual')}
           >
             Annual
-            <span className="save-badge">Save up to 53%</span>
+            <span className="save-badge">Save up to 17%</span>
           </button>
         </div>
       </div>
-
-      {/* Founders' Pricing Banner */}
-      {billingPeriod === 'annual' && (
-        <div className="shell founders-banner">
-          <div className="founders-banner__content">
-            <div className="founders-banner__badge">⚡ FOUNDERS&apos; PRICING</div>
-            <h3 className="founders-banner__title">Limited-Time Launch Offer</h3>
-            <p className="founders-banner__desc">
-              Lock in special pricing for being an early adopter. <strong>First 60 days only.</strong>
-            </p>
-            <div className="founders-banner__pricing">
-              <div className="founders-price-item">
-                <span className="tier-name">Basic</span>
-                <span className="price-strike">${pricing.basic.annual}/yr</span>
-                <span className="price-founders">${pricing.basic.foundersAnnual}/yr</span>
-                <button
-                  className="btn btn--founders"
-                  onClick={() => handleFoundersDeal('basic')}
-                >
-                  Claim Basic Deal
-                </button>
-              </div>
-              <div className="founders-price-item">
-                <span className="tier-name">Pro</span>
-                <span className="price-strike">${pricing.pro.annual}/yr</span>
-                <span className="price-founders">${pricing.pro.foundersAnnual}/yr</span>
-                <button
-                  className="btn btn--founders"
-                  onClick={() => handleFoundersDeal('pro')}
-                >
-                  Claim Pro Deal
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Chrome Extension Pro Trial Callout */}
       <div className="shell extension-bonus">
@@ -173,10 +99,10 @@ export default function PricingSection() {
           <ul className="plan__list">
             <li>10 keyword searches/month</li>
             <li>1 active niche tracking</li>
-            <li>2 AI opportunities/month</li>
+            <li>10 AI opportunities/month</li>
+            <li>50 MB storage</li>
+            <li>Public visibility</li>
             <li>Basic SERP tracking</li>
-            <li>Limited Market Twin simulations</li>
-            <li>Seasonal calendar access</li>
             <li>Community support</li>
             <li className="plan__bonus">+ 14-day Pro trial via extension signup!</li>
           </ul>
@@ -194,18 +120,11 @@ export default function PricingSection() {
           <p className="plan__badge">Most popular</p>
           <h3>Basic</h3>
           <p className="plan__price">
-            ${billingPeriod === 'monthly' ? pricing.basic.monthly : (pricing.basic.foundersAnnual / 12).toFixed(2)}
+            ${billingPeriod === 'monthly' ? pricing.basic.monthly : (pricing.basic.annual / 12).toFixed(2)}
             <span className="plan__period">/month</span>
           </p>
           {billingPeriod === 'annual' && (
-            <>
-              <p className="plan__billed plan__billed--founders">
-                <span className="price-strike-inline">${pricing.basic.annual}/year</span>
-                {' '}
-                <span className="price-founders-inline">${pricing.basic.foundersAnnual}/year</span>
-              </p>
-              <p className="plan__founders-badge">🎯 Founders&apos; Price</p>
-            </>
+            <p className="plan__billed">Billed ${pricing.basic.annual}/year</p>
           )}
           <p className="plan__desc">
             For growing sellers who need regular market intelligence.
@@ -213,17 +132,17 @@ export default function PricingSection() {
           <ul className="plan__list">
             <li><strong>100 keyword searches/month</strong></li>
             <li>10 active niches</li>
-            <li><strong>999 AI opportunities/month</strong></li>
-            <li>999 tag optimizer runs/month</li>
+            <li><strong>100 AI opportunities/month</strong></li>
+            <li>500 MB storage</li>
+            <li>Public visibility</li>
             <li>Standard SERP tracking</li>
             <li>Full Market Twin access</li>
-            <li>All core features</li>
             <li>Email support</li>
             <li className="plan__bonus">+ 14-day Pro trial via extension signup!</li>
           </ul>
           <button
             className="btn btn--ghost btn--full"
-            onClick={() => handlePlanSelection('basic')}
+            onClick={() => handleCheckout('basic', billingPeriod)}
           >
             Choose Basic Plan
           </button>
@@ -235,40 +154,67 @@ export default function PricingSection() {
           <p className="plan__badge">Best value</p>
           <h3>Pro</h3>
           <p className="plan__price">
-            ${billingPeriod === 'monthly' ? pricing.pro.monthly : (pricing.pro.foundersAnnual / 12).toFixed(2)}
+            ${billingPeriod === 'monthly' ? pricing.pro.monthly : (pricing.pro.annual / 12).toFixed(2)}
             <span className="plan__period">/month</span>
           </p>
           {billingPeriod === 'annual' && (
-            <>
-              <p className="plan__billed plan__billed--founders">
-                <span className="price-strike-inline">${pricing.pro.annual}/year</span>
-                {' '}
-                <span className="price-founders-inline">${pricing.pro.foundersAnnual}/year</span>
-              </p>
-              <p className="plan__founders-badge">🎯 Founders&apos; Price</p>
-            </>
+            <p className="plan__billed">Billed ${pricing.pro.annual}/year</p>
           )}
           <p className="plan__desc">
             For serious sellers and teams managing large catalogs.
           </p>
           <ul className="plan__list">
-            <li><strong>UNLIMITED</strong> keyword searches</li>
-            <li><strong>UNLIMITED</strong> active niches</li>
-            <li><strong>UNLIMITED</strong> AI opportunities</li>
-            <li><strong>UNLIMITED</strong> tag optimizer runs</li>
-            <li><strong>UNLIMITED</strong> watchlists</li>
-            <li><strong>UNLIMITED</strong> Market Twin scenarios</li>
-            <li>Multi-user team access</li>
+            <li><strong>500 keyword searches/month</strong></li>
+            <li><strong>50 active niches</strong></li>
+            <li><strong>500 AI opportunities/month</strong></li>
+            <li>5,000 MB storage</li>
+            <li>Public visibility</li>
+            <li>Advanced SERP tracking</li>
+            <li>Full Market Twin access</li>
             <li>Priority support</li>
-            <li>API access &amp; CSV exports</li>
-            <li>Affiliate program access</li>
             <li className="plan__bonus">+ Try Pro free for 14 days via extension!</li>
           </ul>
           <button
             className="btn btn--primary btn--full"
-            onClick={() => handlePlanSelection('pro')}
+            onClick={() => handleCheckout('pro', billingPeriod)}
           >
             Choose Pro Plan
+          </button>
+          <p className="plan__note">Perfect for growing businesses</p>
+        </article>
+
+        {/* Growth Tier */}
+        <article className="plan plan--highlight">
+          <p className="plan__badge">Everything Unlimited</p>
+          <h3>Growth</h3>
+          <p className="plan__price">
+            ${billingPeriod === 'monthly' ? pricing.growth.monthly : (pricing.growth.annual / 12).toFixed(2)}
+            <span className="plan__period">/month</span>
+          </p>
+          {billingPeriod === 'annual' && (
+            <p className="plan__billed">Billed ${pricing.growth.annual}/year</p>
+          )}
+          <p className="plan__desc">
+            For power users and agencies who need unlimited everything.
+          </p>
+          <ul className="plan__list">
+            <li><strong>UNLIMITED</strong> keyword searches</li>
+            <li><strong>UNLIMITED</strong> active niches</li>
+            <li><strong>UNLIMITED</strong> AI opportunities</li>
+            <li><strong>UNLIMITED</strong> storage</li>
+            <li>Hidden visibility (stealth mode)</li>
+            <li>Advanced SERP tracking</li>
+            <li>Full Market Twin access</li>
+            <li>Multi-user team access</li>
+            <li>Priority support</li>
+            <li>API access &amp; CSV exports</li>
+            <li>Affiliate program access</li>
+          </ul>
+          <button
+            className="btn btn--primary btn--full"
+            onClick={() => handleCheckout('growth', billingPeriod)}
+          >
+            Choose Growth Plan
           </button>
           <p className="plan__note">Everything unlimited. Maximum value.</p>
         </article>
@@ -282,20 +228,23 @@ export default function PricingSection() {
             <div className="comparison-cell"></div>
             <div className="comparison-cell comparison-cell--plan">Free</div>
             <div className="comparison-cell comparison-cell--plan">Basic</div>
-            <div className="comparison-cell comparison-cell--plan comparison-cell--highlight">Pro</div>
+            <div className="comparison-cell comparison-cell--plan">Pro</div>
+            <div className="comparison-cell comparison-cell--plan comparison-cell--highlight">Growth</div>
           </div>
 
           <div className="comparison-row">
             <div className="comparison-cell"><strong>Keyword Searches</strong></div>
             <div className="comparison-cell">10/month</div>
             <div className="comparison-cell">100/month</div>
+            <div className="comparison-cell">500/month</div>
             <div className="comparison-cell comparison-cell--highlight">Unlimited</div>
           </div>
 
           <div className="comparison-row">
             <div className="comparison-cell"><strong>AI Opportunities</strong></div>
-            <div className="comparison-cell">2/month</div>
-            <div className="comparison-cell">999/month</div>
+            <div className="comparison-cell">10/month</div>
+            <div className="comparison-cell">100/month</div>
+            <div className="comparison-cell">500/month</div>
             <div className="comparison-cell comparison-cell--highlight">Unlimited</div>
           </div>
 
@@ -303,25 +252,29 @@ export default function PricingSection() {
             <div className="comparison-cell"><strong>Active Niches</strong></div>
             <div className="comparison-cell">1</div>
             <div className="comparison-cell">10</div>
+            <div className="comparison-cell">50</div>
             <div className="comparison-cell comparison-cell--highlight">Unlimited</div>
           </div>
 
           <div className="comparison-row">
-            <div className="comparison-cell"><strong>Market Twin Simulator</strong></div>
-            <div className="comparison-cell">Limited</div>
-            <div className="comparison-cell">Full access</div>
+            <div className="comparison-cell"><strong>Storage</strong></div>
+            <div className="comparison-cell">50 MB</div>
+            <div className="comparison-cell">500 MB</div>
+            <div className="comparison-cell">5,000 MB</div>
             <div className="comparison-cell comparison-cell--highlight">Unlimited</div>
           </div>
 
           <div className="comparison-row">
-            <div className="comparison-cell"><strong>Listing Intelligence</strong></div>
-            <div className="comparison-cell">—</div>
-            <div className="comparison-cell">999/month</div>
-            <div className="comparison-cell comparison-cell--highlight">Unlimited</div>
+            <div className="comparison-cell"><strong>Visibility</strong></div>
+            <div className="comparison-cell">Public</div>
+            <div className="comparison-cell">Public</div>
+            <div className="comparison-cell">Public</div>
+            <div className="comparison-cell comparison-cell--highlight">Hidden</div>
           </div>
 
           <div className="comparison-row">
             <div className="comparison-cell"><strong>Multi-user Teams</strong></div>
+            <div className="comparison-cell">—</div>
             <div className="comparison-cell">—</div>
             <div className="comparison-cell">—</div>
             <div className="comparison-cell comparison-cell--highlight">✓</div>
@@ -331,18 +284,21 @@ export default function PricingSection() {
             <div className="comparison-cell"><strong>API Access</strong></div>
             <div className="comparison-cell">—</div>
             <div className="comparison-cell">—</div>
+            <div className="comparison-cell">—</div>
             <div className="comparison-cell comparison-cell--highlight">✓</div>
           </div>
 
           <div className="comparison-row">
             <div className="comparison-cell"><strong>Priority Support</strong></div>
-            <div className="comparison-cell">—</div>
+            <div className="comparison-cell">Community</div>
             <div className="comparison-cell">Email</div>
+            <div className="comparison-cell">Priority</div>
             <div className="comparison-cell comparison-cell--highlight">Priority</div>
           </div>
 
           <div className="comparison-row comparison-row--highlight">
             <div className="comparison-cell"><strong>Chrome Extension Bonus</strong></div>
+            <div className="comparison-cell">14-day Pro trial</div>
             <div className="comparison-cell">14-day Pro trial</div>
             <div className="comparison-cell">14-day Pro trial</div>
             <div className="comparison-cell comparison-cell--highlight">14-day Pro trial</div>
@@ -614,7 +570,7 @@ export default function PricingSection() {
 
         .comparison-grid {
           display: grid;
-          grid-template-columns: 2fr 1fr 1fr 1fr;
+          grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
           gap: 0;
           border: 1px solid var(--border);
           border-radius: 0.75rem;
@@ -691,7 +647,7 @@ export default function PricingSection() {
 
         @media (max-width: 768px) {
           .comparison-grid {
-            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
             font-size: 0.875rem;
           }
 
@@ -741,7 +697,7 @@ export default function PricingSection() {
           .comparison-header,
           .comparison-row {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
             gap: 0.5rem;
             margin-bottom: 0.5rem;
           }
