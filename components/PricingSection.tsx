@@ -19,11 +19,30 @@ export default function PricingSection() {
     }
   };
 
+  // Add this to your landing page pricing buttons
+  async function handleCheckout(planCode: 'basic' | 'pro', billingCycle: 'monthly' | 'annual') {
+    try {
+      const response = await fetch('https://app.lexyhub.com/api/billing/checkout/public', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          planCode,      // 'basic', 'pro', or 'growth'
+          billingCycle   // 'monthly' or 'annual'
+        })
+      });
+
+      const data = await response.json();
+
+      // Redirect to Stripe Checkout
+      window.location.href = data.url;
+
+    } catch (error) {
+      console.error('Checkout failed:', error);
+    }
+  }
+
   const handleUpgrade = (tier: 'basic' | 'pro') => {
-    const period = billingPeriod;
-    const isFounders = billingPeriod === 'annual'; // Founders pricing is active for annual plans
-    // Redirect to signup with plan selection - the app will create Stripe checkout session
-    window.location.href = `https://app.lexyhub.com/signup?plan=${tier}&billing=${period}${isFounders ? '&founders=true' : ''}`;
+    handleCheckout(tier, billingPeriod);
   };
 
   return (
@@ -149,8 +168,8 @@ export default function PricingSection() {
           <ul className="plan__list">
             <li><strong>100 keyword searches/month</strong></li>
             <li>10 active niches</li>
-            <li><strong>999 AI opportunities/month</strong></li>
-            <li>999 tag optimizer runs/month</li>
+            <li><strong>100 AI opportunities/month</strong></li>
+            <li>100 tag optimizer runs/month</li>
             <li>Standard SERP tracking</li>
             <li>Full Market Twin access</li>
             <li>All core features</li>
@@ -231,7 +250,7 @@ export default function PricingSection() {
           <div className="comparison-row">
             <div className="comparison-cell"><strong>AI Opportunities</strong></div>
             <div className="comparison-cell">2/month</div>
-            <div className="comparison-cell">999/month</div>
+            <div className="comparison-cell">100/month</div>
             <div className="comparison-cell comparison-cell--highlight">Unlimited</div>
           </div>
 
@@ -252,7 +271,7 @@ export default function PricingSection() {
           <div className="comparison-row">
             <div className="comparison-cell"><strong>Listing Intelligence</strong></div>
             <div className="comparison-cell">—</div>
-            <div className="comparison-cell">999/month</div>
+            <div className="comparison-cell">100/month</div>
             <div className="comparison-cell comparison-cell--highlight">Unlimited</div>
           </div>
 
