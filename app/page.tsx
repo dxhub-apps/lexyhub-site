@@ -348,6 +348,9 @@ export default function Home() {
       <section className="section section--extension" id="extension">
         <div className="shell extension-feature">
           <div className="extension-feature__copy">
+            <div className="extension-promo-badge">
+              🎁 Sign up via extension = FREE 14-day Pro trial!
+            </div>
             <h2>
               Your Keyword Sidekick.
               <br />
@@ -363,6 +366,7 @@ export default function Home() {
                 <li>One-click trend lookups from any search</li>
                 <li>Seamless integration with web app</li>
                 <li>Privacy-first design (only active on marketplace pages)</li>
+                <li><strong>Sign up through extension = 14 days of Pro FREE</strong></li>
               </ul>
             </div>
             <a
@@ -371,7 +375,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Download Free Extension →
+              Get Extension + Free Pro Trial →
             </a>
             <p className="extension-note">
               Works with Chrome, Edge, Brave, and all Chromium browsers

@@ -79,13 +79,21 @@ export default function PricingSection() {
         </div>
       )}
 
-      {/* Chrome Extension Bonus Callout */}
+      {/* Chrome Extension Pro Trial Callout */}
       <div className="shell extension-bonus">
         <div className="extension-bonus__content">
-          <span className="extension-bonus__icon">🎁</span>
+          <span className="extension-bonus__icon">⚡</span>
           <div className="extension-bonus__text">
-            <strong>Limited Time Bonus:</strong> Install our Chrome Extension and get <strong>30 days of increased limits</strong> on any plan — completely free!
+            <strong>Sign up via Chrome Extension and get a FREE 14-day Pro trial!</strong> Experience unlimited searches, AI opportunities, and all Pro features.
           </div>
+          <a
+            className="extension-bonus__cta"
+            href="https://chrome.google.com/webstore"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Get Extension →
+          </a>
         </div>
       </div>
 
@@ -106,7 +114,7 @@ export default function PricingSection() {
             <li>Limited Market Twin simulations</li>
             <li>Seasonal calendar access</li>
             <li>Community support</li>
-            <li className="plan__bonus">+ Chrome extension access</li>
+            <li className="plan__bonus">+ 14-day Pro trial via extension signup!</li>
           </ul>
           <a
             className="btn btn--ghost btn--full"
@@ -147,7 +155,7 @@ export default function PricingSection() {
             <li>Full Market Twin access</li>
             <li>All core features</li>
             <li>Email support</li>
-            <li className="plan__bonus">+ 30 days increased limits with extension!</li>
+            <li className="plan__bonus">+ 14-day Pro trial via extension signup!</li>
           </ul>
           <button
             className="btn btn--ghost btn--full"
@@ -190,7 +198,7 @@ export default function PricingSection() {
             <li>Priority support</li>
             <li>API access &amp; CSV exports</li>
             <li>Affiliate program access</li>
-            <li className="plan__bonus">+ 30 days increased limits with extension!</li>
+            <li className="plan__bonus">+ Try Pro free for 14 days via extension!</li>
           </ul>
           <button
             className="btn btn--primary btn--full"
@@ -271,9 +279,9 @@ export default function PricingSection() {
 
           <div className="comparison-row comparison-row--highlight">
             <div className="comparison-cell"><strong>Chrome Extension Bonus</strong></div>
-            <div className="comparison-cell">✓</div>
-            <div className="comparison-cell">✓ + 30 days boost</div>
-            <div className="comparison-cell comparison-cell--highlight">✓ + 30 days boost</div>
+            <div className="comparison-cell">14-day Pro trial</div>
+            <div className="comparison-cell">14-day Pro trial</div>
+            <div className="comparison-cell comparison-cell--highlight">14-day Pro trial</div>
           </div>
         </div>
       </div>
@@ -468,6 +476,22 @@ export default function PricingSection() {
           box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
         }
 
+        .extension-bonus__cta {
+          padding: 0.75rem 1.5rem;
+          background: white;
+          color: #667eea;
+          border-radius: 0.5rem;
+          font-weight: 700;
+          white-space: nowrap;
+          transition: all 0.2s ease;
+          text-decoration: none;
+        }
+
+        .extension-bonus__cta:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
         .extension-bonus__icon {
           font-size: 2rem;
           line-height: 1;
@@ -597,6 +621,11 @@ export default function PricingSection() {
             flex-direction: column;
             text-align: center;
             padding: 1rem;
+          }
+
+          .extension-bonus__cta {
+            width: 100%;
+            text-align: center;
           }
 
           .billing-toggle button {
