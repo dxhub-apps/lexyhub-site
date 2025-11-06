@@ -21,6 +21,7 @@ export default function Header() {
         >
           <Link href="/#features">Features</Link>
           <Link href="/#pricing">Pricing</Link>
+          <Link href="/blog">Blog</Link>
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
         </nav>
