@@ -67,7 +67,7 @@ export default function NeuralBackground() {
           vy: (Math.random() - 0.5) * 0.25,
           keyword: keywords[Math.floor(Math.random() * keywords.length)],
           connections: [],
-          radius: Math.random() * 2 + 3, // Much smaller radius (3-5px)
+          radius: Math.random() * 0.5 + 1.5, // Smaller solid dots (1.5-2px)
           pulsePhase: Math.random() * Math.PI * 2
         };
 
@@ -143,23 +143,14 @@ export default function NeuralBackground() {
 
           // Only draw connection if nodes are reasonably close
           if (distance < 400) {
-            const opacity = Math.max(0, 1 - distance / 400) * 0.15;
+            const opacity = Math.max(0, 1 - distance / 400) * 0.3;
 
-            // Animated pulse along the connection
-            const pulsePosition = (Math.sin(node.pulsePhase) + 1) / 2;
-            const gradient = ctx.createLinearGradient(node.x, node.y, target.x, target.y);
-
-            // Use theme color for lines with modified opacity
-            const lineColor = modifyOpacity(neuralLine, opacity * 0.5);
-            const lineColorBright = modifyOpacity(neuralLine, opacity * 1.2);
-
-            gradient.addColorStop(0, lineColor);
-            gradient.addColorStop(pulsePosition, lineColorBright);
-            gradient.addColorStop(1, lineColor);
+            // Simple solid line, no gradients
+            const lineColor = modifyOpacity(neuralLine, opacity);
 
             ctx.beginPath();
-            ctx.strokeStyle = gradient;
-            ctx.lineWidth = 0.8;
+            ctx.strokeStyle = lineColor;
+            ctx.lineWidth = 0.5;
             ctx.moveTo(node.x, node.y);
             ctx.lineTo(target.x, target.y);
             ctx.stroke();
@@ -167,42 +158,13 @@ export default function NeuralBackground() {
         });
       });
 
-      // Draw nodes
+      // Draw nodes - small, solid dots, very subtle
       nodesRef.current.forEach((node) => {
-        const pulse = Math.sin(node.pulsePhase) * 0.2 + 1;
-        const currentRadius = node.radius * pulse;
-
-        // Outer glow (subtle)
-        const gradient = ctx.createRadialGradient(
-          node.x, node.y, 0,
-          node.x, node.y, currentRadius * 3
-        );
-        gradient.addColorStop(0, neuralGlow);
-        gradient.addColorStop(1, modifyOpacity(neuralGlow, 0));
-
+        // Solid dot with very low opacity to be almost invisible
         ctx.beginPath();
-        ctx.fillStyle = gradient;
-        ctx.arc(node.x, node.y, currentRadius * 3, 0, Math.PI * 2);
+        ctx.fillStyle = modifyOpacity(neuralNode, 0.15);
+        ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
         ctx.fill();
-
-        // Node dot (small and bright)
-        ctx.beginPath();
-        ctx.fillStyle = neuralNode;
-        ctx.arc(node.x, node.y, currentRadius, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Core highlight (bright center)
-        ctx.beginPath();
-        ctx.fillStyle = neuralNodeCore;
-        ctx.arc(node.x, node.y, currentRadius * 0.5, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Draw keyword text in terminal font (small, positioned to the right)
-        ctx.fillStyle = neuralText;
-        ctx.font = '8px "Courier New", Courier, monospace';
-        ctx.textAlign = 'left';
-        ctx.textBaseline = 'middle';
-        ctx.fillText(node.keyword, node.x + currentRadius + 6, node.y);
       });
     };
 
