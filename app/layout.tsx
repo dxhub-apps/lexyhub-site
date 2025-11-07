@@ -25,6 +25,36 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var config = { enabled: true, winner: 'dark', darkThemePercentage: 0.5, storageKey: 'lexyhub_theme_variant' };
+                  var theme = 'dark';
+
+                  if (!config.enabled) {
+                    theme = config.winner;
+                  } else {
+                    var stored = localStorage.getItem(config.storageKey);
+                    if (stored === 'dark' || stored === 'light') {
+                      theme = stored;
+                    } else {
+                      theme = Math.random() < config.darkThemePercentage ? 'dark' : 'light';
+                      localStorage.setItem(config.storageKey, theme);
+                    }
+                  }
+
+                  document.documentElement.setAttribute('data-theme', theme);
+                } catch (e) {
+                  document.documentElement.setAttribute('data-theme', 'dark');
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
       <body>
         <ThemeProvider>
           <NeuralBackground />
