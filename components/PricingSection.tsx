@@ -73,11 +73,13 @@ export default function PricingSection() {
             <li>10 keyword searches/month</li>
             <li>1 active niche tracking</li>
             <li>10 AI opportunities/month</li>
+            <li><strong>LexyBrain™:</strong> 20 AI calls, 2 briefs, 2 sims/month</li>
             <li>50 MB storage</li>
             <li>Public visibility</li>
             <li>Basic SERP tracking</li>
             <li>Community support</li>
             <li className="plan__bonus">+ 14-day Pro trial via extension signup!</li>
+            <li className="plan__bonus">+ Extension signup = 2x LexyBrain™ allowance!</li>
           </ul>
           <a
             className="btn btn--ghost btn--full"
@@ -103,6 +105,7 @@ export default function PricingSection() {
             <li><strong>100 keyword searches/month</strong></li>
             <li>10 active niches</li>
             <li><strong>100 AI opportunities/month</strong></li>
+            <li><strong>LexyBrain™:</strong> 200 AI calls, 20 briefs, 20 sims/month</li>
             <li>500 MB storage</li>
             <li>Public visibility</li>
             <li>Standard SERP tracking</li>
@@ -140,6 +143,7 @@ export default function PricingSection() {
             <li><strong>500 keyword searches/month</strong></li>
             <li><strong>50 active niches</strong></li>
             <li><strong>500 AI opportunities/month</strong></li>
+            <li><strong>LexyBrain™:</strong> 2,000 AI calls, 100 briefs, 200 sims/month</li>
             <li>5,000 MB storage</li>
             <li>Public visibility</li>
             <li>Advanced SERP tracking</li>
@@ -186,6 +190,27 @@ export default function PricingSection() {
             <div className="comparison-cell">10/month</div>
             <div className="comparison-cell">100/month</div>
             <div className="comparison-cell">500/month</div>
+          </div>
+
+          <div className="comparison-row comparison-row--highlight">
+            <div className="comparison-cell"><strong>LexyBrain™ AI Calls</strong></div>
+            <div className="comparison-cell">20/month*</div>
+            <div className="comparison-cell">200/month</div>
+            <div className="comparison-cell">2,000/month</div>
+          </div>
+
+          <div className="comparison-row comparison-row--highlight">
+            <div className="comparison-cell"><strong>LexyBrain™ Briefs</strong></div>
+            <div className="comparison-cell">2/month*</div>
+            <div className="comparison-cell">20/month</div>
+            <div className="comparison-cell">100/month</div>
+          </div>
+
+          <div className="comparison-row comparison-row--highlight">
+            <div className="comparison-cell"><strong>LexyBrain™ Simulations</strong></div>
+            <div className="comparison-cell">2/month*</div>
+            <div className="comparison-cell">20/month</div>
+            <div className="comparison-cell">200/month</div>
           </div>
 
           <div className="comparison-row">
@@ -237,6 +262,9 @@ export default function PricingSection() {
             <div className="comparison-cell">14-day Pro trial</div>
           </div>
         </div>
+        <p className="pricing-comparison__note">
+          * Extension signups receive <strong>2x LexyBrain™ allowance</strong> on Free plan (40 AI calls, 4 briefs, 4 sims/month)
+        </p>
       </div>
 
       <div className="shell pricing-footer">
@@ -408,6 +436,21 @@ export default function PricingSection() {
 
         .comparison-cell--highlight {
           background: #fafbff;
+        }
+
+        .pricing-comparison__note {
+          margin-top: 1rem;
+          padding: 1rem;
+          background: #f0f4ff;
+          border-radius: 0.5rem;
+          text-align: center;
+          font-size: 0.9rem;
+          color: var(--ink-soft);
+        }
+
+        .pricing-comparison__note strong {
+          color: var(--accent);
+          font-weight: 700;
         }
 
         .pricing-footer {

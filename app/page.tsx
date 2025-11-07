@@ -406,8 +406,13 @@ export default function Home() {
               <div className="comparison-cell comparison-cell--no">Not available</div>
             </div>
             <div className="comparison-row">
+              <div className="comparison-cell"><strong>LexyBrain™ AI Engine</strong></div>
+              <div className="comparison-cell comparison-cell--yes">Proprietary intelligence system</div>
+              <div className="comparison-cell comparison-cell--no">Generic algorithms</div>
+            </div>
+            <div className="comparison-row">
               <div className="comparison-cell"><strong>Monthly Cost</strong></div>
-              <div className="comparison-cell comparison-cell--yes">$0 - $24.99</div>
+              <div className="comparison-cell comparison-cell--yes">$0 - $12.99</div>
               <div className="comparison-cell comparison-cell--no">$100 - $200</div>
             </div>
           </div>
