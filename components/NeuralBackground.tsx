@@ -34,6 +34,13 @@ export default function NeuralBackground() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
+    // Helper function to get CSS custom property values
+    const getCSSVar = (varName: string): string => {
+      return getComputedStyle(document.documentElement)
+        .getPropertyValue(varName)
+        .trim();
+    };
+
     // Set canvas size
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
@@ -46,7 +53,7 @@ export default function NeuralBackground() {
     };
 
     const initNodes = () => {
-      const nodeCount = Math.floor((canvas.width * canvas.height) / 35000);
+      const nodeCount = Math.floor((canvas.width * canvas.height) / 25000);
       nodesRef.current = [];
 
       for (let i = 0; i < nodeCount; i++) {
@@ -56,11 +63,11 @@ export default function NeuralBackground() {
         const node: Node = {
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 0.3,
-          vy: (Math.random() - 0.5) * 0.3,
+          vx: (Math.random() - 0.5) * 0.25,
+          vy: (Math.random() - 0.5) * 0.25,
           keyword: keywords[Math.floor(Math.random() * keywords.length)],
           connections: [],
-          radius: Math.random() * 8 + 15,
+          radius: Math.random() * 2 + 3, // Much smaller radius (3-5px)
           pulsePhase: Math.random() * Math.PI * 2
         };
 
@@ -106,6 +113,13 @@ export default function NeuralBackground() {
     const drawNodes = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+      // Get theme colors from CSS variables
+      const neuralLine = getCSSVar('--neural-line');
+      const neuralGlow = getCSSVar('--neural-glow');
+      const neuralNode = getCSSVar('--neural-node');
+      const neuralNodeCore = getCSSVar('--neural-node-core');
+      const neuralText = getCSSVar('--neural-text');
+
       // Draw connections first (behind nodes)
       nodesRef.current.forEach((node, i) => {
         node.connections.forEach((targetIndex) => {
@@ -124,9 +138,13 @@ export default function NeuralBackground() {
             const pulsePosition = (Math.sin(node.pulsePhase) + 1) / 2;
             const gradient = ctx.createLinearGradient(node.x, node.y, target.x, target.y);
 
-            gradient.addColorStop(0, `rgba(100, 100, 100, ${opacity * 0.5})`);
-            gradient.addColorStop(pulsePosition, `rgba(150, 150, 150, ${opacity * 1.2})`);
-            gradient.addColorStop(1, `rgba(100, 100, 100, ${opacity * 0.5})`);
+            // Use theme color for lines
+            const lineColor = neuralLine.replace(')', `, ${opacity * 0.5})`).replace('rgb', 'rgba');
+            const lineColorBright = neuralLine.replace(')', `, ${opacity * 1.2})`).replace('rgb', 'rgba');
+
+            gradient.addColorStop(0, lineColor);
+            gradient.addColorStop(pulsePosition, lineColorBright);
+            gradient.addColorStop(1, lineColor);
 
             ctx.beginPath();
             ctx.strokeStyle = gradient;
@@ -140,54 +158,40 @@ export default function NeuralBackground() {
 
       // Draw nodes
       nodesRef.current.forEach((node) => {
-        const pulse = Math.sin(node.pulsePhase) * 0.15 + 1;
+        const pulse = Math.sin(node.pulsePhase) * 0.2 + 1;
         const currentRadius = node.radius * pulse;
 
-        // Outer glow
+        // Outer glow (subtle)
         const gradient = ctx.createRadialGradient(
           node.x, node.y, 0,
-          node.x, node.y, currentRadius * 1.5
+          node.x, node.y, currentRadius * 3
         );
-        gradient.addColorStop(0, 'rgba(120, 120, 120, 0.2)');
-        gradient.addColorStop(1, 'rgba(120, 120, 120, 0)');
+        gradient.addColorStop(0, neuralGlow);
+        gradient.addColorStop(1, neuralGlow.replace(/[\d.]+\)$/g, '0)'));
 
         ctx.beginPath();
         ctx.fillStyle = gradient;
-        ctx.arc(node.x, node.y, currentRadius * 1.5, 0, Math.PI * 2);
+        ctx.arc(node.x, node.y, currentRadius * 3, 0, Math.PI * 2);
         ctx.fill();
 
-        // Node circle
+        // Node dot (small and bright)
         ctx.beginPath();
-        ctx.fillStyle = 'rgba(200, 200, 200, 0.08)';
-        ctx.strokeStyle = 'rgba(140, 140, 140, 0.3)';
-        ctx.lineWidth = 1.5;
-        ctx.arc(node.x, node.y, currentRadius, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.stroke();
-
-        // Inner highlight
-        const highlightGradient = ctx.createRadialGradient(
-          node.x - currentRadius * 0.3,
-          node.y - currentRadius * 0.3,
-          0,
-          node.x,
-          node.y,
-          currentRadius
-        );
-        highlightGradient.addColorStop(0, 'rgba(240, 240, 240, 0.15)');
-        highlightGradient.addColorStop(1, 'rgba(240, 240, 240, 0)');
-
-        ctx.beginPath();
-        ctx.fillStyle = highlightGradient;
+        ctx.fillStyle = neuralNode;
         ctx.arc(node.x, node.y, currentRadius, 0, Math.PI * 2);
         ctx.fill();
 
-        // Draw keyword text
-        ctx.fillStyle = 'rgba(80, 80, 80, 0.6)';
-        ctx.font = '10px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-        ctx.textAlign = 'center';
+        // Core highlight (bright center)
+        ctx.beginPath();
+        ctx.fillStyle = neuralNodeCore;
+        ctx.arc(node.x, node.y, currentRadius * 0.5, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Draw keyword text in terminal font (small, positioned to the right)
+        ctx.fillStyle = neuralText;
+        ctx.font = '8px "Courier New", Courier, monospace';
+        ctx.textAlign = 'left';
         ctx.textBaseline = 'middle';
-        ctx.fillText(node.keyword, node.x, node.y);
+        ctx.fillText(node.keyword, node.x + currentRadius + 6, node.y);
       });
     };
 
@@ -216,7 +220,7 @@ export default function NeuralBackground() {
       ref={canvasRef}
       className="neural-background"
       style={{
-        position: 'absolute',
+        position: 'fixed',
         top: 0,
         left: 0,
         width: '100%',
