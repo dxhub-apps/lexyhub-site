@@ -15,7 +15,6 @@ export function useTheme() {
 
 export default function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>('dark');
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     // Determine theme based on A/B test config
@@ -51,14 +50,7 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
 
     // Apply theme to document
     document.documentElement.setAttribute('data-theme', selectedTheme);
-
-    setMounted(true);
   }, []);
-
-  // Prevent flash of unstyled content
-  if (!mounted) {
-    return null;
-  }
 
   return <ThemeContext.Provider value={{ theme }}>{children}</ThemeContext.Provider>;
 }
