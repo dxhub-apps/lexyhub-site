@@ -143,7 +143,7 @@ export default function NeuralBackground() {
 
           // Only draw connection if nodes are reasonably close
           if (distance < 400) {
-            const opacity = Math.max(0, 1 - distance / 400) * 0.5;
+            const opacity = Math.max(0, 1 - distance / 400) * 0.8;
 
             // Simple solid line, no gradients
             const lineColor = modifyOpacity(neuralLine, opacity);
@@ -162,7 +162,7 @@ export default function NeuralBackground() {
       nodesRef.current.forEach((node) => {
         // Solid dot with subtle visibility
         ctx.beginPath();
-        ctx.fillStyle = modifyOpacity(neuralNode, 0.3);
+        ctx.fillStyle = modifyOpacity(neuralNode, 0.4);
         ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
         ctx.fill();
       });
