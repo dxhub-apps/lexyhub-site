@@ -1,7 +1,41 @@
 import type { NextConfig } from "next";
+import createMDX from '@next/mdx';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypePrettyCode from 'rehype-pretty-code';
+import remarkGfm from 'remark-gfm';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  experimental: {
+    mdxRs: false,
+  },
 };
 
-export default nextConfig;
+const withMDX = createMDX({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [
+      rehypeSlug,
+      [
+        rehypePrettyCode,
+        {
+          theme: 'github-dark',
+          keepBackground: false,
+        },
+      ],
+      [
+        rehypeAutolinkHeadings,
+        {
+          behavior: 'wrap',
+          properties: {
+            className: ['anchor'],
+          },
+        },
+      ],
+    ],
+  },
+});
+
+export default withMDX(nextConfig);

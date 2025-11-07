@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "@/styles/globals.css";
+import "@/styles/blog.css";
 
 export const metadata: Metadata = {
   title: "LexiHub | AI-Powered Cross-Marketplace Commerce Intelligence",
