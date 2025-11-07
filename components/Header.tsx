@@ -20,6 +20,7 @@ export default function Header() {
           style={{ display: mobileMenuOpen ? 'flex' : undefined }}
         >
           <Link href="/#features">Features</Link>
+          <Link href="/lexybrain">LexyBrain™</Link>
           <Link href="/#pricing">Pricing</Link>
           <Link href="/blog">Blog</Link>
           <Link href="/about">About</Link>

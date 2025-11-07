@@ -147,6 +147,79 @@ export default function Home() {
         </div>
       </section>
 
+      {/* LexyBrain Section */}
+      <section className="section section--lexybrain" id="lexybrain">
+        <div className="shell">
+          <div className="lexybrain-hero">
+            <div className="lexybrain-hero__badge">
+              <span className="badge-dot"></span>
+              Powered by LexyBrain™
+            </div>
+            <h2>LexyHub Presents LexyBrain™</h2>
+            <p className="lexybrain-tagline">
+              Developed by LexyHub. Designed to think like the market itself.
+            </p>
+            <p className="lead">
+              LexyBrain™ is not just another AI feature — it&apos;s our proprietary intelligence engine,
+              developed entirely by LexyHub to redefine how sellers understand and dominate their markets.
+            </p>
+          </div>
+
+          <div className="lexybrain-content">
+            <div className="lexybrain-explanation">
+              <p>
+                Built from the ground up by the LexyHub team, LexyBrain™ analyzes millions of marketplace
+                signals — keywords, buyer intent, trend shifts, and competition patterns — and transforms
+                them into crystal-clear insights you can act on instantly.
+              </p>
+              <div className="lexybrain-highlight">
+                <h3>It doesn&apos;t just collect data. It thinks.</h3>
+                <p>
+                  It learns how your niche behaves, predicts emerging opportunities, and helps you make
+                  precise decisions before anyone else sees what&apos;s coming.
+                </p>
+              </div>
+              <p>
+                Every recommendation inside LexyHub — every trend, insight, and alert — is powered by
+                the analytical depth of LexyBrain™, an AI system engineered to interpret meaning, not just numbers.
+              </p>
+            </div>
+
+            <div className="lexybrain-features">
+              <h3>Why it matters:</h3>
+              <div className="grid grid--2col">
+                <article className="card card--lexybrain">
+                  <h4>Predictive Precision</h4>
+                  <p>Detect tomorrow&apos;s winners before they peak.</p>
+                </article>
+                <article className="card card--lexybrain">
+                  <h4>Actionable Clarity</h4>
+                  <p>Understand why trends move and how to leverage them.</p>
+                </article>
+                <article className="card card--lexybrain">
+                  <h4>Adaptive Learning</h4>
+                  <p>LexyBrain™ evolves with every keyword, every signal, every market cycle.</p>
+                </article>
+                <article className="card card--lexybrain">
+                  <h4>Creator Advantage</h4>
+                  <p>Built exclusively for sellers who want data-driven confidence without technical complexity.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <div className="lexybrain-footer">
+            <p className="lexybrain-statement">
+              With LexyHub developed LexyBrain™, we&apos;ve moved beyond analytics — into intelligence.<br />
+              <strong>It&apos;s not a dashboard. It&apos;s your competitive edge.</strong>
+            </p>
+            <Link href="/lexybrain" className="btn btn--primary">
+              Learn More About LexyBrain™
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Features Deep Dive */}
       <section className="section section--features-deep">
         <div className="shell">
