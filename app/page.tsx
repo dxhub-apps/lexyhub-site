@@ -187,7 +187,7 @@ export default function Home() {
 
             <div className="lexybrain-features">
               <h3>Why it matters:</h3>
-              <div className="grid grid--2col">
+              <div className="grid grid--4col">
                 <article className="card card--lexybrain">
                   <h4>Predictive Precision</h4>
                   <p>Detect tomorrow&apos;s winners before they peak.</p>
