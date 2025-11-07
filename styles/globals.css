@@ -416,7 +416,13 @@ h1 {
 }
 
 .grid--4col {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+@media (min-width: 1024px) {
+  .lexybrain-features .grid--4col {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .card {
@@ -1506,6 +1512,7 @@ h1 {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 1.75rem 1.5rem;
 }
 
 .card--lexybrain:hover {
@@ -1517,11 +1524,14 @@ h1 {
 
 .card--lexybrain h4 {
   color: var(--accent);
-  font-size: 1.25rem;
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
 }
 
 .card--lexybrain p {
   color: var(--ink-soft);
+  font-size: 0.9375rem;
+  line-height: 1.6;
 }
 
 .lexybrain-footer {
