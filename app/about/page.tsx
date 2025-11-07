@@ -91,10 +91,9 @@ export default function About() {
         </div>
         <div className="shell grid grid--features">
           <article className="feature">
-            <h3>Naya Chen — CEO</h3>
+            <h3>Alex Perevalo — CEO</h3>
             <p>
-              Scaled marketplace revenue. Lived the pain of reconciling Amazon keyword jumps with Etsy buyers and D2C ops.
-              Started LexyHub to kill that swivel-chair work.
+              An Etsy, Amazon, and ShineOn seller who scaled his stores to hundreds of thousands in revenue. After struggling to find high-performing keywords and profitable niches, he built LexyHub for his own use and it evolved into something remarkable.
             </p>
           </article>
           <article className="feature">
