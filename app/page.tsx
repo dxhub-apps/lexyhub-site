@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import PricingSection from '@/components/PricingSection';
+import NeuralBackground from '@/components/NeuralBackground';
 
 export default function Home() {
   return (
     <>
       {/* Hero Section */}
       <section className="hero" id="home">
+        <NeuralBackground />
         <div className="shell hero__wrapper">
           <div className="hero__copy">
             <p className="eyebrow">FREE FOREVER PLAN AVAILABLE</p>
