@@ -34,6 +34,13 @@ export default function NeuralBackground() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
+    // Helper function to get CSS custom property values
+    const getCSSVar = (varName: string): string => {
+      return getComputedStyle(document.documentElement)
+        .getPropertyValue(varName)
+        .trim();
+    };
+
     // Set canvas size
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
@@ -106,6 +113,13 @@ export default function NeuralBackground() {
     const drawNodes = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+      // Get theme colors from CSS variables
+      const neuralLine = getCSSVar('--neural-line');
+      const neuralGlow = getCSSVar('--neural-glow');
+      const neuralNode = getCSSVar('--neural-node');
+      const neuralNodeCore = getCSSVar('--neural-node-core');
+      const neuralText = getCSSVar('--neural-text');
+
       // Draw connections first (behind nodes)
       nodesRef.current.forEach((node, i) => {
         node.connections.forEach((targetIndex) => {
@@ -124,9 +138,13 @@ export default function NeuralBackground() {
             const pulsePosition = (Math.sin(node.pulsePhase) + 1) / 2;
             const gradient = ctx.createLinearGradient(node.x, node.y, target.x, target.y);
 
-            gradient.addColorStop(0, `rgba(100, 100, 100, ${opacity * 0.5})`);
-            gradient.addColorStop(pulsePosition, `rgba(150, 150, 150, ${opacity * 1.2})`);
-            gradient.addColorStop(1, `rgba(100, 100, 100, ${opacity * 0.5})`);
+            // Use theme color for lines
+            const lineColor = neuralLine.replace(')', `, ${opacity * 0.5})`).replace('rgb', 'rgba');
+            const lineColorBright = neuralLine.replace(')', `, ${opacity * 1.2})`).replace('rgb', 'rgba');
+
+            gradient.addColorStop(0, lineColor);
+            gradient.addColorStop(pulsePosition, lineColorBright);
+            gradient.addColorStop(1, lineColor);
 
             ctx.beginPath();
             ctx.strokeStyle = gradient;
@@ -148,8 +166,8 @@ export default function NeuralBackground() {
           node.x, node.y, 0,
           node.x, node.y, currentRadius * 3
         );
-        gradient.addColorStop(0, 'rgba(140, 140, 140, 0.4)');
-        gradient.addColorStop(1, 'rgba(140, 140, 140, 0)');
+        gradient.addColorStop(0, neuralGlow);
+        gradient.addColorStop(1, neuralGlow.replace(/[\d.]+\)$/g, '0)'));
 
         ctx.beginPath();
         ctx.fillStyle = gradient;
@@ -158,18 +176,18 @@ export default function NeuralBackground() {
 
         // Node dot (small and bright)
         ctx.beginPath();
-        ctx.fillStyle = 'rgba(180, 180, 180, 0.8)';
+        ctx.fillStyle = neuralNode;
         ctx.arc(node.x, node.y, currentRadius, 0, Math.PI * 2);
         ctx.fill();
 
         // Core highlight (bright center)
         ctx.beginPath();
-        ctx.fillStyle = 'rgba(220, 220, 220, 0.9)';
+        ctx.fillStyle = neuralNodeCore;
         ctx.arc(node.x, node.y, currentRadius * 0.5, 0, Math.PI * 2);
         ctx.fill();
 
         // Draw keyword text in terminal font (small, positioned to the right)
-        ctx.fillStyle = 'rgba(120, 120, 120, 0.5)';
+        ctx.fillStyle = neuralText;
         ctx.font = '8px "Courier New", Courier, monospace';
         ctx.textAlign = 'left';
         ctx.textBaseline = 'middle';

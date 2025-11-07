@@ -1,7 +1,24 @@
-/* lexyhub.css - Modern Professional Theme */
-/* Clean, professional, with strategic accent colors */
+/* lexyhub.css - Modern Professional Theme with A/B Testing */
+/* Futuristic Web3 style with glassmorphism for both light and dark themes */
 
+/* Shared variables (theme-independent) */
 :root {
+  --accent: #6366f1;
+  --accent-light: #818cf8;
+  --accent-dark: #4f46e5;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --radius-lg: 1.25rem;
+  --radius-md: 0.875rem;
+  --radius-sm: 0.5rem;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark Theme (Default) */
+:root,
+[data-theme="dark"] {
   --bg: #0a0a0a;
   --bg-gradient: linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
   --ink: #e8e8e8;
@@ -13,27 +30,51 @@
   --surface: rgba(255, 255, 255, 0.03);
   --surface-muted: rgba(255, 255, 255, 0.02);
   --surface-dark: #0f172a;
-  --accent: #6366f1;
-  --accent-light: #818cf8;
-  --accent-dark: #4f46e5;
   --accent-bg: rgba(99, 102, 241, 0.1);
-  --success: #10b981;
   --success-light: rgba(16, 185, 129, 0.1);
-  --warning: #f59e0b;
   --warning-light: rgba(245, 158, 11, 0.1);
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.1);
   --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  --radius-lg: 1.25rem;
-  --radius-md: 0.875rem;
-  --radius-sm: 0.5rem;
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.4);
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.6), 0 8px 10px -6px rgb(0 0 0 / 0.5);
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
-  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --neural-node: rgba(180, 180, 180, 0.8);
+  --neural-node-core: rgba(220, 220, 220, 0.9);
+  --neural-text: rgba(120, 120, 120, 0.5);
+  --neural-line: rgba(100, 100, 100, 0.5);
+  --neural-glow: rgba(140, 140, 140, 0.4);
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  --bg: #ffffff;
+  --bg-gradient: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+  --ink: #0f172a;
+  --ink-soft: #475569;
+  --ink-muted: #94a3b8;
+  --border: rgba(0, 0, 0, 0.1);
+  --border-light: rgba(0, 0, 0, 0.05);
+  --border-dark: rgba(0, 0, 0, 0.15);
+  --surface: rgba(0, 0, 0, 0.02);
+  --surface-muted: rgba(0, 0, 0, 0.03);
+  --surface-dark: #0f172a;
+  --accent-bg: rgba(99, 102, 241, 0.1);
+  --success-light: rgba(16, 185, 129, 0.15);
+  --warning-light: rgba(245, 158, 11, 0.15);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --neural-node: rgba(80, 80, 80, 0.6);
+  --neural-node-core: rgba(40, 40, 40, 0.8);
+  --neural-text: rgba(100, 100, 100, 0.6);
+  --neural-line: rgba(120, 120, 120, 0.3);
+  --neural-glow: rgba(100, 100, 100, 0.3);
 }
 
 *,
