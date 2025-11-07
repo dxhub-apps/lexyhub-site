@@ -46,7 +46,7 @@ export default function NeuralBackground() {
     };
 
     const initNodes = () => {
-      const nodeCount = Math.floor((canvas.width * canvas.height) / 35000);
+      const nodeCount = Math.floor((canvas.width * canvas.height) / 25000);
       nodesRef.current = [];
 
       for (let i = 0; i < nodeCount; i++) {
@@ -56,11 +56,11 @@ export default function NeuralBackground() {
         const node: Node = {
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 0.3,
-          vy: (Math.random() - 0.5) * 0.3,
+          vx: (Math.random() - 0.5) * 0.25,
+          vy: (Math.random() - 0.5) * 0.25,
           keyword: keywords[Math.floor(Math.random() * keywords.length)],
           connections: [],
-          radius: Math.random() * 8 + 15,
+          radius: Math.random() * 2 + 3, // Much smaller radius (3-5px)
           pulsePhase: Math.random() * Math.PI * 2
         };
 
@@ -140,54 +140,40 @@ export default function NeuralBackground() {
 
       // Draw nodes
       nodesRef.current.forEach((node) => {
-        const pulse = Math.sin(node.pulsePhase) * 0.15 + 1;
+        const pulse = Math.sin(node.pulsePhase) * 0.2 + 1;
         const currentRadius = node.radius * pulse;
 
-        // Outer glow
+        // Outer glow (subtle)
         const gradient = ctx.createRadialGradient(
           node.x, node.y, 0,
-          node.x, node.y, currentRadius * 1.5
+          node.x, node.y, currentRadius * 3
         );
-        gradient.addColorStop(0, 'rgba(120, 120, 120, 0.2)');
-        gradient.addColorStop(1, 'rgba(120, 120, 120, 0)');
+        gradient.addColorStop(0, 'rgba(140, 140, 140, 0.4)');
+        gradient.addColorStop(1, 'rgba(140, 140, 140, 0)');
 
         ctx.beginPath();
         ctx.fillStyle = gradient;
-        ctx.arc(node.x, node.y, currentRadius * 1.5, 0, Math.PI * 2);
+        ctx.arc(node.x, node.y, currentRadius * 3, 0, Math.PI * 2);
         ctx.fill();
 
-        // Node circle
+        // Node dot (small and bright)
         ctx.beginPath();
-        ctx.fillStyle = 'rgba(200, 200, 200, 0.08)';
-        ctx.strokeStyle = 'rgba(140, 140, 140, 0.3)';
-        ctx.lineWidth = 1.5;
-        ctx.arc(node.x, node.y, currentRadius, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.stroke();
-
-        // Inner highlight
-        const highlightGradient = ctx.createRadialGradient(
-          node.x - currentRadius * 0.3,
-          node.y - currentRadius * 0.3,
-          0,
-          node.x,
-          node.y,
-          currentRadius
-        );
-        highlightGradient.addColorStop(0, 'rgba(240, 240, 240, 0.15)');
-        highlightGradient.addColorStop(1, 'rgba(240, 240, 240, 0)');
-
-        ctx.beginPath();
-        ctx.fillStyle = highlightGradient;
+        ctx.fillStyle = 'rgba(180, 180, 180, 0.8)';
         ctx.arc(node.x, node.y, currentRadius, 0, Math.PI * 2);
         ctx.fill();
 
-        // Draw keyword text
-        ctx.fillStyle = 'rgba(80, 80, 80, 0.6)';
-        ctx.font = '10px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-        ctx.textAlign = 'center';
+        // Core highlight (bright center)
+        ctx.beginPath();
+        ctx.fillStyle = 'rgba(220, 220, 220, 0.9)';
+        ctx.arc(node.x, node.y, currentRadius * 0.5, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Draw keyword text in terminal font (small, positioned to the right)
+        ctx.fillStyle = 'rgba(120, 120, 120, 0.5)';
+        ctx.font = '8px "Courier New", Courier, monospace';
+        ctx.textAlign = 'left';
         ctx.textBaseline = 'middle';
-        ctx.fillText(node.keyword, node.x, node.y);
+        ctx.fillText(node.keyword, node.x + currentRadius + 6, node.y);
       });
     };
 
@@ -216,7 +202,7 @@ export default function NeuralBackground() {
       ref={canvasRef}
       className="neural-background"
       style={{
-        position: 'absolute',
+        position: 'fixed',
         top: 0,
         left: 0,
         width: '100%',

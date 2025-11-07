@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import NeuralBackground from "@/components/NeuralBackground";
 import "@/styles/globals.css";
 import "@/styles/blog.css";
 
@@ -24,6 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <NeuralBackground />
         <Header />
         <main>{children}</main>
         <Footer />
