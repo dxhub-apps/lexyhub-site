@@ -113,6 +113,17 @@ export default function NeuralBackground() {
     const drawNodes = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+      // Helper to modify rgba opacity
+      const modifyOpacity = (rgbaString: string, multiplier: number): string => {
+        // Extract rgba values: rgba(r, g, b, a)
+        const match = rgbaString.match(/rgba?\((\d+),\s*(\d+),\s*(\d+),?\s*([\d.]*)\)/);
+        if (!match) return rgbaString;
+
+        const [, r, g, b, a] = match;
+        const alpha = parseFloat(a || '1') * multiplier;
+        return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+      };
+
       // Get theme colors from CSS variables
       const neuralLine = getCSSVar('--neural-line');
       const neuralGlow = getCSSVar('--neural-glow');
@@ -138,9 +149,9 @@ export default function NeuralBackground() {
             const pulsePosition = (Math.sin(node.pulsePhase) + 1) / 2;
             const gradient = ctx.createLinearGradient(node.x, node.y, target.x, target.y);
 
-            // Use theme color for lines
-            const lineColor = neuralLine.replace(')', `, ${opacity * 0.5})`).replace('rgb', 'rgba');
-            const lineColorBright = neuralLine.replace(')', `, ${opacity * 1.2})`).replace('rgb', 'rgba');
+            // Use theme color for lines with modified opacity
+            const lineColor = modifyOpacity(neuralLine, opacity * 0.5);
+            const lineColorBright = modifyOpacity(neuralLine, opacity * 1.2);
 
             gradient.addColorStop(0, lineColor);
             gradient.addColorStop(pulsePosition, lineColorBright);
@@ -167,7 +178,7 @@ export default function NeuralBackground() {
           node.x, node.y, currentRadius * 3
         );
         gradient.addColorStop(0, neuralGlow);
-        gradient.addColorStop(1, neuralGlow.replace(/[\d.]+\)$/g, '0)'));
+        gradient.addColorStop(1, modifyOpacity(neuralGlow, 0));
 
         ctx.beginPath();
         ctx.fillStyle = gradient;
