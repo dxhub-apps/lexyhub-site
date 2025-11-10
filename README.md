@@ -84,10 +84,12 @@ lexyhub-site/
 ## Key Pages
 
 ### Homepage (/)
-- Hero section with live signal board
-- Product features showcase
-- Pricing plans (Free, Basic, Pro)
-- 5-minute workflow overview
+- Friendly hero with instant keyword preview
+- "How it helps" benefit cards for quick wins
+- Product dashboard preview with watchlist example
+- Social proof quotes and marketplace logos
+- Chrome extension banner, pricing plans, and FAQ
+- Final trust-focused call to action
 
 ### About (/about)
 - Company origin story
