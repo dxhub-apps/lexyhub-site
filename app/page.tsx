@@ -1,542 +1,249 @@
-import Link from 'next/link';
-import PricingSection from '@/components/PricingSection';
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <>
-      {/* Hero Section */}
+    <div className="landing">
       <section className="hero" id="home">
-        <div className="shell hero__wrapper">
-          <div className="hero__copy">
-            <p className="eyebrow">FREE FOREVER PLAN AVAILABLE</p>
-            <h1>Turn Marketplace Data Into Revenue</h1>
-            <p className="lead">
-              Stop guessing. LexiHub uses AI to analyze keywords across Amazon, Etsy, and Google—revealing hidden opportunities, seasonal trends, and optimization insights that drive real growth.
+        <div className="shell hero__grid">
+          <div className="hero__content">
+            <h1>Find what buyers really search for.</h1>
+            <p className="hero__lead">
+              LexyHub shows you which keywords, products, and trends are worth your time — using real marketplace data.
             </p>
-            <div className="hero__cta-row">
-              <a
-                className="btn btn--primary"
-                href="https://app.lexyhub.com/signup"
-              >
-                Start Free—No Credit Card
+            <div className="hero__actions">
+              <a className="hero__cta" href="https://app.lexyhub.com/signup">
+                Try Free Now
               </a>
-              <a
-                className="btn btn--secondary"
-                href="#features"
-              >
-                See How It Works
-              </a>
+              <Link className="hero__demo" href="#demo">
+                Watch 1-Minute Demo
+              </Link>
             </div>
-            <p className="hero__perk-note">
-              <strong>10 keyword searches/month free forever.</strong> Upgrade to Basic ($6.99), Pro ($12.99), or Growth ($24.99) for more.
-            </p>
           </div>
-          <div className="hero__side">
-            <div className="panel panel--primary" aria-label="Live signals">
-              <div className="panel__head">
-                <span className="panel__title">Real-Time Intelligence</span>
-                <span className="tag tag--live">LIVE</span>
+          <div className="hero__visual" role="presentation" aria-hidden="true">
+            <div className="hero__screen">
+              <div className="hero__screen-top">
+                <span className="hero__light" />
+                <span className="hero__light" />
+                <span className="hero__light" />
               </div>
-              <p className="panel__desc">Cross-marketplace trend analysis</p>
-              <ul className="signal-list">
-                <li>
-                  <span>&quot;personalized jewelry&quot;</span>
-                  <span className="trend trend--up">+142%</span>
-                </li>
-                <li>
-                  <span>&quot;custom mom necklace&quot;</span>
-                  <span className="trend trend--up">+118%</span>
-                </li>
-                <li>
-                  <span>&quot;seasonal home decor&quot;</span>
-                  <span className="trend trend--up">+89%</span>
-                </li>
-                <li>
-                  <span>&quot;print on demand&quot;</span>
-                  <span className="trend trend--up">+64%</span>
-                </li>
-              </ul>
-            </div>
-            <div className="panel panel--neutral">
-              <p className="panel__label">5+ Data Sources</p>
-              <p className="panel__body">
-                Etsy, Amazon, Google Trends, Pinterest, Reddit—all analyzed in real-time with AI-powered semantic search.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Problem/Solution Section */}
-      <section className="section section--problem">
-        <div className="shell section__head">
-          <h2>The Seller&apos;s Dilemma</h2>
-          <p>Traditional tools leave you guessing. LexiHub gives you answers.</p>
-        </div>
-        <div className="shell grid grid--2col">
-          <article className="problem-card">
-            <div className="problem-card__icon">×</div>
-            <h3>Without LexiHub</h3>
-            <ul>
-              <li>Manual keyword research across multiple tools</li>
-              <li>Discover trends after they&apos;re already saturated</li>
-              <li>Guess if your listings are optimized</li>
-              <li>No way to predict pricing impact</li>
-              <li>Miss seasonal opportunities</li>
-              <li>Pay $100+/month for scattered tools</li>
-            </ul>
-          </article>
-          <article className="problem-card problem-card--solution">
-            <div className="problem-card__icon">✓</div>
-            <h3>With LexiHub</h3>
-            <ul>
-              <li>AI semantic search finds hidden opportunities</li>
-              <li>Multi-source trend validation catches emerging niches</li>
-              <li>Automated listing audits with specific fixes</li>
-              <li>Market Twin simulator models decisions before you act</li>
-              <li>Seasonal intelligence plans 3 months ahead</li>
-              <li>All-in-one platform starting at $0/month</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      {/* Key Differentiators */}
-      <section className="section section--why" id="features">
-        <div className="shell section__head">
-          <h2>What Makes LexiHub Different</h2>
-          <p>We built what we wish existed when we were sellers.</p>
-        </div>
-        <div className="shell grid grid--3col">
-          <article className="card">
-            <h3>AI Semantic Search</h3>
-            <p>
-              Not just keyword matching. Our 3,072-dimensional AI embeddings understand <em>meaning</em>. Search &quot;handmade candles&quot; and discover related opportunities like &quot;artisan wax melts&quot; that competitors miss.
-            </p>
-          </article>
-          <article className="card">
-            <h3>5+ Data Sources</h3>
-            <p>
-              Cross-validate trends across Etsy, Amazon, Google, Pinterest, and Reddit. Reduce false positives and catch opportunities before mainstream tools.
-            </p>
-          </article>
-          <article className="card">
-            <h3>Seasonal Intelligence</h3>
-            <p>
-              Automatic seasonal weighting for Black Friday, Christmas, Mother&apos;s Day, and more. Plan inventory 2-3 months ahead of demand peaks.
-            </p>
-          </article>
-          <article className="card">
-            <h3>Market Twin Simulator</h3>
-            <p>
-              Model &quot;what-if&quot; scenarios before making changes. Test price adjustments, ad spend, and inventory decisions with data-backed projections.
-            </p>
-          </article>
-          <article className="card">
-            <h3>Listing Intelligence</h3>
-            <p>
-              AI-powered quality audits score your listings and provide specific, prioritized fixes. Upload images for computer vision-powered tag suggestions.
-            </p>
-          </article>
-          <article className="card">
-            <h3>Visual Tag AI</h3>
-            <p>
-              Upload product images and get AI-generated tag suggestions using computer vision. Find keywords you never would have thought of.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      {/* LexyBrain Section */}
-      <section className="section section--lexybrain" id="lexybrain">
-        <div className="shell">
-          <div className="lexybrain-hero">
-            <div className="lexybrain-hero__badge">
-              <span className="badge-dot"></span>
-              Powered by LexyBrain™
-            </div>
-            <h2>LexyHub Presents LexyBrain™</h2>
-            <p className="lexybrain-tagline">
-              Developed by LexyHub. Designed to think like the market itself.
-            </p>
-            <p className="lead">
-              LexyBrain™ is not just another AI feature — it&apos;s our proprietary intelligence engine,
-              developed entirely by LexyHub to redefine how sellers understand and dominate their markets.
-            </p>
-          </div>
-
-          <div className="lexybrain-content">
-            <div className="lexybrain-explanation">
-              <p>
-                Built from the ground up by the LexyHub team, LexyBrain™ analyzes millions of marketplace
-                signals — keywords, buyer intent, trend shifts, and competition patterns — and transforms
-                them into crystal-clear insights you can act on instantly.
-              </p>
-              <div className="lexybrain-highlight">
-                <h3>It doesn&apos;t just collect data. It thinks.</h3>
-                <p>
-                  It learns how your niche behaves, predicts emerging opportunities, and helps you make
-                  precise decisions before anyone else sees what&apos;s coming.
-                </p>
-              </div>
-              <p>
-                Every recommendation inside LexyHub — every trend, insight, and alert — is powered by
-                the analytical depth of LexyBrain™, an AI system engineered to interpret meaning, not just numbers.
-              </p>
-            </div>
-
-            <div className="lexybrain-features">
-              <h3>Why it matters:</h3>
-              <div className="grid grid--4col">
-                <article className="card card--lexybrain">
-                  <h4>Predictive Precision</h4>
-                  <p>Detect tomorrow&apos;s winners before they peak.</p>
-                </article>
-                <article className="card card--lexybrain">
-                  <h4>Actionable Clarity</h4>
-                  <p>Understand why trends move and how to leverage them.</p>
-                </article>
-                <article className="card card--lexybrain">
-                  <h4>Adaptive Learning</h4>
-                  <p>LexyBrain™ evolves with every keyword, every signal, every market cycle.</p>
-                </article>
-                <article className="card card--lexybrain">
-                  <h4>Creator Advantage</h4>
-                  <p>Built exclusively for sellers who want data-driven confidence without technical complexity.</p>
-                </article>
-              </div>
-            </div>
-          </div>
-
-          <div className="lexybrain-footer">
-            <p className="lexybrain-statement">
-              With LexyHub developed LexyBrain™, we&apos;ve moved beyond analytics — into intelligence.<br />
-              <strong>It&apos;s not a dashboard. It&apos;s your competitive edge.</strong>
-            </p>
-            <Link href="/lexybrain" className="btn btn--primary">
-              Learn More About LexyBrain™
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Deep Dive */}
-      <section className="section section--features-deep">
-        <div className="shell">
-          <div className="feature-block">
-            <div className="feature-block__content">
-              <h2>Discover Keywords Competitors Don&apos;t See</h2>
-              <p className="lead">
-                Traditional tools rely on exact keyword matching. LexiHub uses AI to understand semantic relationships, revealing hidden market opportunities.
-              </p>
-              <ul className="feature-list">
-                <li>Search by meaning, not just exact phrases</li>
-                <li>Discover sub-niches within your market</li>
-                <li>Find buyer intent keywords that drive sales</li>
-                <li>Reduce research time from hours to minutes</li>
-              </ul>
-            </div>
-            <div className="feature-block__visual">
-              <div className="feature-demo">
-                <div className="demo-search">
-                  <div className="demo-input">handmade candles</div>
-                  <div className="demo-arrow">→</div>
-                </div>
-                <div className="demo-results">
-                  <div className="demo-result">artisan wax melts</div>
-                  <div className="demo-result">hand-poured soy candles</div>
-                  <div className="demo-result">aromatherapy home decor</div>
-                  <div className="demo-result">scented gift sets</div>
+              <div className="hero__search">
+                <div className="hero__search-label">Keyword check</div>
+                <div className="hero__search-input">
+                  <span className="hero__search-icon">🔍</span>
+                  <span>necklaces</span>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <div className="feature-block feature-block--reverse">
-            <div className="feature-block__content">
-              <h2>Know What Will Happen Before You Act</h2>
-              <p className="lead">
-                Market Twin lets you simulate pricing changes, ad spend adjustments, and seasonal impacts—seeing projected results before investing.
-              </p>
-              <ul className="feature-list">
-                <li>Model price changes and revenue impact</li>
-                <li>Test different ad spend scenarios</li>
-                <li>Forecast inventory needs</li>
-                <li>Compare best-case vs. realistic outcomes</li>
-              </ul>
-            </div>
-            <div className="feature-block__visual">
-              <div className="feature-demo feature-demo--simulator">
-                <div className="simulator-row">
-                  <span>Price: $12.99 → $15.99</span>
-                  <span className="simulator-result">+23% revenue</span>
-                </div>
-                <div className="simulator-row">
-                  <span>Ad Spend: +$200/month</span>
-                  <span className="simulator-result">+47 sales</span>
-                </div>
-                <div className="simulator-row">
-                  <span>Seasonal Peak: Dec</span>
-                  <span className="simulator-result">1.8x demand</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="feature-block">
-            <div className="feature-block__content">
-              <h2>Fix What&apos;s Wrong. Rank Higher.</h2>
-              <p className="lead">
-                Get specific, actionable fixes for underperforming listings. AI analyzes completeness, sentiment, readability, and keyword density.
-              </p>
-              <ul className="feature-list">
-                <li>Comprehensive quality audits with scores</li>
-                <li>Prioritized action items by impact</li>
-                <li>Tag health scoring and substitutions</li>
-                <li>Competitor benchmarking</li>
-              </ul>
-            </div>
-            <div className="feature-block__visual">
-              <div className="feature-demo">
-                <div className="audit-score">
-                  <div className="score-circle">68/100</div>
-                  <div className="score-label">Listing Quality</div>
-                </div>
-                <div className="audit-items">
-                  <div className="audit-item audit-item--high">Readability: 42/100</div>
-                  <div className="audit-item audit-item--medium">Keyword density low</div>
-                  <div className="audit-item audit-item--low">Completeness: 89/100</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <PricingSection />
-
-      {/* Use Cases / Success Stories */}
-      <section className="section section--use-cases">
-        <div className="shell section__head">
-          <h2>Real Sellers. Real Results.</h2>
-          <p>See how LexiHub helps sellers discover opportunities and optimize performance.</p>
-        </div>
-        <div className="shell grid grid--3col">
-          <article className="card">
-            <h3>Seasonal Launch Success</h3>
-            <p>
-              <strong>Challenge:</strong> Launch Christmas ornaments in time for holiday peak.
-            </p>
-            <p>
-              <strong>Solution:</strong> Used semantic search to find high-demand, low-competition keywords. Seasonal calendar identified August launch window. Market Twin modeled optimal pricing.
-            </p>
-            <p className="result">
-              <strong>Result:</strong> Launched 3 months early with data-backed pricing. 40% of seasonal revenue.
-            </p>
-          </article>
-          <article className="card">
-            <h3>Untapped Niche Discovery</h3>
-            <p>
-              <strong>Challenge:</strong> Wanted to expand product line but unsure which direction.
-            </p>
-            <p>
-              <strong>Solution:</strong> Semantic exploration revealed &quot;bohemian wall hanging&quot; niche with low competition, high demand, and 3,200% YoY growth.
-            </p>
-            <p className="result">
-              <strong>Result:</strong> Discovered profitable niche before saturation. Clear path to profitability.
-            </p>
-          </article>
-          <article className="card">
-            <h3>Conversion Rate Optimization</h3>
-            <p>
-              <strong>Challenge:</strong> 20 listings but only 3 driving sales. Others had impressions but no conversions.
-            </p>
-            <p>
-              <strong>Solution:</strong> Listing Intelligence audits identified specific issues (low readability, poor sentiment, weak tags). Quick-fix recommendations prioritized by impact.
-            </p>
-            <p className="result">
-              <strong>Result:</strong> Conversion rate increased from 1.2% to 3.8% across 17 listings.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      {/* Comparison Section */}
-      <section className="section section--comparison">
-        <div className="shell section__head">
-          <h2>LexiHub vs. Traditional Tools</h2>
-          <p>Stop paying for 3-4 separate tools. Get everything in one platform.</p>
-        </div>
-        <div className="shell">
-          <div className="comparison-table">
-            <div className="comparison-row comparison-row--header">
-              <div className="comparison-cell">Capability</div>
-              <div className="comparison-cell">LexiHub</div>
-              <div className="comparison-cell">Traditional Tools</div>
-            </div>
-            <div className="comparison-row">
-              <div className="comparison-cell"><strong>Semantic AI Search</strong></div>
-              <div className="comparison-cell comparison-cell--yes">3,072D embeddings</div>
-              <div className="comparison-cell comparison-cell--no">Exact matching only</div>
-            </div>
-            <div className="comparison-row">
-              <div className="comparison-cell"><strong>Multi-Source Data</strong></div>
-              <div className="comparison-cell comparison-cell--yes">5+ sources</div>
-              <div className="comparison-cell comparison-cell--no">Usually 1-2</div>
-            </div>
-            <div className="comparison-row">
-              <div className="comparison-cell"><strong>Seasonal Intelligence</strong></div>
-              <div className="comparison-cell comparison-cell--yes">Automatic weighting</div>
-              <div className="comparison-cell comparison-cell--no">Manual adjustments</div>
-            </div>
-            <div className="comparison-row">
-              <div className="comparison-cell"><strong>Market Simulator</strong></div>
-              <div className="comparison-cell comparison-cell--yes">Built-in scenarios</div>
-              <div className="comparison-cell comparison-cell--no">Not available</div>
-            </div>
-            <div className="comparison-row">
-              <div className="comparison-cell"><strong>Listing Audits</strong></div>
-              <div className="comparison-cell comparison-cell--yes">AI-powered analysis</div>
-              <div className="comparison-cell comparison-cell--no">Basic SEO checks</div>
-            </div>
-            <div className="comparison-row">
-              <div className="comparison-cell"><strong>Visual Tag AI</strong></div>
-              <div className="comparison-cell comparison-cell--yes">Image-to-tag generation</div>
-              <div className="comparison-cell comparison-cell--no">Not available</div>
-            </div>
-            <div className="comparison-row">
-              <div className="comparison-cell"><strong>LexyBrain™ AI Engine</strong></div>
-              <div className="comparison-cell comparison-cell--yes">Proprietary intelligence system</div>
-              <div className="comparison-cell comparison-cell--no">Generic algorithms</div>
-            </div>
-            <div className="comparison-row">
-              <div className="comparison-cell"><strong>Monthly Cost</strong></div>
-              <div className="comparison-cell comparison-cell--yes">$0 - $12.99</div>
-              <div className="comparison-cell comparison-cell--no">$100 - $200</div>
-            </div>
-          </div>
-          <p className="comparison-note">
-            <strong>Save $1,000+ per year</strong> by replacing multiple tools with LexiHub&apos;s all-in-one platform.
-          </p>
-        </div>
-      </section>
-
-      {/* Chrome Extension Section */}
-      <section className="section section--extension" id="extension">
-        <div className="shell extension-feature">
-          <div className="extension-feature__copy">
-            <div className="extension-promo-badge">
-              🎁 Sign up via extension = FREE 14-day Pro trial!
-            </div>
-            <h2>
-              Your Keyword Sidekick.
-              <br />
-              Works Everywhere You Do.
-            </h2>
-            <p className="lead">
-              The LexiHub Chrome Extension brings intelligence directly into your workflow. Browse Amazon, Etsy, or Google—we&apos;re already there.
-            </p>
-            <div className="extension-perks">
-              <h3>Extension Features:</h3>
-              <ul>
-                <li>Instant keyword overlays on product pages</li>
-                <li>One-click trend lookups from any search</li>
-                <li>Seamless integration with web app</li>
-                <li>Privacy-first design (only active on marketplace pages)</li>
-                <li><strong>Sign up through extension = 14 days of Pro FREE</strong></li>
-              </ul>
-            </div>
-            <a
-              className="btn btn--primary btn--large"
-              href="https://chrome.google.com/webstore"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Get Extension + Free Pro Trial →
-            </a>
-            <p className="extension-note">
-              Works with Chrome, Edge, Brave, and all Chromium browsers
-            </p>
-          </div>
-          <div className="extension-feature__visual">
-            <div className="browser-mockup">
-              <div className="browser-chrome">
-                <div className="browser-dots">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-                <div className="browser-address">chrome://extensions</div>
-              </div>
-              <div className="browser-content">
-                <div className="extension-card">
-                  <div className="extension-icon">LH</div>
-                  <div className="extension-info">
-                    <h4>LexiHub Intelligence</h4>
-                    <p>Keyword data. Everywhere.</p>
+              <div className="hero__result-card">
+                <div className="hero__result-title">Demand snapshot</div>
+                <div className="hero__result-rows">
+                  <div>
+                    <span className="hero__badge hero__badge--high">High demand</span>
+                    <span className="hero__meta">22K searches this week</span>
+                  </div>
+                  <div>
+                    <span className="hero__badge hero__badge--calm">Stable price</span>
+                    <span className="hero__meta">Average sale $34</span>
+                  </div>
+                  <div>
+                    <span className="hero__badge hero__badge--medium">Medium risk</span>
+                    <span className="hero__meta">Competition easing</span>
                   </div>
                 </div>
-                <div className="extension-badge">Installed</div>
               </div>
+              <div className="hero__note">Real numbers from Etsy &amp; Amazon, updated today.</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="section section--how">
-        <div className="shell section__head">
-          <h2>Get Started in Minutes</h2>
-          <p>From signup to insights in under 5 minutes.</p>
-        </div>
-        <div className="shell grid grid--4col">
-          <article className="step">
-            <h3>1. Sign Up Free</h3>
-            <p>Create your account. No credit card needed. Start with 10 free searches per month.</p>
-          </article>
-          <article className="step">
-            <h3>2. Search Keywords</h3>
-            <p>Use semantic search to discover opportunities. See demand, competition, and trends.</p>
-          </article>
-          <article className="step">
-            <h3>3. Optimize Listings</h3>
-            <p>Run quality audits. Get specific fixes. Upload images for AI tag suggestions.</p>
-          </article>
-          <article className="step">
-            <h3>4. Monitor & Grow</h3>
-            <p>Track SERP positions. Get trend alerts. Upgrade when you need more capacity.</p>
-          </article>
+      <section className="section section--benefits" id="how-it-helps">
+        <div className="shell">
+          <h2>How it helps you sell</h2>
+          <div className="benefits__grid">
+            <article className="benefit-card">
+              <div className="benefit-card__icon" aria-hidden="true">🔍</div>
+              <h3>Discover what sells</h3>
+              <p>Search any word and see if buyers are looking for it right now.</p>
+            </article>
+            <article className="benefit-card">
+              <div className="benefit-card__icon" aria-hidden="true">💡</div>
+              <h3>Get smart tips</h3>
+              <p>LexyHub explains how to improve your listings and avoid mistakes.</p>
+            </article>
+            <article className="benefit-card">
+              <div className="benefit-card__icon" aria-hidden="true">📈</div>
+              <h3>Grow safely</h3>
+              <p>Track your keywords and learn what’s changing in your market.</p>
+            </article>
+          </div>
+          <a className="section-link" href="https://app.lexyhub.com/signup">
+            See Example Results
+          </a>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="section section--cta">
-        <div className="shell cta-block">
-          <h2>Ready to Gain an Unfair Advantage?</h2>
-          <p>
-            Join sellers who use LexiHub to discover opportunities competitors don&apos;t see.
-            Start free—upgrade only when you need more.
-          </p>
-          <div className="cta-buttons">
-            <a
-              className="btn btn--primary btn--large"
-              href="https://app.lexyhub.com/signup"
-            >
-              Start Free Forever Plan
-            </a>
-            <a
-              className="btn btn--secondary btn--large"
-              href="#pricing"
-            >
-              View Pricing
-            </a>
+      <section className="section section--product" id="product">
+        <div className="shell product__grid">
+          <div className="product__visual" aria-hidden="true">
+            <div className="product__card">
+              <p className="product__title">Keyword results</p>
+              <div className="product__rows">
+                <div className="product__row">
+                  <span>wall art</span>
+                  <span className="product__chip product__chip--good">High demand</span>
+                </div>
+                <div className="product__row">
+                  <span>nursery print</span>
+                  <span className="product__chip product__chip--steady">Balanced</span>
+                </div>
+                <div className="product__row">
+                  <span>metal sign</span>
+                  <span className="product__chip product__chip--watch">Keep watch</span>
+                </div>
+              </div>
+              <div className="product__chart">
+                <div className="product__bar product__bar--primary" style={{ height: "80%" }} />
+                <div className="product__bar" style={{ height: "55%" }} />
+                <div className="product__bar product__bar--accent" style={{ height: "68%" }} />
+                <div className="product__bar" style={{ height: "40%" }} />
+              </div>
+              <div className="product__footer">
+                <span>Watchlist</span>
+                <span className="product__add">+ Add keyword</span>
+              </div>
+            </div>
           </div>
-          <p className="cta-note">
-            No credit card required • 10 searches/month free forever • Upgrade anytime
-          </p>
+          <div className="product__copy">
+            <h2>See everything in one simple dashboard</h2>
+            <ul>
+              <li>Clear demand, competition, and risk badges</li>
+              <li>Track the ideas you care about with one click</li>
+              <li>Spot trends with easy-to-read charts</li>
+            </ul>
+            <p className="product__note">Prefer video? A quick loop shows &ldquo;wall art&rdquo; turning into instant insights.</p>
+          </div>
         </div>
       </section>
-    </>
+
+      <section className="section section--love" id="love">
+        <div className="shell">
+          <h2>Why sellers love it</h2>
+          <div className="love__grid">
+            <blockquote>
+              “LexyHub tells me which ideas are worth making. It’s like a cheat sheet for Etsy.”
+            </blockquote>
+            <blockquote>
+              “Finally something that makes data simple.”
+            </blockquote>
+            <blockquote>
+              “I stopped guessing and started selling what people want.”
+            </blockquote>
+          </div>
+          <div className="love__logos" role="list" aria-label="Supported marketplaces">
+            <span role="listitem">Etsy</span>
+            <span role="listitem">Amazon</span>
+            <span role="listitem">Shopify</span>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--extension" id="extension">
+        <div className="shell extension__content">
+          <div>
+            <h2>See keyword insights while you browse Etsy or Amazon.</h2>
+            <p>Install the Chrome extension to highlight keywords and add them to your watchlist instantly.</p>
+            <ul className="extension__list">
+              <li>One-click install</li>
+              <li>Works right on marketplace pages</li>
+              <li>
+                <span className="extension__check">☑</span> Free to use with a LexyHub account
+              </li>
+            </ul>
+            <a className="extension__cta" href="https://chrome.google.com/webstore" target="_blank" rel="noopener noreferrer">
+              Install Chrome Extension
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--pricing" id="pricing">
+        <div className="shell">
+          <h2>Pricing made easy</h2>
+          <div className="pricing__grid">
+            <article className="pricing-card">
+              <h3>Free</h3>
+              <p className="pricing-card__price">$0</p>
+              <p className="pricing-card__tag">Just starting</p>
+              <ul>
+                <li>Limited searches</li>
+                <li>Basic tips</li>
+              </ul>
+            </article>
+            <article className="pricing-card pricing-card--highlight">
+              <h3>Basic</h3>
+              <p className="pricing-card__price">$6.99/mo</p>
+              <p className="pricing-card__tag">Small shops</p>
+              <ul>
+                <li>Unlimited searches</li>
+                <li>Insights and watchlists</li>
+              </ul>
+            </article>
+            <article className="pricing-card">
+              <h3>Pro</h3>
+              <p className="pricing-card__price">$12.99/mo</p>
+              <p className="pricing-card__tag">Growing sellers</p>
+              <ul>
+                <li>Everything in Basic</li>
+                <li>AI keyword ideas</li>
+              </ul>
+            </article>
+          </div>
+          <p className="pricing__note">Cancel anytime. No credit card for Free plan.</p>
+          <a className="pricing__cta" href="https://app.lexyhub.com/signup">
+            Start Free Today
+          </a>
+        </div>
+      </section>
+
+      <section className="section section--faq" id="faq">
+        <div className="shell">
+          <h2>FAQ</h2>
+          <div className="faq__list">
+            <details open>
+              <summary>How does LexyHub get its data?</summary>
+              <p>We analyze real marketplace trends and keep them updated daily.</p>
+            </details>
+            <details>
+              <summary>Do I need technical skills?</summary>
+              <p>No. Just type what you sell and read the results.</p>
+            </details>
+            <details>
+              <summary>Does it work for Amazon or Etsy?</summary>
+              <p>Yes — and more marketplaces soon.</p>
+            </details>
+            <details>
+              <summary>What is the Chrome extension?</summary>
+              <p>A small tool that shows keyword info right on product pages.</p>
+            </details>
+            <details>
+              <summary>Can I cancel my plan?</summary>
+              <p>Anytime, from your account settings.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--cta" id="demo">
+        <div className="shell final-cta">
+          <h2>Stop guessing. Start knowing.</h2>
+          <p>Join thousands of marketplace sellers who grow with LexyHub every day.</p>
+          <a className="final-cta__button" href="https://app.lexyhub.com/signup">
+            Create Free Account
+          </a>
+          <p className="final-cta__note">Works with Etsy, Amazon, and Shopify.</p>
+        </div>
+      </section>
+
+    </div>
   );
 }
