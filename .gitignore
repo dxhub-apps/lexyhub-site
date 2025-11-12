@@ -38,3 +38,6 @@ next-env.d.ts
 
 # backup
 .backup
+
+# auto-generated documentation
+CODEBASE_MAP.md
