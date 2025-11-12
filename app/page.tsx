@@ -69,7 +69,7 @@ export default function Home() {
             </article>
             <article className="benefit-card">
               <h3>Grow safely</h3>
-              <p>Track your keywords and learn what's changing in your market.</p>
+              <p>Track your keywords and learn what&apos;s changing in your market.</p>
             </article>
           </div>
           <a className="section-link" href="https://app.lexyhub.com/signup">
