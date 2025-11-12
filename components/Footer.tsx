@@ -28,6 +28,7 @@ export default function Footer() {
           <Link href="/contact">Contact</Link>
           <Link href="/terms">Terms</Link>
           <Link href="/privacy">Privacy</Link>
+          <Link href="/disclaimer">Disclaimer</Link>
         </div>
       </div>
       <p className="site-footer__legal">© 2025 LexyHub Technologies. LexyHub™ and LexyBrain™ are trademarks.</p>
