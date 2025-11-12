@@ -29,7 +29,6 @@ export default function Home() {
               <div className="hero__search">
                 <div className="hero__search-label">Keyword check</div>
                 <div className="hero__search-input">
-                  <span className="hero__search-icon">🔍</span>
                   <span>necklaces</span>
                 </div>
               </div>
@@ -61,19 +60,16 @@ export default function Home() {
           <h2>How it helps you sell</h2>
           <div className="benefits__grid">
             <article className="benefit-card">
-              <div className="benefit-card__icon" aria-hidden="true">🔍</div>
               <h3>Discover what sells</h3>
               <p>Search any word and see if buyers are looking for it right now.</p>
             </article>
             <article className="benefit-card">
-              <div className="benefit-card__icon" aria-hidden="true">💡</div>
               <h3>Get smart tips</h3>
               <p>LexyHub explains how to improve your listings and avoid mistakes.</p>
             </article>
             <article className="benefit-card">
-              <div className="benefit-card__icon" aria-hidden="true">📈</div>
               <h3>Grow safely</h3>
-              <p>Track your keywords and learn what’s changing in your market.</p>
+              <p>Track your keywords and learn what's changing in your market.</p>
             </article>
           </div>
           <a className="section-link" href="https://app.lexyhub.com/signup">
@@ -150,17 +146,15 @@ export default function Home() {
       <section className="section section--extension" id="extension">
         <div className="shell extension__content">
           <div>
-            <h2>See keyword insights while you browse Etsy or Amazon.</h2>
-            <p>Install the Chrome extension to highlight keywords and add them to your watchlist instantly.</p>
+            <h2>Free Chrome Extension - Get insights while you browse</h2>
+            <p>Install our free Chrome extension to highlight keywords and add them to your watchlist instantly while browsing Etsy or Amazon.</p>
             <ul className="extension__list">
               <li>One-click install</li>
               <li>Works right on marketplace pages</li>
-              <li>
-                <span className="extension__check">☑</span> Free to use with a LexyHub account
-              </li>
+              <li>Completely free with your LexyHub account</li>
             </ul>
             <a className="extension__cta" href="https://chrome.google.com/webstore" target="_blank" rel="noopener noreferrer">
-              Install Chrome Extension
+              Use Now - Free Extension
             </a>
           </div>
         </div>

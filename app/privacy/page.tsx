@@ -168,6 +168,7 @@ export default function Privacy() {
       <p>If you have any questions about this Privacy Policy, please contact us:</p>
       <ul>
         <li>Email: <a href="mailto:privacy@lexyhub.com">privacy@lexyhub.com</a></li>
+        <li>Support: <a href="mailto:support@lexyhub.com">support@lexyhub.com</a></li>
         <li>Address: 2100 Market Street, Suite 502, San Francisco, CA 94114</li>
         <li>Phone: +1 (415) 555-0123</li>
       </ul>

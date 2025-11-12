@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Disclaimer | LexiHub",
-  description: "Important disclaimers and limitations of LexiHub's marketplace intelligence services.",
+  title: "Disclaimer | LexyHub",
+  description: "Important disclaimers and limitations of LexyHub's marketplace intelligence services.",
 };
 
 export default function Disclaimer() {
@@ -12,14 +12,14 @@ export default function Disclaimer() {
       <p className="updated">Last updated: November 5, 2025</p>
 
       <p>
-        Please read this Disclaimer carefully before using the LexiHub platform and services. This Disclaimer supplements our{" "}
+        Please read this Disclaimer carefully before using the LexyHub platform and services. This Disclaimer supplements our{" "}
         <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Policy</a>.
       </p>
 
       <h2>1. General Information Only</h2>
 
       <p>
-        The information, data, insights, and recommendations provided through LexiHub are for general informational and educational
+        The information, data, insights, and recommendations provided through LexyHub are for general informational and educational
         purposes only. They are not intended to be, and should not be construed as, professional business advice, financial advice,
         investment advice, or any other type of professional advice.
       </p>
@@ -46,7 +46,7 @@ export default function Disclaimer() {
       <h2>3. No Guarantee of Results</h2>
 
       <p>
-        Using LexiHub does not guarantee any specific business results, sales increases, revenue growth, or marketplace success.
+        Using LexyHub does not guarantee any specific business results, sales increases, revenue growth, or marketplace success.
         Your results depend on numerous factors beyond our control, including but not limited to:
       </p>
       <ul>
@@ -85,7 +85,7 @@ export default function Disclaimer() {
       <h2>5. Third-Party Data and Platforms</h2>
 
       <p>
-        LexiHub aggregates data from third-party platforms including Amazon, Etsy, Google, Pinterest, Reddit, and others.
+        LexyHub aggregates data from third-party platforms including Amazon, Etsy, Google, Pinterest, Reddit, and others.
         We have no control over these platforms and are not responsible for:
       </p>
       <ul>
@@ -117,14 +117,14 @@ export default function Disclaimer() {
       </ul>
 
       <p>
-        You acknowledge that marketplace selling carries financial risk and that you could lose money. LexiHub is not
+        You acknowledge that marketplace selling carries financial risk and that you could lose money. LexyHub is not
         liable for any financial losses you may incur.
       </p>
 
       <h2>7. Not Professional Advice</h2>
 
       <p>
-        LexiHub and its employees, contractors, and affiliates are not financial advisors, investment advisors, certified
+        LexyHub and its employees, contractors, and affiliates are not financial advisors, investment advisors, certified
         public accountants, lawyers, or licensed professionals in any regulated field. Our services do not constitute:
       </p>
       <ul>
@@ -158,7 +158,7 @@ export default function Disclaimer() {
       <h2>9. No Liability for Business Decisions</h2>
 
       <p>
-        LexiHub shall not be liable for any losses, damages, or adverse consequences resulting from:
+        LexyHub shall not be liable for any losses, damages, or adverse consequences resulting from:
       </p>
       <ul>
         <li>Business decisions made based on our data or insights</li>
@@ -173,7 +173,7 @@ export default function Disclaimer() {
       <h2>10. Competitive Intelligence</h2>
 
       <p>
-        While LexiHub may provide information about market trends, keyword opportunities, and competitive insights, we do not:
+        While LexyHub may provide information about market trends, keyword opportunities, and competitive insights, we do not:
       </p>
       <ul>
         <li>Guarantee the accuracy of competitive data or market intelligence</li>
@@ -247,7 +247,7 @@ export default function Disclaimer() {
       <h2>15. Limitation of Liability</h2>
 
       <p>
-        To the maximum extent permitted by law, LexiHub and its affiliates, officers, employees, agents, partners, and licensors
+        To the maximum extent permitted by law, LexyHub and its affiliates, officers, employees, agents, partners, and licensors
         shall not be liable for:
       </p>
       <ul>
@@ -265,7 +265,7 @@ export default function Disclaimer() {
       <h2>16. Indemnification</h2>
 
       <p>
-        You agree to indemnify and hold harmless LexiHub from any claims, losses, damages, or expenses (including legal fees)
+        You agree to indemnify and hold harmless LexyHub from any claims, losses, damages, or expenses (including legal fees)
         arising from:
       </p>
       <ul>
@@ -298,6 +298,7 @@ export default function Disclaimer() {
       </p>
       <ul>
         <li>Email: <a href="mailto:legal@lexyhub.com">legal@lexyhub.com</a></li>
+        <li>Support: <a href="mailto:support@lexyhub.com">support@lexyhub.com</a></li>
         <li>Address: 2100 Market Street, Suite 502, San Francisco, CA 94114</li>
         <li>Phone: +1 (415) 555-0123</li>
       </ul>
@@ -305,7 +306,7 @@ export default function Disclaimer() {
       <h2>20. Acknowledgment</h2>
 
       <p>
-        By using LexiHub, you acknowledge that you have read, understood, and agree to be bound by this Disclaimer. You
+        By using LexyHub, you acknowledge that you have read, understood, and agree to be bound by this Disclaimer. You
         understand that:
       </p>
       <ul>
@@ -318,7 +319,7 @@ export default function Disclaimer() {
 
       <p className="emphasis">
         <strong>
-          USE OF LEXIHUB DOES NOT GUARANTEE BUSINESS SUCCESS, INCREASED SALES, OR PROFITABILITY. YOUR RESULTS MAY VARY
+          USE OF LEXYHUB DOES NOT GUARANTEE BUSINESS SUCCESS, INCREASED SALES, OR PROFITABILITY. YOUR RESULTS MAY VARY
           SIGNIFICANTLY FROM EXAMPLES OR CASE STUDIES PRESENTED. ALL BUSINESS ACTIVITIES INVOLVE RISK, INCLUDING THE RISK
           OF FINANCIAL LOSS.
         </strong>

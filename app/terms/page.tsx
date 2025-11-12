@@ -301,6 +301,7 @@ export default function Terms() {
       <p>If you have any questions about these Terms, please contact us:</p>
       <ul>
         <li>Email: <a href="mailto:legal@lexyhub.com">legal@lexyhub.com</a></li>
+        <li>Support: <a href="mailto:support@lexyhub.com">support@lexyhub.com</a></li>
         <li>Address: 2100 Market Street, Suite 502, San Francisco, CA 94114</li>
         <li>Phone: +1 (415) 555-0123</li>
       </ul>

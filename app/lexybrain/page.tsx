@@ -62,7 +62,6 @@ export default function LexyBrainPage() {
         </div>
         <div className="shell grid grid--2col">
           <article className="card card--feature">
-            <div className="card__icon">🎯</div>
             <h3>Predictive Precision</h3>
             <p>
               Detect tomorrow&apos;s winners before they peak. LexyBrain™ identifies emerging trends
@@ -76,7 +75,6 @@ export default function LexyBrainPage() {
           </article>
 
           <article className="card card--feature">
-            <div className="card__icon">💡</div>
             <h3>Actionable Clarity</h3>
             <p>
               Understand why trends move and how to leverage them. Get context-rich insights that
@@ -90,7 +88,6 @@ export default function LexyBrainPage() {
           </article>
 
           <article className="card card--feature">
-            <div className="card__icon">🔄</div>
             <h3>Adaptive Learning</h3>
             <p>
               LexyBrain™ evolves with every keyword, every signal, every market cycle. The more
@@ -104,7 +101,6 @@ export default function LexyBrainPage() {
           </article>
 
           <article className="card card--feature">
-            <div className="card__icon">⚡</div>
             <h3>Creator Advantage</h3>
             <p>
               Built exclusively for sellers who want data-driven confidence without technical complexity.

@@ -69,9 +69,9 @@ export default function Contact() {
           <article className="feature">
             <h3>Support</h3>
             <p>
-              Open a ticket at{' '}
-              <a href="https://support.lexyhub.com">support.lexyhub.com</a>
-              {' '}for ingestion issues, data freshness, or mapping questions.
+              Email{' '}
+              <a href="mailto:support@lexyhub.com">support@lexyhub.com</a>
+              {' '}for platform issues, data freshness, or technical questions. We typically respond within 24 hours.
             </p>
           </article>
           <article className="feature">
