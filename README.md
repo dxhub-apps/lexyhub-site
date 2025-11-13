@@ -53,6 +53,41 @@ npm run build
 npm run start
 ```
 
+## Chrome extension integration
+
+The marketing site now exposes a typed configuration endpoint that the LexyHub Chrome
+extension consumes to learn how to authenticate, where to route API calls, and which
+brand assets to render. The endpoint lives at [`/api/ext/config`](./app/api/ext/config/route.ts)
+and responds with JSON so the extension can display the LexyHub logo, determine where to
+send users to log in, and understand which features (watchlist sync, keyword highlighting,
+etc.) are available.
+
+Because this configuration needs to work across local development, staging, and
+production, it is fully driven by environment variables. Update the following variables
+in your `.env.local` (or hosting provider) to customize the Chrome extension behavior:
+
+| Variable | Purpose | Default |
+| --- | --- | --- |
+| `NEXT_PUBLIC_SITE_URL` | Absolute base URL of the marketing site that hosts the assets | `http://localhost:3000` |
+| `NEXT_PUBLIC_EXTENSION_APP_URL` | Base URL of the authenticated LexyHub app | Marketing site origin |
+| `NEXT_PUBLIC_EXTENSION_API_BASE_URL` | API base that the extension should call | `${NEXT_PUBLIC_EXTENSION_APP_URL}/api` |
+| `NEXT_PUBLIC_EXTENSION_LOGIN_URL` | Sign-in URL surfaced in the extension | `${NEXT_PUBLIC_EXTENSION_APP_URL}/login` |
+| `NEXT_PUBLIC_EXTENSION_SIGNUP_URL` | Sign-up URL for new users | `${NEXT_PUBLIC_EXTENSION_APP_URL}/signup` |
+| `NEXT_PUBLIC_EXTENSION_AUTH_STATUS_URL` | Token validation endpoint | `${NEXT_PUBLIC_EXTENSION_API_BASE_URL}/auth/status` |
+| `NEXT_PUBLIC_EXTENSION_LOGO_PATH` | Path or URL for the extension badge logo | `/assets/Lexyhub_logo_dark.svg` |
+| `NEXT_PUBLIC_EXTENSION_WORDMARK_PATH` | Path or URL for the wordmark used on bright backgrounds | `/assets/Lexyhub_logo_white.svg` |
+| `NEXT_PUBLIC_EXTENSION_AUTH_MODE` | Authentication mode label (`magic_link`, `oauth`, or `api_key`) | `magic_link` |
+| `NEXT_PUBLIC_EXTENSION_MIN_VERSION` | Minimum extension version allowed to authenticate | `1.0.0` |
+| `NEXT_PUBLIC_EXTENSION_REFRESH_INTERVAL` | Seconds between token refresh checks | `1800` |
+| `NEXT_PUBLIC_EXTENSION_TRIAL_DAYS` | Trial duration surfaced inside the extension | `14` |
+| `NEXT_PUBLIC_EXTENSION_ENABLE_AI` | Toggle for AI briefing UI | `true` |
+| `NEXT_PUBLIC_EXTENSION_ACCENT_COLOR` | Accent color used in the extension shell | `#E4B306` |
+| `NEXT_PUBLIC_EXTENSION_BG_COLOR` | Background color for extension fallback screens | `#050713` |
+| `NEXT_PUBLIC_EXTENSION_ENFORCE_LOGIN` | Set to `false` to allow unauthenticated read-only mode | `true` |
+
+The configuration helper that powers the endpoint lives in [`lib/ext/config.ts`](./lib/ext/config.ts).
+Updating that module is the recommended way to extend the data that the extension can read.
+
 ## Project Structure
 
 ```
